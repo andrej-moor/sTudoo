@@ -20,7 +20,7 @@ Below you can find the project idea of the webapp "Visudoo" created by the team 
 - This is the outline
 - This is the outline
 ## Link of the code repository
-- [Vidoo WebApp](https://github.com/andrej-moor/vidoo)
+- [Visudoo WebApp](https://github.com/andrej-moor/visudoo)
 ## Goals 
 ### Expected ambition level as a group
 What we expect from this project:
