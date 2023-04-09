@@ -6,4 +6,4 @@
 3. You can break down your projects into feasible steps to complete them.
 - If you want, you can be visually reminded of your big goals by a short slides show before you dedicate yourself to your tasks.
 - Stay on track and reach your goals faster because you don't let them out of your sight.
-- YOUR vision board, YOUR projects, YOUR daily tasks! ^^
+- YOUR vision board, YOUR projects, YOUR daily tasks!
