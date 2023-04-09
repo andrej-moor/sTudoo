@@ -1,12 +1,12 @@
 # Project Ideation 
-Below you can find the project idea of the webapp "Vidoo" created by the team "The Unicorns".
+Below you can find the project idea of the webapp "Visudoo" created by the team "The Unicorns".
 ## Team Name
 -> "The Unicorns"
 ## Contributors 
 - Jana Kusch
 - Andreas Moor
 ## Value Proposition of the app
-- Vidoo is a web app written in Phython that helps you achieve the life you want.
+- Visudoo is a web app written in Phython that helps you achieve the life you want.
 - The principle is that we first visually imagine what we want in order to achieve it. If what we imagine is attractive enough, imagining it attracts ideas on how to realize it.
 - For this, the app uses a grid overview for your BIG GOALS in a form of a digital vision board.
 1. You can create your goals and add text and picture.
