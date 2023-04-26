@@ -10,9 +10,9 @@ Wenn du studierst kennst du sicherlich das Problem, dass Prüfungen, Hausarbeite
 
 **sTudoo** will genau dieses Problem lösen indem es dir ermöglicht:
 
-  1. Deine Studienfächer als **Ziele** anzulegen.
-  2. Welchen du **Projekte** mit Start- und Abgabezeitpunkt (Prüfung, Präsentation, Hausarbeit etc.) zuordnen kannst.
-  3. Für jedes Projekt definierst du die nötigen Maßnamen als **sTudoos** (To-dos ;).
+  1. Deine Studienfächer als **Ziele** anzulegen
+  2. Welchen du **Projekte** mit Start- und Abgabezeitpunkt (Prüfung, Präsentation, Hausarbeit etc.) zuordnen kannst
+  3. Für jedes Projekt definierst du die nötigen Maßnamen als **sTudoos** (To-dos ;)
 
 ## Outline of the Application
 - Classes & Goals
