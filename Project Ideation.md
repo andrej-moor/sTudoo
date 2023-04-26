@@ -3,7 +3,7 @@ Below you can find the project idea of the webapp "Studoo" created by the team "
 ## Team Name
 "The Unicorns"
 ## Contributors 
-- Jana Kusch
+- Jana Kusch (1909841)
 - Andreas Moor
 ## Value Proposition
 Wenn du studierst kennst du sicherlich das Problem, dass Prüfungen, Hausarbeiten, Präsentationen und andere Projekte alle ihre Abgabetermine haben. Die Übersicht zu behalten ist wirklich nicht leicht und führt oft zu Stress und langen Nächten vor der Deadline.
@@ -16,6 +16,11 @@ Wenn du studierst kennst du sicherlich das Problem, dass Prüfungen, Hausarbeite
 
 ## Outline of the Application
 - Classes & Goals
+  -  front page 
+  -  selection page
+  -  destription page --> add to calendar (optional)
+  -  calendar page
+  
 - Projects
 - Todos
 ## Link of the code repository
