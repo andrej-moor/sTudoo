@@ -23,15 +23,15 @@ Wenn du studierst kennst du sicherlich das Problem, dass Prüfungen, Hausarbeite
 ## Goals 
 ### Expected ambition level as a group
 What we expect from this project:
-- sdlfkskdj
-- sldkflksd
-- lsdkflsfd
+- get a throughout understanding of the individual contributions
+-
+- 
 ### Personal goals of each team member
 #### Jana's goals
 My goals are:
-1. Goal 1
-2. Goal 2
-3. Goal 3
+1. Become familiar with Python in web development environments
+2. stay organized through the implementation and git version controls
+3. Implement the Python and database contents
 #### Andy's goals
 My goals are:
 1. Become comfortable with functional and OOP programming in Python
