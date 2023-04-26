@@ -1,7 +1,7 @@
 # Project Ideation 
 Below you can find the project idea of the webapp "Studoo" created by the team "The Unicorns".
 ## Team Name
--> "The Unicorns"
+"The Unicorns"
 ## Contributors 
 - Jana Kusch
 - Andreas Moor
