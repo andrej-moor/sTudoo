@@ -1,30 +1,31 @@
 # Project Ideation 
-Below you can find the project idea of the webapp "Visudoo" created by the team "The Unicorns".
+Below you can find the project idea of the webapp "Studoo" created by the team "The Unicorns".
 ## Team Name
 -> "The Unicorns"
 ## Contributors 
 - Jana Kusch
 - Andreas Moor
-## Value Proposition of the app
-- Visudoo is a web app written in Phython that helps you achieve the life you want.
-- The principle is that we first visually imagine what we want in order to achieve it. If what we imagine is attractive enough, imagining it attracts ideas on how to realize it.
-- For this, the app uses a grid overview for your BIG GOALS in a form of a digital vision board.
-1. You can create your goals and add text and picture.
-2. You can break down your goals into specific projects that will ensure the achievement of your goals.
-3. You can break down your projects into feasible steps to complete them.
-- If you want, you can be visually reminded of your big goals by a short slides show before you dedicate yourself to your tasks.
-- Stay on track and reach your goals faster because you don't let them out of your sight.
-- YOUR vision board, YOUR projects, YOUR daily tasks! 
+## Value Proposition
+Wenn du studierst kennst du sicherlich das Problem, dass Prüfungen, Hausarbeiten, Präsentationen und andere Projekte alle ihre Abgabetermine haben. Die Übersicht zu behalten ist wirklich nicht leicht und führt oft zu Stress und langen Nächten vor der Deadline.
+
+**sTudoo** will genau dieses Problem lösen indem es dir ermöglicht:
+
+  1. Deine Studienfächer als **Ziele** anzulegen.
+  2. Welchen du **Projekte** mit Start- und Abgabezeitpunkt (Prüfung, Präsentation, Hausarbeit etc.) zuordnen kannst.
+  3. Für jedes Projekt definierst du die nötigen Maßnamen als **sTudoos** (To-dos ;).
+
 ## Outline of the Application
-- This is the outline
-- This is the outline
-- This is the outline
+- Classes & Goals
+- Projects
+- Todos
 ## Link of the code repository
-- [Visudoo WebApp](https://github.com/andrej-moor/visudoo)
+- [Visudoo WebApp](https://github.com/andrej-moor/studoo)
 ## Goals 
 ### Expected ambition level as a group
 What we expect from this project:
-
+- sdlfkskdj
+- sldkflksd
+- lsdkflsfd
 ### Personal goals of each team member
 #### Jana's goals
 My goals are:
@@ -33,6 +34,6 @@ My goals are:
 3. Goal 3
 #### Andy's goals
 My goals are:
-1. Goal 1
-2. Goal 2
-3. Goal 3
+1. Become comfortable with functional and OOP programming in Python
+2. Learn how to corporate on an project with version control (github)
+3. Implement my HTML & CSS skills in the frontend
