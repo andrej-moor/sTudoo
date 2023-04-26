@@ -20,6 +20,7 @@ Wenn du studierst kennst du sicherlich das Problem, dass Prüfungen, Hausarbeite
   -  selection page
   -  destription page --> add to calendar (optional)
   -  calendar page
+  -  add to-dos (manually?) for weekly tasks
   
 - Projects
 - Todos
@@ -29,8 +30,8 @@ Wenn du studierst kennst du sicherlich das Problem, dass Prüfungen, Hausarbeite
 ### Expected ambition level as a group
 What we expect from this project:
 - get a throughout understanding of the individual contributions
--
-- 
+- similar amount of workload
+- regular feedback and checkups
 ### Personal goals of each team member
 #### Jana's goals
 My goals are:
