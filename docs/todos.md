@@ -68,7 +68,7 @@ Below you can find the detailed tasks to each of the milestones.
 - [-] Talk to Mr. Eck reg. API (Export of Projects & Todos)
 
 ## Documentation
-- [x] [Home (Index)](/docs/index) @Jana @Andy
+- [x] [Home (Index)](sTudoo/docs/index) @Jana @Andy
 - [-] Tecnical Docs
   - [-] [Tech Docs Index](/docs/technical-docs/)
   - [-] [App Structure](/docs/technical-docs/app-structure)
