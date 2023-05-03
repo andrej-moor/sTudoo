@@ -45,6 +45,10 @@ Below you can find the detailed tasks to each of the milestones.
   - [-] Route 7: xxx
   - [-] Route 8: xxx
 
+Resources: 
+  - [Harvard CS50’s Introduction to Programming with Python](https://youtu.be/nLRL_NcnK-4)
+  - [Harvard CS50's Web Programming with Flask](https://youtu.be/zdgYw-3tzfI)
+
 ## Database (SQLite)
 - [-] Create Class Diagrams (Class, Attributes, Methods)
   - [-] User
@@ -56,7 +60,8 @@ Below you can find the detailed tasks to each of the milestones.
 
 Ressources:
   - [UML Tutorial](https://youtu.be/WnMQ8HlmeXc)
-  - SQLite python/flask ??
+  - [SQLite in python/flask](https://youtu.be/tPxUSWTvZAs)
+  - [Mermaid.js Docs for Diagrams](https://mermaid.js.org/intro/)
 
 ## HTML & CSS Templates (Jinja)
 - [-]Classes 
@@ -95,6 +100,10 @@ Ressources:
 
 - [-] Structure Presentation (see pdf from 1st session)
 - [-] Plan and devide Todos between @Andy & @Jana
+- [-] Watch "Markdown Presentation Tools" & choose a Tool
+
+Resources: 
+- [Markdown Presentation Tools](https://youtu.be/owx5KoiqFBs)
 
 ## Deploy on dedicated Web server (NGINX/Waitress)
 
