@@ -45,7 +45,7 @@ Below you can find the detailed tasks to each of the milestones.
 
 ## Database (SQLite)
 
-- [-] [Create data model (UML)](/docs/technical-docs/data-model.md)
+- [-] [Create data model (UML)](/docs/technical-docs/data-model)
 - [-] Create Database from data model
 - [-] Connect data base to app
 
@@ -66,21 +66,21 @@ Below you can find the detailed tasks to each of the milestones.
 - [-] Talk to Mr. Eck reg. API (Export of Projects & Todos)
 
 ## Documentation
-- [-] [Home (Index)](/docs/index.md)
+- [x] [Home (Index)](/docs/index) @Jana @Andy
 - [-] Tecnical Docs
-  - [-] [Tech Docs Index](/docs/technical-docs/index.md)
-  - [-] [App Structure](/docs/technical-docs/app-structure.md)
-  - [-] [App Behavior](/docs/technical-docs/app-behavior.md)
-  - [-] [App Data Model](/docs/technical-docs/data-model.md)
-  - [-] [API Reference](/docs/technical-docs/api-reference.md)
-  - [-] [Design Decisions](/docs/technical-docs/design-decisions.md)
+  - [-] [Tech Docs Index](/docs/technical-docs/index)
+  - [-] [App Structure](/docs/technical-docs/app-structure)
+  - [-] [App Behavior](/docs/technical-docs/app-behavior)
+  - [-] [App Data Model](/docs/technical-docs/data-model)
+  - [-] [API Reference](/docs/technical-docs/api-reference)
+  - [-] [Design Decisions](/docs/technical-docs/design-decisions)
 - [-] User Evaluation
 - [-] Team Evaluation
-  - [-] [Team Evaluation Index](/docs/team-eval/index.md)
-  - [-] [Goals](/docs/team-eval/goals.md)
-  - [-] [Contributions](/docs/team-eval/contributions.md)@Jana @Andy
-  - [-] [Improvement](/docs/team-eval/improvements.md) @Jana @Andy
-  - [-] [Peer Review](/docs/team-eval/peer-review.md)
+  - [-] [Team Evaluation Index](/docs/team-eval/index)
+  - [-] [Goals](/docs/team-eval/goals)
+  - [-] [Contributions](/docs/team-eval/contributions)@Jana @Andy
+  - [-] [Improvement](/docs/team-eval/improvements) @Jana @Andy
+  - [-] [Peer Review](/docs/team-eval/peer-review)
 
 ## Presentation
 
