@@ -5,6 +5,8 @@ nav_order: 0
 
 # [Project Todos Structure]
 
+
+
 The project structure should help us to navigate through the project and stay on track.
 
 The main milstones in the sTudoo project are the following:
@@ -91,3 +93,7 @@ Below you can find the detailed tasks to each of the milestones.
 
 - [-] Research: flask app deployment with NGNIX/Waitress
 - [-] Plan Todos
+
+---
+
+[Link Documentation Page](https://www.andreas-moor.de/sTudoo/)
