@@ -2,6 +2,10 @@
 title: Home
 nav_order: 0
 ---
+[Jana]
+{: .label }
+[Andy]
+{: .label }
 
 # [Welcome to *sTudoo*'s Documentation]
 
