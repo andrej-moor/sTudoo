@@ -9,7 +9,7 @@ nav_order: 0
 
 The project structure should help us to navigate through the project and stay on track.
 
-The main milstones in the sTudoo project are the following:
+The main milstones in the *sTudoo* project are the following:
 
 - [8 Routes (Python & Flask)](#8-routes-python--flask)
 - [Database (SQLite)](#database-sqlite)
@@ -18,8 +18,6 @@ The main milstones in the sTudoo project are the following:
 - [Documentation](#documentation)
 - [Presentation](#presentation)
 - [Bonus: Deploy on dedicated Web server (NGINX/Waitress)](#deploy-on-dedicated-web-server-nginxwaitress)
-
-Below you can find the detailed tasks to each of the milestones.
 
 ## Description of labels & states
 
@@ -30,6 +28,8 @@ Below you can find the detailed tasks to each of the milestones.
 [>] = Task in progess
 
 [x] = Task finished
+
+Below you can find the detailed tasks to each of the milestones.
 
 ---
 
@@ -64,7 +64,7 @@ Ressources:
   - [Mermaid.js Docs for Diagrams](https://mermaid.js.org/intro/)
 
 ## HTML & CSS Templates (Jinja)
-- [-]Classes 
+- [-] Classes 
   - [-] Template: All Classes Overview
   - [-] Template: Class Overview (Titel, Description, related Projects)
 - [-] Projects
