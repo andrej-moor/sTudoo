@@ -19,7 +19,7 @@ The main milstones in the sTudoo project are the following:
 
 Below you can find the detailed tasks to each of the milestones.
 
-## Description of states
+## Description of labels & states
 
 @Name = assignment to responsible contributer
 
