@@ -70,7 +70,7 @@ Below you can find the detailed tasks to each of the milestones.
 ## Documentation
 - [x] [Home (Index)](/docs/index) @Jana @Andy
 - [-] Tecnical Docs
-  - [-] [Tech Docs Index](/docs/technical-docs/index)
+  - [-] [Tech Docs Index](/docs/technical-docs/)
   - [-] [App Structure](/docs/technical-docs/app-structure)
   - [-] [App Behavior](/docs/technical-docs/app-behavior)
   - [-] [App Data Model](/docs/technical-docs/data-model)
