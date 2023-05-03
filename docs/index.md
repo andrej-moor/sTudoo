@@ -5,12 +5,14 @@ nav_order: 0
 
 # [sTudoo]
 
-The idea to create **[sTudoo](https://github.com/andrej-moor/sTudoo.git)** grew as a project in our web development with Pyhton class at the [Business School of Economics & Law](https://www.hwr-berlin.de/en/) in Berlin, Germany.] With sTudoo we try to code a web app which should help to reduce the stress in our student lives, for example including lecture descriptions, a semester calendar and custom to-do lists.
+**_sTudoo is a webapp written in python which helps students to organize their class related projects, keep the overview and stay on track with deadlines._**
+
+The idea to create [sTudoo](https://github.com/andrej-moor/sTudoo.git) grew as a project in our web development with Pyhton class at the [Business School of Economics & Law](https://www.hwr-berlin.de/en/) in Berlin, Germany.
 
 ## Team members
 
-## Jana Kusch (Mtr_Nr.: 1909841)
-## Andreas Moor (Mtr_Nr.: 10275592)
+- Jana Kusch (Mtr_Nr.: 1909841)
+- Andreas Moor (Mtr_Nr.: 10275592)
 
 ## Eidesstattliche Erklärung
 
