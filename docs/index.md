@@ -11,8 +11,8 @@ The idea to create [sTudoo](https://github.com/andrej-moor/sTudoo.git) grew as a
 
 ## Team members
 
-- Jana Kusch (Mtr_Nr.: 1909841)
-- Andreas Moor (Mtr_Nr.: 10275592)
+- [Jana Kusch](https://github.com/JanaKusch) (Mtr_Nr.: 1909841)
+- [Andreas Moor](https://github.com/andrej-moor) (Mtr_Nr.: 10275592)
 
 ## Eidesstattliche Erklärung
 
