@@ -46,10 +46,17 @@ Below you can find the detailed tasks to each of the milestones.
   - [-] Route 8: xxx
 
 ## Database (SQLite)
-
-- [-] [Create data model (UML)](/docs/technical-docs/data-model)
-- [-] Create Database from data model
+- [-] Create Class Diagrams (Class, Attributes, Methods)
+  - [-] User
+  - [-] Class (Uni)
+  - [-] Project
+  - [-] Todo
+- [-] Create Database
 - [-] Connect data base to app
+
+Ressources:
+  - [UML Tutorial](https://youtu.be/WnMQ8HlmeXc)
+  - SQLite python/flask ??
 
 ## HTML & CSS Templates (Jinja)
 - [-]Classes 
@@ -68,7 +75,7 @@ Below you can find the detailed tasks to each of the milestones.
 - [-] Talk to Mr. Eck reg. API (Export of Projects & Todos)
 
 ## Documentation
-- [x] [Home (Index)](sTudoo/docs/index) @Jana @Andy
+- [x] Home (Index)@Jana @Andy
 - [-] Tecnical Docs
   - [-] [Tech Docs Index](/docs/technical-docs/)
   - [-] [App Structure](/docs/technical-docs/app-structure)
