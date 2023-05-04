@@ -99,6 +99,7 @@ Ressources:
 ## Presentation
 
 - [-] Structure Presentation (see pdf from 1st session)
+- [-] Install Slidev
 - [-] Plan and devide Todos between @Andy & @Jana
 - [x] [Watch "Markdown Presentation Tools" & choose a Tool](https://youtu.be/owx5KoiqFBs) @Andy
 
