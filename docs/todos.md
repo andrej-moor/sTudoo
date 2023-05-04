@@ -80,7 +80,7 @@ Ressources:
 - [-] Talk to Mr. Eck reg. API (Export of Projects & Todos)
 
 ## Documentation
-- [x] Home (Index)@Jana @Andy
+- [x] Home (Index) @Jana @Andy
 - [-] Tecnical Docs
   - [x] [Tech Docs Index](/docs/technical-docs/)
   - [-] [App Structure](/docs/technical-docs/app-structure)
