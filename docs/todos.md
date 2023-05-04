@@ -113,7 +113,7 @@ Resources:
 - **[Slidev](https://sli.dev/)**
   - [Slidev Markdown Syntax](https://sli.dev/guide/syntax.html)
   - [Slidev VS Code Extension](https://github.com/slidevjs/slidev-vscode)
-
+- [iconidy](https://iconify.design/)
 
 
 ## Deploy on dedicated Web server (NGINX/Waitress)
