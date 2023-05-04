@@ -82,7 +82,7 @@ Ressources:
 ## Documentation
 - [x] Home (Index)@Jana @Andy
 - [-] Tecnical Docs
-  - [-] [Tech Docs Index](/docs/technical-docs/)
+  - [x] [Tech Docs Index](/docs/technical-docs/)
   - [-] [App Structure](/docs/technical-docs/app-structure)
   - [-] [App Behavior](/docs/technical-docs/app-behavior)
   - [-] [App Data Model](/docs/technical-docs/data-model)
