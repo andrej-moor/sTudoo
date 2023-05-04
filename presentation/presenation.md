@@ -1,3 +1,7 @@
+---
+layout: cover
+background: https://unsplash.com/de/fotos/_kd5cxwZOK4
+---
 # What is **_sTudoo_** ?
 
 **sTudoo** is a web app written in python which helps students to: 
