@@ -111,6 +111,8 @@ Ressources:
 Resources:
 - [Reveal.js](https://revealjs.com/)
 - **[Slidev](https://sli.dev/)**
+  - [Slidev Markdown Syntax](https://sli.dev/guide/syntax.html)
+  - [Slidev VS Code Extension](https://github.com/slidevjs/slidev-vscode)
 
 
 
