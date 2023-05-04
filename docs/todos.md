@@ -98,7 +98,12 @@ Ressources:
 
 ## Presentation
 
-- [-] Structure Presentation (see pdf from 1st session)
+- [-] Structure Presentation (see pdf from 1st session) @Andy
+  - [x] What is **_sTudoo_** @Andy
+  - [-] The Team 
+  - [-] Our Value Proposition
+  - [-] Key Design Decisions We Took
+  - [-] Why We Won't Implement These Useful Features
 - [-] Install Slidev
 - [-] Plan and devide Todos between @Andy & @Jana
 - [x] [Watch "Markdown Presentation Tools" & choose a Tool](https://youtu.be/owx5KoiqFBs) @Andy
