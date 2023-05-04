@@ -100,10 +100,13 @@ Ressources:
 
 - [-] Structure Presentation (see pdf from 1st session)
 - [-] Plan and devide Todos between @Andy & @Jana
-- [-] Watch "Markdown Presentation Tools" & choose a Tool
+- [x] [Watch "Markdown Presentation Tools" & choose a Tool](https://youtu.be/owx5KoiqFBs) @Andy
 
-Resources: 
-- [Markdown Presentation Tools](https://youtu.be/owx5KoiqFBs)
+Resources:
+- [Reveal.js](https://revealjs.com/)
+- **[Slidev](https://sli.dev/)**
+
+
 
 ## Deploy on dedicated Web server (NGINX/Waitress)
 
