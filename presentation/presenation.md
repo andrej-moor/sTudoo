@@ -11,6 +11,18 @@ background: https://unsplash.com/de/fotos/_kd5cxwZOK4
 
 ---
 
+# The Team
+
+Jana: 
+
+noto:woman-student-light-skin-tone (icon)
+
+Andy: 
+
+noto:man-student-light-skin-tone (icon)
+
+---
+
 # Our Value Proposition
 
 -> “Design” in a broad sense of finding solutions to non-trivial problems (which may or may not include visual elements)
