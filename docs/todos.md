@@ -23,11 +23,11 @@ The main milstones in the *sTudoo* project are the following:
 
 @Name = assignment to responsible contributer
 
-[-] = Task not started
+- [-] = Task not started
 
-[>] = Task in progess
+- [>] = Task in progess
 
-[x] = Task finished
+- [x] = Task finished
 
 Below you can find the detailed tasks to each of the milestones.
 
