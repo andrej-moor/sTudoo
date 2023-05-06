@@ -1,0 +1,49 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@100;200&display=swap');
+
+/* Borderbox & Resets */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Body */
+
+body {
+  font-family: 'Comme', sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Lists */
+
+ul {
+  list-style: none;
+}
+
+/* Links */
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Headings */
+
+h1, h2 {
+font-weight: 300;
+line-height: 1.2;
+}
+
+/* Pragraphs */
+
+p {
+  margin: 10px 0;
+}
+
+/* Images (100% of container width) */
+img {
+  width: 100%;
+}
