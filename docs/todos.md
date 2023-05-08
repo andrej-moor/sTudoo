@@ -35,15 +35,15 @@ Below you can find the detailed tasks to each of the milestones.
 
 ## 8 Routes (Python & Flask)
 
-- [-] Define the 8 Routes
-  - [-] Route 1: xxx
-  - [-] Route 2: xxx
-  - [-] Route 3: xxx
-  - [-] Route 4: xxx
-  - [-] Route 5: xxx
-  - [-] Route 6: xxx
-  - [-] Route 7: xxx
-  - [-] Route 8: xxx
+- [x] Define the 8 Routes @Andy
+- [-] Programm User Account Registration (Route 1)
+- [-] Programm User Login (Route 2)
+- [-] Programm User Logout (Route 3 )
+- [-] Programm All-Classes-View (Route 4)
+- [-] Programm Class-Related-Projects-View (Route 5)
+- [-] Programm All-Projects-View (Route 6)
+- [-] Programm Project-Todos-View (Route 7)
+- [-] Programm All-Todos-View (Route 8)
 
 Resources: 
   - [Harvard CS50’s Introduction to Programming with Python](https://youtu.be/nLRL_NcnK-4)
