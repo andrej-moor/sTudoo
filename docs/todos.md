@@ -63,18 +63,15 @@ Ressources:
   - [SQLite in python/flask](https://youtu.be/tPxUSWTvZAs)
   - [Mermaid.js Docs for Diagrams](https://mermaid.js.org/intro/)
 
-## HTML & CSS Templates (Jinja)
-- [-] Classes 
-  - [-] Template: All Classes Overview
-  - [-] Template: Class Overview (Titel, Description, related Projects)
-- [-] Projects
-  - [-] Template: All Projects Overview
-  - [-] Template: Project Overview (Title, Descritpion, related Todos)
-- [-] Todos
-  - [-] Template: All Todos
-- [-] User
-  - [-] Template: User Login
-  - [-] Template: User Account
+## HTML & CSS Templates (Jinja) 
+- [-] Template User Account Registration (Route 1) @Andy
+- [-] Template User Login (Route 2) @Andy
+- [-] Template User Logout (Route 3 ) @Andy
+- [-] Template All-Classes-View (Route 4) @Andy
+- [-] Template Class-Related-Projects-View (Route 5) @Andy
+- [-] Template All-Projects-View (Route 6) @Andy
+- [-] Template Project-Todos-View (Route 7) @Andy
+- [-] Template All-Todos-View (Route 8) @Andy
 
 ## Headless API (JSON delivery)
 - [-] Talk to Mr. Eck reg. API (Export of Projects & Todos)
@@ -83,9 +80,16 @@ Ressources:
 - [x] Home (Index) @Jana @Andy
 - [-] Tecnical Docs
   - [x] [Tech Docs Index](/docs/technical-docs/)
-  - [-] [App Structure](/docs/technical-docs/app-structure)
+  - [>] [App Structure](/docs/technical-docs/app-structure)
+    - [x] 8 Routes @Andy
+    - [-] Chose (UML) Diagrams
+      - [-] OOP Classes
+      - [-] Entity-Relationship Model
+      - [-] User Flow Diagram
   - [-] [App Behavior](/docs/technical-docs/app-behavior)
   - [-] [App Data Model](/docs/technical-docs/data-model)
+    - ERM ?
+    - OOP Classes
   - [-] [API Reference](/docs/technical-docs/api-reference)
   - [-] [Design Decisions](/docs/technical-docs/design-decisions)
 - [-] User Evaluation
