@@ -113,11 +113,7 @@ Ressources:
 - [x] [Watch "Markdown Presentation Tools" & choose a Tool](https://youtu.be/owx5KoiqFBs) @Andy
 
 Resources:
-- [Reveal.js](https://revealjs.com/)
-- **[Slidev](https://sli.dev/)**
-  - [Slidev Markdown Syntax](https://sli.dev/guide/syntax.html)
-  - [Slidev VS Code Extension](https://github.com/slidevjs/slidev-vscode)
-- [iconidy](https://iconify.design/)
+- **[Reveal.js]**(https://revealjs.com/)
 
 
 ## Deploy on dedicated Web server (NGINX/Waitress)
