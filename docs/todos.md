@@ -65,8 +65,8 @@ Ressources:
 
 ## HTML & CSS Templates (Jinja) 
 - [x] Template User Account Registration (Route 1) @Andy
-- [-] Template User Login (Route 2) @Andy
-- [-] Template User Logout (Route 3 ) @Andy
+- [x] Template User Login (Route 2) @Andy
+- [x] Template User Logout (Route 3 ) @Andy
 - [-] Template All-Classes-View (Route 4) @Andy
 - [-] Template Class-Related-Projects-View (Route 5) @Andy
 - [-] Template All-Projects-View (Route 6) @Andy
