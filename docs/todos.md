@@ -64,7 +64,7 @@ Ressources:
   - [Mermaid.js Docs for Diagrams](https://mermaid.js.org/intro/)
 
 ## HTML & CSS Templates (Jinja) 
-- [-] Template User Account Registration (Route 1) @Andy
+- [x] Template User Account Registration (Route 1) @Andy
 - [-] Template User Login (Route 2) @Andy
 - [-] Template User Logout (Route 3 ) @Andy
 - [-] Template All-Classes-View (Route 4) @Andy
