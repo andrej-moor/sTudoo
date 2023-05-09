@@ -91,6 +91,14 @@ img {
   position: relative;
   color: #fff;
 }
+.hero #hero_singup {
+  background: url(/Templates/images/typing.jpg) no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+}
+
+
 
 .hero .content {
   display: flex;
