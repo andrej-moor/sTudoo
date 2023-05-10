@@ -36,8 +36,8 @@ Below you can find the detailed tasks to each of the milestones.
 ## 8 Routes (Python & Flask)
 
 - [x] Define the 8 Routes @Andy
-- [-] Programm the app
-  - [-] Programm User Account Registration (Route 1)
+- [>] Programm the app
+  - [>] Programm User Account Registration (Route 1) @Jana
   - [-] Programm User Login (Route 2)
   - [-] Programm User Logout (Route 3 )
   - [-] Programm All-Classes-View (Route 4)
@@ -106,13 +106,13 @@ Ressources:
 
 ## Presentation
 
-- [-] Structure Presentation (see pdf from 1st session) @Andy
+- [x] Structure Presentation (see pdf from 1st session) @Andy
   - [x] What is **_sTudoo_** @Andy
   - [-] The Team 
   - [-] Our Value Proposition
   - [-] Key Design Decisions We Took
   - [-] Why We Won't Implement These Useful Features
-- [-] Install Slidev
+- [x] Install Reveal.js @Andy
 - [-] Plan and devide Todos between @Andy & @Jana
 - [x] [Watch "Markdown Presentation Tools" & choose a Tool](https://youtu.be/owx5KoiqFBs) @Andy
 
