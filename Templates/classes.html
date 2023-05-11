@@ -4,58 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="CSS/utilities.css">
+  <link rel="stylesheet" href="CSS/stylesheet_login.css">
   <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>sTudoo | Classes</title>
+  <title>sTudoo | Login</title>
 </head>
-<body>
-  <header>
-    <div id="nav1">
-      <div id="logo"><a href="#"><i class="fa-sharp fa-solid fa-graduation-cap"></i></i></i> sTudoo</a></div>
-    <div id="login"><a href="user.html"><i class="fa-solid fa-circle-user"></i></a></div>
+<body id="home">
+  <header class="hero" id="hero_signup">
+    <div id="navbar" class="navbar">
+      <h1 class="logo">
+        <span class="text-primary"><i class="fa-solid fa-graduation-cap"></i>sTu</span>doo
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sign_up.html">Sign-Up</a></li>
+          <li><a href="login.html" class="current
+            "><i class="fa-solid fa-right-to-bracket"></i></a></li>
+        </ul>
+      </nav>
     </div>
-    <div id="nav2">
-      <a class="current" href="classes.html">Classes</a>
-      <a href="projects.html">Projects</a>
-      <a href="todos.html">Todos</a>
-    </div>
+    <div class="content">
+      <div id="form_container">      
+        <h1>Log in</h1>
+        <p>To get things done!</p>
+        <form action="#">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+          </div>
+          <button type="submit" class="btn"> Login</button>
+        </form>
+  </div>
+</div>
   </header>
-  <!-- Input -->
-  <form>
-    <input id="class_input" type="text" placeholder="Add a new class ...">
-    <input class="btn" type="button" value="+">
-  </form>
-  <!-- Classes -->
-  <table>
-    <tr>
-      <th>Name</th>
-    </tr>
-    <tr>
-      <td><a href="#">Objektorientierte Programmierung 1</a></td>
-      <td><i class="fa-regular fa-pen-to-square"></i></td>
-      <td><i class="fa-solid fa-trash"></i></td>
-    </tr>
-    <tr>
-      <td><a href="#">Objektorientierte Programmierung 2</a></td>
-      <td><i class="fa-regular fa-pen-to-square"></i></td>
-      <td><i class="fa-solid fa-trash"></i></td>
-    </tr>
   
-    <tr>
-      <td>Datenbanken</td>
-      <td><i class="fa-regular fa-pen-to-square"></i></td>
-      <td><i class="fa-solid fa-trash"></i></td>
-    </tr>
-    <tr>
-      <td>Entwicklung von Web-Anwendungen</td>
-      <td><i class="fa-regular fa-pen-to-square"></i></td>
-      <td><i class="fa-solid fa-trash"></i></td>
-    </tr>
-    <tr>
-      <td>App-Entwicklung mit Android</td>
-      <td><i class="fa-regular fa-pen-to-square"></i></td>
-      <td><i class="fa-solid fa-trash"></i></td>
-    </tr>
 </body>
 </html>
