@@ -142,3 +142,7 @@ img {
   color: #fff;
   font-size: 30px;
 }
+
+.content a {
+  width: 300px;
+}
