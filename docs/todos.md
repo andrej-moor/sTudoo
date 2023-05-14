@@ -119,7 +119,6 @@ Ressources:
 Resources:
 - **[Reveal.js]**(https://revealjs.com/)
 
-
 ## Deploy on dedicated Web server (NGINX/Waitress)
 
 - [-] Research: flask app deployment with NGNIX/Waitress
