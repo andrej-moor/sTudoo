@@ -26,6 +26,23 @@
   background-color: #30c453;
 }
 
+.btn-red {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 10px;
+  color: #fff;
+  background-color: #972929;
+  border: none;
+  border-radius: 5px;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.btn-red:hover {
+  background-color: #b12a2a;
+}
+
 .btn-primary {
   background:#28a745;
   color:#fff;
