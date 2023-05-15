@@ -17,10 +17,10 @@
       </h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{url_for('index')}}">Home</a></li>
           <li><a href="sign_up.html" class="current
             ">Sign-Up</a></li>
-          <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a></li>
+          <li><a href="{{url_for('login')}}"><i class="fa-solid fa-right-to-bracket"></i></a></li>
         </ul>
       </nav>
     </div>
@@ -45,8 +45,8 @@
             <input type="password" name="password" id="password">
           </div>
           <button type="submit" class="btn"> Sign Up</button>
-          <p>By cklicking the Sign Up button, you agree to our <a href="#">Termns & conditions</a> and <a href="#">Privacy Policy</a></p>
-          <p class="small_text">Already have an account? <a href="login.html">Login Here</a></p>
+          <p>By cklicking the Sign Up button, you agree to our <a href="#">Terms & conditions</a> and <a href="#">Privacy Policy</a></p>
+          <p class="small_text">Already have an account? <a href="{{url_for('login')}}">Login Here</a></p>
         </form>
   </div>
 </div>
