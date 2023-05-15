@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/utilities.css">
-  <link rel="stylesheet" href="CSS/stylesheet_sign_up.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/utilities.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/stylesheet_sign_up.css')}}">
   <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
   <title>sTudoo | Sign-Up</title>
 </head>
@@ -18,8 +18,7 @@
       <nav>
         <ul>
           <li><a href="{{url_for('index')}}">Home</a></li>
-          <li><a href="sign_up.html" class="current
-            ">Sign-Up</a></li>
+          <li><a href="{{url_for('sign_up')}}" class="current">Sign-Up</a></li>
           <li><a href="{{url_for('login')}}"><i class="fa-solid fa-right-to-bracket"></i></a></li>
         </ul>
       </nav>
@@ -28,29 +27,29 @@
       <div id="form_container">      
         <h1>Sign up for free</h1>
         <p>It's free and only takes a minute</p>
-        <form action="#">
+        <form method="POST" action="{{url_for('sign_up')}}">
           <div class="form-group">
             <label for="first_name">First Name</label>
-            <input type="text" name="first_name" id="first_name">
+            <input type="text" name="first_name" id="first_name" required>
+          </div>
           <div class="form-group">
             <label for="last_name">Last Name</label>
-            <input type="text" name="last_name" id="last_name">
+            <input type="text" name="last_name" id="last_name" required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
           </div>
-          <button type="submit" class="btn"> Sign Up</button>
-          <p>By cklicking the Sign Up button, you agree to our <a href="#">Terms & conditions</a> and <a href="#">Privacy Policy</a></p>
+          <button type="submit" class="btn">Sign Up</button>
+          <p>By clicking the Sign Up button, you agree to our <a href="#">Terms & conditions</a> and <a href="#">Privacy Policy</a></p>
           <p class="small_text">Already have an account? <a href="{{url_for('login')}}">Login Here</a></p>
         </form>
-  </div>
-</div>
+      </div>
+    </div>
   </header>
-  
 </body>
 </html>
