@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, session
 import sqlite3
+from flask import flash
 
 
 app = Flask(__name__)
@@ -9,8 +10,6 @@ conn = sqlite3.connect('users.db')
 cursor = conn.cursor()
 
 def create_table():
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,7 +20,6 @@ def create_table():
         )
     ''')
     conn.commit()
-create_table()
 
 def insert_user(first_name, last_name, email, password):
     conn = sqlite3.connect(DB_NAME)
@@ -42,7 +40,6 @@ def sign_up():
         last_name = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
-        insert_user(first_name, last_name, email, password)
         return redirect(url_for('signed_up'))  # Redirect to the signed_up page
 
     return render_template('sign_up.html')   
@@ -64,11 +61,14 @@ def login():
 
         if user:
             session['user_id'] = user[0]  # Store the user ID in the session
+            flash('You have successfully logged in!', 'success')
             return redirect(url_for('dashboard'))
         else:
-            return render_template('login.html', error='Invalid credentials')
+            flash('Invalid credentials. Please try again.', 'error')
+            return redirect(url_for('login'))
 
     return render_template('login.html')
+
 
 @app.route('/dashboard')
 def dashboard():
@@ -78,13 +78,16 @@ def dashboard():
         # Additional code to fetch user data from the database
         return render_template('dashboard.html', user_id=user_id)
     else:
+        flash('You must be logged in to access the dashboard.', 'error')
         return redirect(url_for('login'))
+
     
     
 @app.route('/logout')
 def logout():
     session.clear()  # Clear the session data
-    return redirect(url_for('login'))
+    flash('You have been logged out.', 'success')
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

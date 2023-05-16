@@ -28,6 +28,20 @@
       <div id="form_container">      
         <h1>Log in</h1>
         <p>To get things done!</p>
+
+        <!--flash message-->
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flash-messages">
+      {% for message in messages %}
+        <li class="flash-message">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<!--flash message end-->
+
         <form action="#">
           <div class="form-group">
             <label for="email">Email</label>
