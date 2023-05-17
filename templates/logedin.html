@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/utilities.css">
-  <link rel="stylesheet" href="CSS/stylesheet_logedin.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/utilities.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/stylesheet_logedin.css')}}">
   <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
   <title>sTudoo | Let's Get Things Done!</title>
 </head>
@@ -17,12 +17,13 @@
       </h1>
       <nav>
         <ul>
-          <li><a href="index.html" class="current">Home</a></li>
+          <li><a href="{{url_for('index')}}" class="current">Home</a></li>
+          <!--url_for home should lead to user dashboard, will be adjusted-->
           <li><a href="todos.html" class="link-yellow" class="current" >Todos</a></li>
           <li><a href="projects.html" class="link-yellow">Projects</a></li>
           <li><a href="classes.html" class="link-yellow">Classes</a></li>
-          <li><a href="user_account.html" ><i class="fa-regular fa-circle-user"></i></a></li>
-          <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+          <li><a href="{{url_for('useraccount')}}" ><i class="fa-regular fa-circle-user"></i></a></li>
+          <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </nav>
     </div>
