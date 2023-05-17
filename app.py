@@ -99,7 +99,7 @@ def dashboard():
     if 'user_id' in session:
         # User is logged in
         user_id = session['user_id']
-        # get user data from the database
+        # is user id = session id
         return render_template('dashboard.html', user_id=user_id)
     else:
         flash('You must be logged in to access the dashboard.', 'error')
@@ -107,7 +107,8 @@ def dashboard():
 
 @app.route('/logout')
 def logout():
-    session.clear()  # Clear session data
+    session.clear() 
+    # Clear session data
     flash('You have been logged out.', 'success')
     return redirect(url_for('index'))
 
