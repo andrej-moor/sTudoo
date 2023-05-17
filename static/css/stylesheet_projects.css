@@ -85,7 +85,7 @@ img {
 /* Header */
 
 .hero {
-  background: url(/Templates/images/table.jpg) no-repeat center center/cover;
+  background: url(/static/images/table.jpg) no-repeat center center/cover;
   height: 100vh;
   position: relative;
   color: #fff;
