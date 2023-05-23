@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/utilities.css">
-  <link rel="stylesheet" href="CSS/stylesheet_user_account.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/utilities.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='stylesheet_user_account_copy.css')}}">
   <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
   <title>sTudoo | Your Account!</title>
 </head>
@@ -17,12 +17,12 @@
       </h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{url_for('index')}}">Home</a></li>
           <li><a href="todos.html" class="link-yellow" class="current" >Todos</a></li>
           <li><a href="projects.html" class="link-yellow">Projects</a></li>
           <li><a href="classes.html" class="link-yellow">Classes</a></li>
           <li><a href="user.html" class="current"><i class="fa-regular fa-circle-user"></i></a></li>
-          <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+          <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </nav>
     </div>

@@ -1,45 +1,17 @@
 from flask import Flask, render_template, url_for, request, redirect, session
 import sqlite3
 from flask import flash
+from datetime import timedelta
+from database import DB_NAME, create_table, insert_user
 
 
 app = Flask(__name__)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=24)
 app.secret_key = 'blablabla'
 # secret key needed to encrypt data so it cannot be read in plaintext
 # stronger key = more security
 # without secret key --> runtime error, session is unavailable because no secret key was set
 
-DB_NAME = 'users.db'
-
-def create_table():
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            first_name TEXT NOT NULL,
-            last_name TEXT NOT NULL,
-            email TEXT NOT NULL UNIQUE,
-            password TEXT NOT NULL
-        )
-    ''')
-    conn.commit()
-    conn.close()
-    
-    #cursor object can execute sql statements and get stored data from the database
-    #cursor.execute is called and executes the following sql statement that creates a table, email must be unique
-    
-    
-def insert_user(first_name, last_name, email, password):
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
-    cursor.execute('INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
-                   (first_name, last_name, email, password))
-    conn.commit()
-    conn.close()
-    
-    #placeholders = ?
-    #insert into users: values stored in users.db with sql statement
 
 @app.route("/")
 def index():
@@ -85,25 +57,29 @@ def login():
 
         if user:
             session['user_id'] = user[0] 
+            session.permanent = True
             # Store user ID in the session, user id is stored in database
             flash('You have successfully logged in!', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('logedin'))
         else:
             flash('Invalid credentials. Please try again.', 'error')
             return redirect(url_for('login'))
 
     return render_template('login.html')
 
-@app.route('/dashboard')
-def dashboard():
+@app.route('/logedin')
+def logedin():
     if 'user_id' in session:
         # User is logged in
         user_id = session['user_id']
         # is user id = session id
-        return render_template('dashboard.html', user_id=user_id)
+        return render_template('logedin.html', user_id=user_id)
     else:
-        flash('You must be logged in to access the dashboard.', 'error')
         return redirect(url_for('login'))
+    
+@app.route('/useraccount')
+def useraccount():
+    return render_template('user_account.html')
 
 @app.route('/logout')
 def logout():
