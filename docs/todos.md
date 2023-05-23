@@ -65,17 +65,15 @@ Ressources:
   - [Mermaid.js Docs for Diagrams](https://mermaid.js.org/intro/)
 
 ## HTML & CSS Templates (Jinja) 
-- [x] Template User Account Registration (Route 1) @Andy
-  - [x] Registered Message @Andy
-- [x] Template User Login (Route 2) @Andy
-  - [x] Overview LogedIn (Route 1.1.) @Andy
-  - [x] User Account (Route 1.1.) @Andy
-- [x] Template User Logout (Route 3 ) @Andy
-- [-] Template All-Classes-View (Route 4) @Andy
-- [-] Template Class-Related-Projects-View (Route 5) @Andy
-- [-] Template All-Projects-View (Route 6) @Andy
-- [-] Template Project-Todos-View (Route 7) @Andy
-- [-] Template All-Todos-View (Route 8) @Andy
+- [x] Template User Account Registration -> @Andy
+  - [x] Registered Message -> @Andy
+- [x] Template User Login -> @Andy
+  - [x] Overview LogedIn -> @Andy
+  - [x] User Account -> @Andy
+- [x] Template User Logout ->@Andy
+- [x] Template All-Classes-View -> @Andy
+- [x] Template All-Projects-View -> @Andy
+- [x] Template All-Todos-View -> @Andy
 
 ## Headless API (JSON delivery)
 - [-] Talk to Mr. Eck reg. API (Export of Projects & Todos)
