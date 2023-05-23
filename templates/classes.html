@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{url_for('static', 'filename=css/utilities.css')}}">
-  <link rel="stylesheet" href="{{url_for('static', 'filename =css/stylesheet_login.css')}}">
+  <link rel="stylesheet" href="/static/css/utilities.css">
+  <link rel="stylesheet" href="/static/css/stylesheet_projects.css">
   <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
-  <title>sTudoo | Login</title>
+  <title>sTudoo | Classes </title>
 </head>
 <body id="home">
   <header class="hero" id="hero_signup">
@@ -18,30 +18,35 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="sign_up.html">Sign-Up</a></li>
-          <li><a href="login.html" class="current
-            "><i class="fa-solid fa-right-to-bracket"></i></a></li>
+          <li><a href="todos.html">Todos</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="classes.html" class="current">Classes</a></li>
+          <li><a href="user.html"><i class="fa-regular fa-circle-user"></i></a></li>
+          <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </nav>
     </div>
     <div class="content">
-      <div id="form_container">      
-        <h1>Log in</h1>
-        <p>To get things done!</p>
-        <form action="#">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-          </div>
-          <button type="submit" class="btn"> Login</button>
-        </form>
-  </div>
-</div>
+      <h1>Your Classes</h1>
+      <div id="add_project">
+
+        <div id="project-input">
+          <input type="text" id="project" placeholder="Add a class">
+        </div>
+        <a href="#" class="btn-small"><i class="fa-solid fa-plus"></i></a>
+      </div>
+      <div id="projects-overview">
+        <table>
+          <tr></tr>
+            <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
+            <td><a href="#" class="project-link">Programmierung von Webapplikationen</a></td>
+            <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></td>
+            <td><a href="#" class="trash"><i class="fa-solid fa-trash"></td>
+            <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </header>
-  
 </body>
 </html>
