@@ -85,7 +85,7 @@ img {
 /* Header */
 
 .hero {
-  background: url(/Templates/images/table.jpg) no-repeat center center/cover;
+  background: url(/static/images/table.jpg) no-repeat center center/cover;
   height: 100vh;
   position: relative;
   color: #fff;
@@ -175,6 +175,9 @@ td {
 
 table tr td a {
   color: #fff;
+}
+table tr td a.project-link:hover{
+  text-decoration: underline 2px #28a745;
 }
 
 table tr td a.checkmark:hover , a.pen:hover {
