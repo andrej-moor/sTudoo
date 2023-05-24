@@ -18,8 +18,8 @@
 
 ### 3. App Behavior
 
-- Use-case diagram of the App (user Uni classes, projects & todos)
-- Class diagram @Andy
+- Use-case diagram of the App (user Uni classes, projects & todos)@Andy
+- Class diagram @Jana
 - App routes and functionality @Jana
 
 ### 4. Data Model
