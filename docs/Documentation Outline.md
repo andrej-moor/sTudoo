@@ -12,7 +12,7 @@
 
 ### 2. App Structure
 
-- Component diagram 
+- Component diagram @Jana
 - HTML & CSS Templates Overview @Andy
 - Structure Diagram of CSS Files @Andy
 
@@ -24,6 +24,7 @@
 ### 4. Data Model
 
 - ERM/Class-Diagram @Andy
+- Database implementation
 
 ### 5. API Reference
 
@@ -32,6 +33,7 @@
 ### 6. Design Decisions
 
 - UI Design Decisions @Andy
+- CSS Structure Decisions @Andy
 
 ### 7. User Evaluation 
 ### 8. Goals
