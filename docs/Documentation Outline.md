@@ -36,11 +36,11 @@
 ### 7. User Evaluation 
 ### 8. Goals
 
-  - Our Goals @Jana @Andy
-  - Goals achieved @Jana @Andy
-  - Goals missed @Jana @Andy
+- Our Goals @Jana @Andy
+- Goals achieved @Jana @Andy
+- Goals missed @Jana @Andy
 
 ### 9. Individual Contribution
 
-  - Jana's Contributions @Jana
-  - Andy's contributions @Andy
+- Jana's Contributions @Jana
+- Andy's contributions @Andy
