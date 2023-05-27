@@ -25,7 +25,9 @@ nav_order: 3
 ---
 title: ER-Diagram betwenn Studen, Class, Project & Todo
 ---
+
 erDiagram
+
 STUDENT ||--o{ CLASS : attends
 STUDENT {
     string studentId PK, FK
@@ -39,6 +41,7 @@ CLASS {
     string classId PK, FK
     string className
 }
+
 PROJECT ||--o{ TODO: contains
 PROJECT {
     string projectId PK, FK
