@@ -25,6 +25,7 @@ The main milstones in the *sTudoo* project are the following:
 
 - [-] = Task not started
 
+
 - [>] = Task in progess
 
 - [x] = Task finished
@@ -50,19 +51,23 @@ Resources:
   - [Harvard CS50’s Introduction to Programming with Python](https://youtu.be/nLRL_NcnK-4)
   - [Harvard CS50's Web Programming with Flask](https://youtu.be/zdgYw-3tzfI)
 
-## Database (SQLite)
-- [-] Create Class Diagrams (Class, Attributes, Methods)
-  - [-] User
-  - [-] Class (Uni)
-  - [-] Project
-  - [-] Todo
-- [-] Create Database
-- [-] Connect data base to app
+## Database (SQLite) @Jana
+- [>] Create Class Diagrams (Class, Attributes, Methods)
+  
+  &rarr; User ,Class, Projects, Todos
+- [x] Create ER Diagram (Attributes, IDs, Primary Keys, Foreign Key, Relations) @Andy
+  
+  &rarr; User ,Class, Projects, Todos
+- [>] Create database
+- [>] Connect database to app
 
 Ressources:
-  - [UML Tutorial](https://youtu.be/WnMQ8HlmeXc)
-  - [SQLite in python/flask](https://youtu.be/tPxUSWTvZAs)
-  - [Mermaid.js Docs for Diagrams](https://mermaid.js.org/intro/)
+- [Entity-Relationship Diagrams 1](https://youtu.be/QpdhBUYk7Kk)
+- [Entity-Relationship Diagrams 2](https://youtu.be/QpdhBUYk7Kk)
+- [Primary & Foreign Keys](https://youtu.be/QpdhBUYk7Kk)
+- [UML Tutorial](https://youtu.be/WnMQ8HlmeXc)
+- [SQLite in python/flask](https://youtu.be/tPxUSWTvZAs)
+- [Mermaid.js Docs for Diagrams](https://mermaid.js.org/intro/)
 
 ## HTML & CSS Templates (Jinja) 
 - [x] Template User Account Registration -> @Andy
@@ -83,15 +88,14 @@ Ressources:
 - [-] Tecnical Docs
   - [x] [Tech Docs Index](/docs/technical-docs/)
   - [>] [App Structure](/docs/technical-docs/app-structure)
-    - [x] 8 Routes @Andy
-    - [-] Chose (UML) Diagrams
-      - [-] OOP Classes
-      - [-] Entity-Relationship Model
-      - [-] User Flow Diagram
+    - [-] User Flow Diagram @Andy
+    - [-] 8 Routes @Andy
+    - HTML & CSS Templates Overview @Andy
+    - Structure Diagram of CSS Files @Andy
   - [-] [App Behavior](/docs/technical-docs/app-behavior)
+    - [-] Class Diagram @Jana
   - [-] [App Data Model](/docs/technical-docs/data-model)
-    - ERM ?
-    - OOP Classes
+    - [x] Entity-Relationship Model @And
   - [-] [API Reference](/docs/technical-docs/api-reference)
   - [-] [Design Decisions](/docs/technical-docs/design-decisions)
 - [-] User Evaluation
