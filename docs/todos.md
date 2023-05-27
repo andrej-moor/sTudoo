@@ -88,11 +88,11 @@ Ressources:
 - [-] Tecnical Docs
   - [x] [Tech Docs Index](/docs/technical-docs/)
   - [>] [App Structure](/docs/technical-docs/app-structure)
-    - [-] User Flow Diagram @Andy
     - [-] 8 Routes @Andy
     - HTML & CSS Templates Overview @Andy
     - Structure Diagram of CSS Files @Andy
   - [-] [App Behavior](/docs/technical-docs/app-behavior)
+    - [>] Use-case diagram of the App (user Uni classes, projects & todos) @Andy
     - [-] Class Diagram @Jana
   - [-] [App Data Model](/docs/technical-docs/data-model)
     - [x] Entity-Relationship Model @And
