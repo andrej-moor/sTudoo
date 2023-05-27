@@ -19,6 +19,8 @@ nav_order: 3
 {:toc}
 </details>
 
+## Entity-Relationship Diagram of sTudoo
+
 ```mermaid
 ---
 title: ER-Diagram betwenn Studen, Class, Project & Todo
