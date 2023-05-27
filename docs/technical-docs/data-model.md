@@ -18,3 +18,34 @@ nav_order: 3
 - TOC
 {:toc}
 </details>
+
+```mermaid
+---
+title: ER-Diagram betwenn Studen, Class, Project & Todo
+---
+erDiagram
+STUDENT ||--o{ CLASS : attends
+STUDENT {
+    string studentId PK, FK
+    string firstName
+    string lastName
+    string email
+}
+
+CLASS ||--o{ PROJECT: consists
+CLASS {
+    string classId PK, FK
+    string className
+}
+PROJECT ||--o{ TODO: contains
+PROJECT {
+    string projectId PK, FK
+    int submissionDate
+    string projectName
+}
+
+TODO {
+    string todoId PK, FK
+    string todoName
+}
+```
