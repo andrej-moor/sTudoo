@@ -33,3 +33,18 @@ def insert_user(first_name, last_name, email, password):
     
     #placeholders = ?
     #insert into users: values stored in users.db with sql statement
+    
+def delete_account(email, password):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM users WHERE email = ?', (email,))
+    user = cursor.fetchone()
+    
+    if user and user[4] == password:
+        cursor.execute('DELETE FROM users WHERE email = ?', (email,))
+        conn.commit()
+        conn.close()
+        return True
+    
+    conn.close()
+    return False
