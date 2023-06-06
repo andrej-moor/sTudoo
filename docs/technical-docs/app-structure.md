@@ -25,7 +25,14 @@ To get a big picture of the functions lets take a look at the use case diagram o
 
 ![Use Case Diagram of sTudoo](/diagrams/Studoo_Features.png)
 
-To use the full functionality it is is necessary for a user to register an login. After the registration an the login the user is able to add, edit, delete and view his classes, projects and todos.
+To use the full functionality it is necessary for a user to register an login. After the registration an the login the user is able to:
+-  add,
+-  edit,
+-  delete,
+-  mark as completed and
+-  view
+
+the **classes, projects and todos**.
 
 To stay focused the user can choose between different views:
 
