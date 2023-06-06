@@ -7,7 +7,7 @@ nav_order: 1
 [Andy]
 {: .label }
 
-# [App structure, incl. context]
+# [sTudoos app structure]
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,9 +19,36 @@ nav_order: 1
 {:toc}
 </details>
 
+## Overview of sTudoo's structure (Use Case Diagram)
+
+To get a big picture of the functions lets take a look at the use case diagram of sTudoo.
+
+![Use Case Diagram of sTudoo](/diagrams/Studoo_Features.png)
+
+To use the full functionality it is necessary for a user to register an login. After the registration an the login the user is able to:
+-  add,
+-  edit,
+-  delete,
+-  mark as completed and
+-  view
+
+the **classes, projects and todos**.
+
+To stay focused the user can choose between different views:
+
+- Classes:
+  - see all classes
+  - see class relevant projects
+  - see class relevant todos
+- Projects:
+  - see all projects
+  - see project relevant todos
+- Todos:
+  - see all todos
+
 ## The necessary routes
 
-To create a minimal valuable product (MVP) the team of sTudoo create 8 routes which can be seen below. 
+sTudoo as a web app is build with the Flask framework which uses routes to present the content to the user. The following routes should acts as a more precise navigation through the app functionality.
 
 ### User Account Registration (Route 1)
 
