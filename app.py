@@ -3,18 +3,23 @@ import sqlite3
 from flask import flash
 from datetime import timedelta
 from database import (
-    DB_NAME,
+    USERS_DB,
     create_table,
     insert_user,
     delete_user,
-    authenticate_user,
     get_first_name,
-    insert_project,
-    delete_project,
+)
+from database import (
+    CLASSES_DB,
+    create_classes_table,
+    create_projects_table,
+    create_todos_table,
     insert_class,
-    delete_class,
+    insert_project,
     insert_todo,
-    delete_todo
+    delete_class,
+    delete_project,
+    delete_todo  
 )
 
 
@@ -24,6 +29,11 @@ app.secret_key = 'blablabla'
 # secret key needed to encrypt data so it cannot be read in plaintext
 # stronger key = more security
 # without secret key --> runtime error, session is unavailable because no secret key was set
+
+create_table()
+create_classes_table()
+create_projects_table()
+create_todos_table()
 
 
 @app.route("/")
@@ -61,7 +71,7 @@ def login():
         password = request.form['password']
         # receive data from request form
 
-        conn = sqlite3.connect(DB_NAME)
+        conn = sqlite3.connect(USERS_DB)
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
         # sql statement to get user input (email, password) from database
@@ -87,6 +97,7 @@ def logedin():
         first_name = get_first_name(user_id)
         
         if request.method == 'POST':
+            print(request.form)  # debugging because the post is not getting the values from the form
             if 'add_project' in request.form:
                 project_name = request.form['project_name']
                 insert_project(user_id, project_name)
@@ -100,6 +111,7 @@ def logedin():
         return render_template('logedin.html', user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
+
 
     
 @app.route('/useraccount')
@@ -123,8 +135,6 @@ def delete_account():
         return redirect(url_for('index'))
 
     return 'Incorrect email or password'
-
-
 
 
 
