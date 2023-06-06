@@ -2,7 +2,20 @@ from flask import Flask, render_template, url_for, request, redirect, session
 import sqlite3
 from flask import flash
 from datetime import timedelta
-from database import DB_NAME, create_table, insert_user, delete_user, authenticate_user, get_first_name
+from database import (
+    DB_NAME,
+    create_table,
+    insert_user,
+    delete_user,
+    authenticate_user,
+    get_first_name,
+    insert_project,
+    delete_project,
+    insert_class,
+    delete_class,
+    insert_todo,
+    delete_todo
+)
 
 
 app = Flask(__name__)
@@ -67,17 +80,27 @@ def login():
 
     return render_template('login.html')
 
-@app.route('/logedin')
+@app.route('/logedin', methods=['GET', 'POST'])
 def logedin():
     if 'user_id' in session:
-        # User is logged in
         user_id = session['user_id']
-        # is user id = session id
-        first_name = get_first_name(user_id)  # Replace with your actual function
+        first_name = get_first_name(user_id)
+        
+        if request.method == 'POST':
+            if 'add_project' in request.form:
+                project_name = request.form['project_name']
+                insert_project(user_id, project_name)
+            elif 'add_class' in request.form:
+                class_name = request.form['class_name']
+                insert_class(user_id, class_name)
+            elif 'add_todo' in request.form:
+                todo_name = request.form['todo_name']
+                insert_todo(user_id, todo_name)
 
         return render_template('logedin.html', user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
+
     
 @app.route('/useraccount')
 def useraccount():

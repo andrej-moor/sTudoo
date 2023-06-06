@@ -4,6 +4,7 @@ import sqlite3
 
 DB_NAME = 'users.db'
 
+#create user table
 def create_table():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
@@ -16,6 +17,38 @@ def create_table():
             password TEXT NOT NULL
         )
     ''')
+    
+    #create projects table with foreign key referencing to user, so the projects
+    #are created for the logged-in user
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS projects (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            name TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users (id)
+        )
+    ''')
+
+    #create classes table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS classes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            name TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users (id)
+        )
+    ''')
+
+    #create to-dos table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS todos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            name TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users (id)
+        )
+    ''')
+
     conn.commit()
     conn.close()
     
@@ -75,3 +108,49 @@ def delete_user(email, password):
     
     conn.close()
     return False
+
+
+#projects/classes/to-dos functionality, add and delete
+
+def insert_project(user_id, name):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO projects (user_id, name) VALUES (?, ?)', (user_id, name))
+    conn.commit()
+    conn.close()
+
+def delete_project(project_id):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM projects WHERE id = ?', (project_id,))
+    conn.commit()
+    conn.close()
+
+def insert_class(user_id, name):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO classes (user_id, name) VALUES (?, ?)', (user_id, name))
+    conn.commit()
+    conn.close()
+
+def delete_class(class_id):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM classes WHERE id = ?', (class_id,))
+    conn.commit()
+    conn.close()
+
+def insert_todo(user_id, name):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO todos (user_id, name) VALUES (?, ?)', (user_id, name))
+    conn.commit()
+    conn.close()
+
+def delete_todo(todo_id):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM todos WHERE id = ?', (todo_id,))
+    conn.commit()
+    conn.close()
+
