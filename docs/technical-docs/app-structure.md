@@ -48,7 +48,7 @@ To stay focused the user can choose between different views:
 
 ## The necessary routes
 
-To become
+sTudoo as a web app is build with the Flask framework which uses routes to present the content to the user. The following routes should acts as a more precise navigation through the app functionality.
 
 ### User Account Registration (Route 1)
 
