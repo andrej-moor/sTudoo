@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, session
 import sqlite3
 from flask import flash
 from datetime import timedelta
-from database import DB_NAME, create_table, insert_user
+from database import DB_NAME, create_table, insert_user, delete_account
 
 
 app = Flask(__name__)
@@ -87,6 +87,20 @@ def logout():
     # Clear session data
     flash('You have been logged out.', 'success')
     return redirect(url_for('index'))
+
+
+@app.route('/delete_account', methods=['POST'])
+def delete_account():
+    email = request.form['email']
+    password = request.form['password']
+    
+    if delete_account(email, password):
+        return redirect(url_for('index'), 'Account erfolgreich gelöscht')
+    
+    else:
+        return 'Falsches Passwort'
+
+
 
 
 if __name__ == '__main__':
