@@ -19,7 +19,7 @@ nav_order: 1
 {:toc}
 </details>
 
-## Overview of sTudoo's ability (Use Case Diagram)
+## Overview of sTudoo's structure (Use Case Diagram)
 
 To get a big picture of the functions lets take a look at the use case diagram of sTudoo.
 
