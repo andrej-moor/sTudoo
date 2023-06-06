@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, session
 import sqlite3
 from flask import flash
 from datetime import timedelta
-from database import DB_NAME, create_table, insert_user, delete_account
+from database import DB_NAME, create_table, insert_user, delete_user, authenticate_user, get_first_name
 
 
 app = Flask(__name__)
@@ -73,7 +73,9 @@ def logedin():
         # User is logged in
         user_id = session['user_id']
         # is user id = session id
-        return render_template('logedin.html', user_id=user_id)
+        first_name = get_first_name(user_id)  # Replace with your actual function
+
+        return render_template('logedin.html', user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
     
@@ -94,11 +96,11 @@ def delete_account():
     email = request.form['email']
     password = request.form['password']
     
-    if delete_account(email, password):
-        return redirect(url_for('index'), 'Account erfolgreich gelöscht')
-    
-    else:
-        return 'Falsches Passwort'
+    if delete_user(email, password):
+        return redirect(url_for('index'))
+
+    return 'Incorrect email or password'
+
 
 
 

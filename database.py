@@ -34,7 +34,34 @@ def insert_user(first_name, last_name, email, password):
     #placeholders = ?
     #insert into users: values stored in users.db with sql statement
     
-def delete_account(email, password):
+    
+def authenticate_user(email, password):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM users WHERE email = ?', (email,))
+    user = cursor.fetchone()
+    conn.close()
+
+    if user and user[4] == password:
+        return True
+
+    return False
+   
+def get_first_name(user_id):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('SELECT first_name FROM users WHERE id = ?', (user_id,))
+    result = cursor.fetchone()
+    conn.close()
+
+    if result:
+        return result[0]
+    else:
+        return None
+    
+    
+    
+def delete_user(email, password):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM users WHERE email = ?', (email,))

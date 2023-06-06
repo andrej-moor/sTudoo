@@ -46,9 +46,10 @@
       <div id="buttons">
         <a href="#" class="btn-red"><i class="fa-solid fa-trash"></i></a>
         <form action="{{ url_for('delete_account') }}" method="POST">
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
           <button type="submit" onclick="return confirm('Are you sure you want to delete your account?')">Delete Account</button>
-      </form>
-      
+        </form>  
         <a href="#" class="btn"><i class="fa-solid fa-pen"></i></a>
       </div>
     </div>
