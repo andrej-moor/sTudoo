@@ -22,9 +22,6 @@ nav_order: 3
 ## Entity-Relationship Diagram of sTudoo
 
 ```mermaid
----
-title: ER-Diagram betwenn Studen, Class, Project & Todo
----
 
 erDiagram
 
@@ -34,6 +31,7 @@ STUDENT {
     string firstName
     string lastName
     string email
+    string password
 }
 
 CLASS ||--o{ PROJECT: consists

@@ -23,7 +23,7 @@ nav_order: 1
 
 To get a big picture of the functions lets take a look at the use case diagram of sTudoo.
 
-![Use Case Diagram of sTudoo](/diagrams/Studoo_Features.png)
+![Use case diagram](../assets/diagrams/Studoo_Features.png)
 
 To use the full functionality it is necessary for a user to register an login. After the registration an the login the user is able to:
 -  add,
