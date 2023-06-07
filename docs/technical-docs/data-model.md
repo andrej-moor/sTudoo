@@ -34,6 +34,7 @@ STUDENT {
     string firstName
     string lastName
     string email
+    string password
 }
 
 CLASS ||--o{ PROJECT: consists
