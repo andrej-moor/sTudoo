@@ -60,7 +60,7 @@ Resources:
 - [x] Create ER Diagram (Attributes, IDs, Primary Keys, Foreign Key, Relations) @Andy
   
   &rarr; User ,Class, Projects, Todos
-- [>] Create database
+- [x] Create database
 - [>] Connect database to app
 
 Ressources:
