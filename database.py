@@ -72,7 +72,7 @@ def create_todos_table():
     
     
 def insert_user(first_name, last_name, email, password):
-    conn = sqlite3.connect(USERS_DB)
+    conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     cursor.execute('INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
                    (first_name, last_name, email, password))
@@ -84,7 +84,7 @@ def insert_user(first_name, last_name, email, password):
     
     
 def authenticate_user(email, password):
-    conn = sqlite3.connect(USERS_DB)
+    conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM users WHERE email = ?', (email,))
     user = cursor.fetchone()
@@ -96,7 +96,7 @@ def authenticate_user(email, password):
     return False
    
 def get_first_name(user_id):
-    conn = sqlite3.connect(USERS_DB)
+    conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     cursor.execute('SELECT first_name FROM users WHERE id = ?', (user_id,))
     result = cursor.fetchone()
@@ -110,7 +110,7 @@ def get_first_name(user_id):
     
     
 def delete_user(email, password):
-    conn = sqlite3.connect(USERS_DB)
+    conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM users WHERE email = ?', (email,))
     user = cursor.fetchone()

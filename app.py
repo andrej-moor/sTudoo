@@ -71,7 +71,7 @@ def login():
         password = request.form['password']
         # receive data from request form
 
-        conn = sqlite3.connect(USERS_DB)
+        conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
         # sql statement to get user input (email, password) from database
