@@ -135,6 +135,9 @@ def logout():
     flash('You have been logged out.', 'success')
     return redirect(url_for('index'))
 
+@app.route('/delete_site')
+def delete_site():
+    return render_template('user_account_delete.html')
 
 @app.route('/delete_account', methods=['POST'])
 def delete_account():
@@ -142,7 +145,7 @@ def delete_account():
     password = request.form['password']
     
     if delete_user(email, password):
-        return redirect(url_for('index'))
+        return render_template('user_account_deleted.html')
 
     return 'Incorrect email or password'
 
