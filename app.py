@@ -112,7 +112,17 @@ def logedin():
     else:
         return redirect(url_for('login'))
 
+@app.route('/projects')
+def projects():
+    return render_template('projects.html')
 
+@app.route('/classes')
+def classes():
+    return render_template('classes.html')
+
+@app.route('/todos')
+def todos():
+    return render_template('todos.html')
     
 @app.route('/useraccount')
 def useraccount():
