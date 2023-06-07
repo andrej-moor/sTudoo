@@ -11,13 +11,15 @@ The project structure should help us to navigate through the project and stay on
 
 The main milstones in the *sTudoo* project are the following:
 
-- [8 Routes (Python & Flask)](#8-routes-python--flask)
-- [Database (SQLite)](#database-sqlite)
-- [HTML & CSS Templates (Jinja)](#html--css-templates-jinja)
-- [Headless API (JSON delivery)](#headless-api-json-delivery)
-- [Documentation](#documentation)
-- [Presentation](#presentation)
-- [Bonus: Deploy on dedicated Web server (NGINX/Waitress)](#deploy-on-dedicated-web-server-nginxwaitress)
+- [\[Project Todos Structure\]](#project-todos-structure)
+  - [Description of labels \& states](#description-of-labels--states)
+  - [8 Routes (Python \& Flask)](#8-routes-python--flask)
+  - [Database (SQLite) @Jana](#database-sqlite-jana)
+  - [HTML \& CSS Templates (Jinja)](#html--css-templates-jinja)
+  - [Headless API (JSON delivery)](#headless-api-json-delivery)
+  - [Documentation](#documentation)
+  - [Presentation](#presentation)
+  - [Deploy on dedicated Web server (NGINX/Waitress)](#deploy-on-dedicated-web-server-nginxwaitress)
 
 ## Description of labels & states
 
@@ -92,7 +94,7 @@ Ressources:
     - HTML & CSS Templates Overview @Andy
     - Structure Diagram of CSS Files @Andy
   - [-] [App Behavior](/docs/technical-docs/app-behavior)
-    - [>] Use-case diagram of the App (user Uni classes, projects & todos) @Andy
+    - [x] Use-case diagram of the App (user Uni classes, projects & todos) @Andy
     - [-] Class Diagram @Jana
   - [-] [App Data Model](/docs/technical-docs/data-model)
     - [x] Entity-Relationship Model @And
