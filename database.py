@@ -7,7 +7,7 @@ CLASSES_DB = 'classes.db'
 
 #create user table
 def create_table():
-    conn = sqlite3.connect(USERS_DB)
+    conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
@@ -162,7 +162,7 @@ def insert_project(user_id, class_id, name):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
 
-    # Check if the provided class_id exists
+    # Check if the provided class_id and user_id exist
     cursor.execute('SELECT class_id FROM classes WHERE class_id = ? AND user_id = ?', (class_id, user_id))
     class_exists = cursor.fetchone()
 
@@ -174,6 +174,7 @@ def insert_project(user_id, class_id, name):
     else:
         conn.close()
         return False
+
 
 
 def insert_todo(user_id, class_id, project_id, name):

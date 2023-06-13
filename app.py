@@ -104,37 +104,6 @@ def logedin():
     else:
         return redirect(url_for('login'))
 
-@app.route('/projects')
-def projects():
-    if 'user_id' in session:
-        user_id = session['user_id']
-        
-        # Check if any classes exist for the user
-        conn = sqlite3.connect(CLASSES_DB)
-        cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM classes WHERE user_id = ?', (user_id,))
-        class_count = cursor.fetchone()[0]
-        conn.close()
-
-        if request.method == 'POST':
-            print(request.form)  # debugging to check if the form values are received
-
-            if 'add_project' in request.form:
-                project_name = request.form.get('project_name')
-                
-                if class_count == 0:
-                    error_message = "No classes added yet. Please add a class first."
-                    return render_template('projects.html', error_message=error_message)
-                
-                insert_project(user_id, project_name)
-
-        return render_template('projects.html', class_count=class_count)
-
-    # user_id is not in session, redirect to login site
-    return redirect(url_for('login'))
-
-
-
 @app.route('/classes', methods=['GET', 'POST'])
 def classes():
     if 'user_id' in session:
@@ -149,10 +118,76 @@ def classes():
 
 
 
+@app.route('/projects', methods=['GET', 'POST'])
+def projects():
+    if 'user_id' in session:
+        user_id = session['user_id']
+        
+        # Check if any classes exist for the user
+        conn = sqlite3.connect(CLASSES_DB)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM classes WHERE user_id = ?', (user_id,))
+        class_count = cursor.fetchone()[0]
 
-@app.route('/todos')
+        if request.method == 'POST':
+            if 'add_project' in request.form:
+                project_name = request.form.get('project_name')
+                class_id = request.form.get('class_id')
+                
+                #if class_count == 0:
+                  #  error_message = "No classes added yet. Please add a class first."
+                   # return render_template('projects.html', error_message=error_message)
+                
+                insert_project(user_id, class_id, project_name)
+
+        # Retrieve the available classes from the database
+        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
+        classes = cursor.fetchall()
+        conn.close()
+
+        return render_template('projects.html', class_count=class_count, classes=classes)
+
+    # user_id is not in session, redirect to login site
+    return redirect(url_for('login'))
+
+
+
+@app.route('/todos', methods=['GET', 'POST'])
 def todos():
-    return render_template('todos.html')
+    if 'user_id' in session:
+        user_id = session['user_id']
+
+        # Check if any classes exist for the user
+        conn = sqlite3.connect(CLASSES_DB)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM classes WHERE user_id = ?', (user_id,))
+        class_count = cursor.fetchone()[0]
+
+        # Retrieve the available classes from the database
+        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
+        classes = cursor.fetchall()
+
+        # Retrieve the available projects from the database
+        cursor.execute('SELECT project_id, name FROM projects WHERE user_id = ?', (user_id,))
+        projects = cursor.fetchall()
+
+        if request.method == 'POST':
+            if 'add_todo' in request.form:
+                todo_name = request.form.get('todo_name')
+                class_id = request.form.get('class_id')
+                project_id = request.form.get('project_id')
+
+                # Insert the new todo into the database
+                insert_todo(user_id, class_id, project_id, todo_name)
+
+        conn.close()
+
+        return render_template('todos.html', class_count=class_count, classes=classes, projects=projects)
+
+    # user_id is not in session, redirect to login site
+    return redirect(url_for('login'))
+
+
     
 @app.route('/useraccount')
 def useraccount():
