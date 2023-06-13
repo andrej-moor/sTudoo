@@ -32,10 +32,12 @@
       <h1>Your Classes</h1>
       <div id="add_project">
 
-        <div id="project-input">
-          <input type="text" id="project" placeholder="Add a class">
-        </div>
-        <a href="#" class="btn-small"><i class="fa-solid fa-plus"></i></a>
+              <!-- Add Class Form -->
+      <div id="add_class">
+        <form method="POST" action="{{ url_for('classes') }}" class="add-form">
+          <input type="text" name="class_name" placeholder="Class Name" required>
+          <button type="submit" name="add_class">Add</button>
+        </form>
       </div>
       <div id="projects-overview">
         <table>

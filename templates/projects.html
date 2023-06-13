@@ -31,12 +31,13 @@
     <div class="content">
       <h1>Your Projects</h1>
       <div id="add_project">
-        <div id="date-input">
-          <input type="date" id="date">
-        </div>
-        <div id="project-input">
-          <input type="text" id="project" placeholder="Add a project">
-        </div>
+
+         <!-- Add Project Form -->
+      <form method="POST" action="{{ url_for('projects') }}" class="add-form">
+        <input type="text" name="project_name" placeholder="Project Name" required>
+        <button type="submit" name="add_project">Add</button>
+    </form>
+
         <a href="#" class="btn-small"><i class="fa-solid fa-plus"></i></a>
       </div>
       <div id="projects-overview">

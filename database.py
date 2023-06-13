@@ -116,7 +116,18 @@ def delete_user(email, password):
     user = cursor.fetchone()
     
     if user and user[4] == password:
+        # Delete user's projects
+        cursor.execute('DELETE FROM projects WHERE user_id = ?', (user[0],))
+        
+        # Delete user's classes
+        cursor.execute('DELETE FROM classes WHERE user_id = ?', (user[0],))
+        
+        # Delete user's todos
+        cursor.execute('DELETE FROM todos WHERE user_id = ?', (user[0],))
+        
+        # Delete user
         cursor.execute('DELETE FROM users WHERE email = ?', (email,))
+        
         conn.commit()
         conn.close()
         return True

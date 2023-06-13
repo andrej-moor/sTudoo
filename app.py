@@ -101,9 +101,7 @@ def logedin():
             if 'add_project' in request.form:
                 project_name = request.form['project_name']
                 insert_project(user_id, project_name)
-            elif 'add_class' in request.form:
-                class_name = request.form['class_name']
-                insert_class(user_id, class_name)
+        
             elif 'add_todo' in request.form:
                 todo_name = request.form['todo_name']
                 insert_todo(user_id, todo_name)
@@ -114,11 +112,34 @@ def logedin():
 
 @app.route('/projects')
 def projects():
+    
+    if 'user_id' in session:
+        user_id = session['user_id']
+    if request.method == 'POST':
+        print(request.form)  # debugging to check if the form values are received
+        
+        if 'add_project' in request.form:
+            project_name = request.form.get('project_name')
+            insert_project(user_id, project_name)
+    
     return render_template('projects.html')
 
-@app.route('/classes')
+
+    
+@app.route('/classes', methods=['GET', 'POST'])
 def classes():
+    if 'user_id' in session:
+        user_id = session['user_id']
+    if request.method == 'POST':
+        print(request.form)  # debugging to check if the form values are received
+        
+        if 'add_class' in request.form:
+            class_name = request.form.get('class_name')
+            insert_class(user_id, class_name)
+    
     return render_template('classes.html')
+
+
 
 @app.route('/todos')
 def todos():
