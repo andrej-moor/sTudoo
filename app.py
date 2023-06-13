@@ -96,15 +96,9 @@ def logedin():
         user_id = session['user_id']
         first_name = get_first_name(user_id)
         
-        if request.method == 'POST':
-            print(request.form)  # debugging because the post is not getting the values from the form
-            if 'add_project' in request.form:
-                project_name = request.form['project_name']
-                insert_project(user_id, project_name)
-        
-            elif 'add_todo' in request.form:
-                todo_name = request.form['todo_name']
-                insert_todo(user_id, todo_name)
+        if 'add_todo' in request.form:
+            todo_name = request.form['todo_name']
+            insert_todo(user_id, todo_name)
 
         return render_template('logedin.html', user_id=user_id, first_name=first_name)
     else:
@@ -112,32 +106,47 @@ def logedin():
 
 @app.route('/projects')
 def projects():
-    
     if 'user_id' in session:
         user_id = session['user_id']
-    if request.method == 'POST':
-        print(request.form)  # debugging to check if the form values are received
         
-        if 'add_project' in request.form:
-            project_name = request.form.get('project_name')
-            insert_project(user_id, project_name)
-    
-    return render_template('projects.html')
+        # Check if any classes exist for the user
+        conn = sqlite3.connect(CLASSES_DB)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM classes WHERE user_id = ?', (user_id,))
+        class_count = cursor.fetchone()[0]
+        conn.close()
+
+        if request.method == 'POST':
+            print(request.form)  # debugging to check if the form values are received
+
+            if 'add_project' in request.form:
+                project_name = request.form.get('project_name')
+                
+                if class_count == 0:
+                    error_message = "No classes added yet. Please add a class first."
+                    return render_template('projects.html', error_message=error_message)
+                
+                insert_project(user_id, project_name)
+
+        return render_template('projects.html', class_count=class_count)
+
+    # user_id is not in session, redirect to login site
+    return redirect(url_for('login'))
 
 
-    
+
 @app.route('/classes', methods=['GET', 'POST'])
 def classes():
     if 'user_id' in session:
         user_id = session['user_id']
+    
     if request.method == 'POST':
-        print(request.form)  # debugging to check if the form values are received
-        
         if 'add_class' in request.form:
             class_name = request.form.get('class_name')
             insert_class(user_id, class_name)
     
     return render_template('classes.html')
+
 
 
 
