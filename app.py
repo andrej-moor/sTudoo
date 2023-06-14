@@ -58,7 +58,6 @@ def sign_up():
 # redirect to signed_up when sign_up is successful
 # otherwise show sign_up page to try again
 
-
 @app.route("/signed_up")
 def signed_up():
     return render_template("signed_up.html")
@@ -116,9 +115,17 @@ def logedin():
 def projects():
     return render_template('projects.html')
 
+@app.route('/projects/<int:project_id>')
+def project_todos(project_id):
+    return render_template('project_todos.html')
+
 @app.route('/classes')
 def classes():
     return render_template('classes.html')
+
+@app.route('/classes/<int:class_id>')
+def classes_todos(class_id):
+    return render_template('class_todos.html')
 
 @app.route('/todos')
 def todos():
