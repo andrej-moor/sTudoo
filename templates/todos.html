@@ -19,18 +19,16 @@
       </h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="todos.html"class="current">Todos</a></li>
+          <li><a href="{{url_for('/')}}">Home</a></li>
+          <li><a href="{{url_for('todos')}}"class="current">Todos</a></li>
           <li><a href="{{url_for('projects')}}">Projects</a></li>
-          <li><a href="classes.html">Classes</a></li>
+          <li><a href="{{url_for('classes')}}">Classes</a></li>
           <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
           <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </nav>
     </div>
     <div class="content">
-
-      <h1>Your Todos</h1>
       <h1>Your Todos</h1>
       <div id="add_project">
         <form method="POST" action="{{ url_for('todos') }}" class="add-form">
