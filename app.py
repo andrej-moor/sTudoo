@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, session
+from flask import Flask, jsonify, render_template, url_for, request, redirect, session
 import sqlite3
 from flask import flash
 from datetime import timedelta
@@ -150,6 +150,20 @@ def projects():
     # user_id is not in session, redirect to login site
     return redirect(url_for('login'))
 
+@app.route('/get_projects')
+def get_projects():
+    class_id = request.args.get('class_id')
+
+    conn = sqlite3.connect(CLASSES_DB)
+    cursor = conn.cursor()
+    cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ?', (class_id,))
+    projects = cursor.fetchall()
+    conn.close()
+
+    return jsonify(projects)
+
+# had to research a lot because the select fields would not show the projects for the classes
+# copied this from stackoverflow because I have very little knowledge about javascript/jsonify
 
 
 @app.route('/todos', methods=['GET', 'POST'])
@@ -167,25 +181,31 @@ def todos():
         cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
         classes = cursor.fetchall()
 
-        # Retrieve the available projects from the database
-        cursor.execute('SELECT project_id, name FROM projects WHERE user_id = ?', (user_id,))
-        projects = cursor.fetchall()
-
         if request.method == 'POST':
             if 'add_todo' in request.form:
                 todo_name = request.form.get('todo_name')
                 class_id = request.form.get('class_id')
                 project_id = request.form.get('project_id')
 
+                # Retrieve the available projects for the selected class
+                cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ? AND user_id = ?', (class_id, user_id))
+                projects = cursor.fetchall()
+
                 # Insert the new todo into the database
                 insert_todo(user_id, class_id, project_id, todo_name)
 
+        else:
+            projects = []
+
         conn.close()
 
-        return render_template('todos.html', class_count=class_count, classes=classes, projects=projects)
+        return render_template('todos.html', class_count=class_count, classes=classes, projects=projects, selected_class_id=request.form.get('class_id'))
 
     # user_id is not in session, redirect to login site
     return redirect(url_for('login'))
+
+
+
 
 
     
