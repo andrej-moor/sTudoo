@@ -21,21 +21,17 @@
       <nav>
         <ul>
           <li><a href="{{url_for('index')}}" class="current">Home</a></li>
-          <!--url_for home should lead to user dashboard, will be adjusted-->
-          <li><a href="todos.html" class="link-yellow">Todos</a></li>
-          <li><a href="projects.html" class="link-yellow">Projects</a></li>
-          <li><a href="classes.html" class="link-yellow">Classes</a></li>
-          <li><a href="{{url_for('useraccount')}}" ><i class="fa-regular fa-circle-user"></i></a></li>
+          <li><a href="{{url_for('todos')}}">Todos</a></li>
+          <li><a href="{{url_for('projects')}}">Projects</a></li>
+          <li><a href="{{url_for('classes')}}">Classes</a></li>
+          <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
           <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </nav>
     </div>
     <div class="content">
       <h1>Welcome <span id="greeting">{{ first_name }}</span>!</h1>
-      <h1>Let's get started!</h1>
-      <p>Add something new to one of your lists.</p>
-
-  
+      <p>Add something new to one of your lists.</p>  
       <a href="{{url_for('classes')}}" class="btn add-class-btn">Add a Class</a>
       <a href="{{url_for('projects')}}" class="btn add-project-btn">Add a Project</a>
       <a href="{{url_for('todos')}}" class="btn add-todo-btn">Add a Todo</a>
