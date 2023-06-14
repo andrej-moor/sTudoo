@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, session
+from flask import Flask, jsonify, render_template, url_for, request, redirect, session
 import sqlite3
 from flask import flash
 from datetime import timedelta
@@ -95,41 +95,118 @@ def logedin():
         user_id = session['user_id']
         first_name = get_first_name(user_id)
         
-        if request.method == 'POST':
-            print(request.form)  # debugging because the post is not getting the values from the form
-            if 'add_project' in request.form:
-                project_name = request.form['project_name']
-                insert_project(user_id, project_name)
-            elif 'add_class' in request.form:
-                class_name = request.form['class_name']
-                insert_class(user_id, class_name)
-            elif 'add_todo' in request.form:
-                todo_name = request.form['todo_name']
-                insert_todo(user_id, todo_name)
+        if 'add_todo' in request.form:
+            todo_name = request.form['todo_name']
+            insert_todo(user_id, todo_name)
 
         return render_template('logedin.html', user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
 
-@app.route('/projects')
-def projects():
-    return render_template('projects.html')
-
-@app.route('/projects/<int:project_id>')
-def project_todos(project_id):
-    return render_template('project_todos.html')
-
-@app.route('/classes')
+@app.route('/classes', methods=['GET', 'POST'])
 def classes():
+    if 'user_id' in session:
+        user_id = session['user_id']
+    
+    if request.method == 'POST':
+        if 'add_class' in request.form:
+            class_name = request.form.get('class_name')
+            insert_class(user_id, class_name)
+    
     return render_template('classes.html')
 
-@app.route('/classes/<int:class_id>')
-def classes_todos(class_id):
-    return render_template('class_todos.html')
 
-@app.route('/todos')
+
+@app.route('/projects', methods=['GET', 'POST'])
+def projects():
+    if 'user_id' in session:
+        user_id = session['user_id']
+        
+        # Check if any classes exist for the user
+        conn = sqlite3.connect(CLASSES_DB)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM classes WHERE user_id = ?', (user_id,))
+        class_count = cursor.fetchone()[0]
+
+        if request.method == 'POST':
+            if 'add_project' in request.form:
+                project_name = request.form.get('project_name')
+                class_id = request.form.get('class_id')
+                
+                #if class_count == 0:
+                  #  error_message = "No classes added yet. Please add a class first."
+                   # return render_template('projects.html', error_message=error_message)
+                
+                insert_project(user_id, class_id, project_name)
+
+        # Retrieve the available classes from the database
+        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
+        classes = cursor.fetchall()
+        conn.close()
+
+        return render_template('projects.html', class_count=class_count, classes=classes)
+
+    # user_id is not in session, redirect to login site
+    return redirect(url_for('login'))
+
+@app.route('/get_projects')
+def get_projects():
+    class_id = request.args.get('class_id')
+
+    conn = sqlite3.connect(CLASSES_DB)
+    cursor = conn.cursor()
+    cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ?', (class_id,))
+    projects = cursor.fetchall()
+    conn.close()
+
+    return jsonify(projects)
+
+# had to research a lot because the select fields would not show the projects for the classes
+# copied this from stackoverflow because I have very little knowledge about javascript/jsonify
+
+
+@app.route('/todos', methods=['GET', 'POST'])
 def todos():
-    return render_template('todos.html')
+    if 'user_id' in session:
+        user_id = session['user_id']
+
+        # Check if any classes exist for the user
+        conn = sqlite3.connect(CLASSES_DB)
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM classes WHERE user_id = ?', (user_id,))
+        class_count = cursor.fetchone()[0]
+
+        # Retrieve the available classes from the database
+        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
+        classes = cursor.fetchall()
+
+        if request.method == 'POST':
+            if 'add_todo' in request.form:
+                todo_name = request.form.get('todo_name')
+                class_id = request.form.get('class_id')
+                project_id = request.form.get('project_id')
+
+                # Retrieve the available projects for the selected class
+                cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ? AND user_id = ?', (class_id, user_id))
+                projects = cursor.fetchall()
+
+                # Insert the new todo into the database
+                insert_todo(user_id, class_id, project_id, todo_name)
+
+        else:
+            projects = []
+
+        conn.close()
+
+        return render_template('todos.html', class_count=class_count, classes=classes, projects=projects, selected_class_id=request.form.get('class_id'))
+
+    # user_id is not in session, redirect to login site
+    return redirect(url_for('login'))
+
+
+
+
+
     
 @app.route('/useraccount')
 def useraccount():

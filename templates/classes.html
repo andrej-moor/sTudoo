@@ -20,11 +20,11 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="todos.html">Todos</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="{{url_for('todos')}}">Todos</a></li>
+          <li><a href="{{url_for('projects')}}">Projects</a></li>
           <li><a href="classes.html" class="current">Classes</a></li>
-          <li><a href="user.html"><i class="fa-regular fa-circle-user"></i></a></li>
-          <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+          <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
+          <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </nav>
     </div>
@@ -32,10 +32,12 @@
       <h1>Your Classes</h1>
       <div id="add_project">
 
-        <div id="project-input">
-          <input type="text" id="project" placeholder="Add a class">
-        </div>
-        <a href="#" class="btn-small"><i class="fa-solid fa-plus"></i></a>
+              <!-- Add Class Form -->
+      <div id="add_class">
+        <form method="POST" action="{{ url_for('classes') }}" class="add-form">
+          <input type="text" name="class_name" placeholder="Class Name" required>
+          <button type="submit" name="add_class">Add</button>
+        </form>
       </div>
       <div id="projects-overview">
         <table>

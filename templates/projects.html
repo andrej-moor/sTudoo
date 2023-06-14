@@ -20,23 +20,35 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="todos.html">Todos</a></li>
+          <li><a href="{{url_for('todos')}}">Todos</a></li>
           <li><a href="projects.html" class="current">Projects</a></li>
-          <li><a href="classes.html">Classes</a></li>
-          <li><a href="user.html"><i class="fa-regular fa-circle-user"></i></a></li>
-          <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+          <li><a href="{{url_for('classes')}}">Classes</a></li>
+          <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
+          <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </nav>
     </div>
     <div class="content">
       <h1>Your Projects</h1>
       <div id="add_project">
-        <div id="date-input">
-          <input type="date" id="date">
-        </div>
-        <div id="project-input">
-          <input type="text" id="project" placeholder="Add a project">
-        </div>
+
+  <!-- Add Project Form -->
+<form method="POST" action="{{ url_for('projects') }}" class="add-form">
+    <input type="text" name="project_name" placeholder="Project Name" required>
+    
+    <!-- Select field for class_id -->
+    <select name="class_id" required>
+      <option value="">Select a class</option>
+      <!-- Populate the options dynamically from the database -->
+      {% for class in classes %}
+      <option value="{{ class[0] }}">{{ class[1] }}</option>
+      {% endfor %}
+    </select>
+    
+    <button type="submit" name="add_project">Add</button>
+</form>
+
+
         <a href="#" class="btn-small"><i class="fa-solid fa-plus"></i></a>
       </div>
       <div id="projects-overview">

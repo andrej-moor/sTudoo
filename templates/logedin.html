@@ -34,28 +34,11 @@
       <h1>Welcome <span id="greeting">{{ first_name }}</span>!</h1>
       <h1>Let's get started!</h1>
       <p>Add something new to one of your lists.</p>
+
   
-      <!-- Add Class Form -->
-      <form method="POST" action="{{ url_for('logedin') }}" class="add-form">
-          <input type="text" name="class_name" placeholder="Class Name" required>
-          <button type="submit" name="add_class">Add</button>
-      </form>
-  
-      <!-- Add Project Form -->
-      <form method="POST" action="{{ url_for('logedin') }}" class="add-form">
-          <input type="text" name="project_name" placeholder="Project Name" required>
-          <button type="submit" name="add_project">Add</button>
-      </form>
-  
-      <!-- Add Todo Form -->
-      <form method="POST" action="{{ url_for('logedin') }}" class="add-form">
-          <input type="text" name="todo_name" placeholder="To-Do Name" required>
-          <button type="submit" name="add_todo">Add</button>
-      </form>
-  
-      <a href="#" class="btn add-class-btn">Add a Class</a>
-      <a href="#" class="btn add-project-btn">Add a Project</a>
-      <a href="#" class="btn add-todo-btn">Add a Todo</a>
+      <a href="{{url_for('classes')}}" class="btn add-class-btn">Add a Class</a>
+      <a href="{{url_for('projects')}}" class="btn add-project-btn">Add a Project</a>
+      <a href="{{url_for('todos')}}" class="btn add-todo-btn">Add a Todo</a>
   </div>
   
 </div>
