@@ -19,7 +19,7 @@
       </h1>
       <nav>
         <ul>
-          <li><a href="{{url_for('/')}}">Home</a></li>
+          <li><a href="{{url_for('index')}}">Home</a></li>
           <li><a href="{{url_for('todos')}}"class="current">Todos</a></li>
           <li><a href="{{url_for('projects')}}">Projects</a></li>
           <li><a href="{{url_for('classes')}}">Classes</a></li>
@@ -38,11 +38,9 @@
             <option value="{{ class[0] }}">{{ class[1] }}</option>
             {% endfor %}
           </select>
-      
           <select name="project_id" id="project-select" required>
             <option value="">Select a project</option>
           </select>
-      
           <div id="project-input">
             <input type="text" name="todo_name" placeholder="Add a todo">
           </div>
