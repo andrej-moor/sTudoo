@@ -138,6 +138,7 @@ img {
   margin-bottom: 15px;
 }
 
+
 /* ============ HERO SECTION =============== */
 
 .hero {
@@ -180,6 +181,42 @@ img {
 .hero * {
   z-index: 3;
 }
+
+/* ==== TABLE LIST ==== */
+
+table {
+  border-spacing: 10px;
+}
+
+tr {
+  background-color: #333333af;
+}
+
+td {
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+table tr td a {
+  color: #fff;
+}
+table tr td a.project-link:hover{
+  text-decoration: underline 2px #28a745;
+}
+
+table tr td a.checkmark:hover , a.pen:hover {
+  color: #28a745 !important;
+}
+
+table tr td a.trash:hover {
+  color: red !important;
+}
+
+table tr td a i {
+  font-size: 16px;
+}
+
 
 /* ============ FORMS =============== */
 
