@@ -1,3 +1,26 @@
+/* 
+TABLE OF CONTENTS
+-----------------
+- Reset
+- Fonts
+- Colors
+- Navbar
+- Body
+  - Headings
+  - Paragraphs
+  - Lists
+  - Links
+  - Buttons
+  - Images
+  - Icons
+- Hero Section
+- Forms
+  - Signup Form
+- List Section
+- List Table 
+- Flex Items (Index.html)
+*/
+
 /* =========== RESET ============== */
 
 * {
@@ -5,9 +28,11 @@
   padding: 0;
   margin: 0;
 }
-/* =========== FONT ============== */
+/* =========== FONTS ============== */
 
 @import url('https://fonts.googleapis.com/css2?family=Comme:wght@100;200&display=swap');
+
+/* =========== COLORS ============== */
 
 /* =========== NAVBAR ============== */
 
@@ -181,43 +206,6 @@ img {
 .hero * {
   z-index: 3;
 }
-
-/* ==== TABLE LIST ==== */
-
-table {
-  border-spacing: 10px;
-}
-
-tr {
-  background-color: #333333af;
-}
-
-td {
-  padding: 10px 15px;
-  font-size: 20px;
-  border-radius: 5px;
-}
-
-table tr td a {
-  color: #fff;
-}
-table tr td a.project-link:hover{
-  text-decoration: underline 2px #28a745;
-}
-
-table tr td a.checkmark:hover , a.pen:hover {
-  color: #28a745 !important;
-}
-
-table tr td a.trash:hover {
-  color: red !important;
-}
-
-table tr td a i {
-  font-size: 16px;
-}
-
-
 /* ============ FORMS =============== */
 
 /* ==== Sign Up Form ==== */
@@ -258,10 +246,80 @@ table tr td a i {
 
 }
 
-/* ==== Login Form ==== */
+/* ==== LIST SECTION ==== */
+#add_class, #add_project {
+  margin-top: 20px;
+  max-width: 800px;
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+}
 
+select {
+  font-family: 'Comme', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+}
 
-/* ============ FLEX ITEMS =============== */
+#date-input input {
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+#project-input input {
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+}
+
+.btn-small {
+  padding: 7px 10px;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* ==== LIST TABLE ==== */
+
+table {
+  border-spacing: 10px;
+}
+
+tr {
+  background-color: #333333af;
+}
+
+td {
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+table tr td a {
+  color: #fff;
+}
+table tr td a.project-link:hover{
+  text-decoration: underline 2px #28a745;
+}
+
+table tr td a.checkmark:hover , a.pen:hover {
+  color: #28a745 !important;
+}
+
+table tr td a.trash:hover {
+  color: red !important;
+}
+
+table tr td a i {
+  font-size: 16px;
+}
+
+/* ============ FLEX ITEMS (Index.html) =============== */
 
 .flex-items {
   display: flex;
@@ -318,3 +376,5 @@ table tr td a i {
 .flex-columns p {
   margin: 20px 0;
 }
+
+
