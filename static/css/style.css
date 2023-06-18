@@ -89,7 +89,7 @@ h1, h2, h3 {
   }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 h2 {
   font-size: 1.8rem;
@@ -102,6 +102,7 @@ h3 {
 
 p {
   margin: 10px 0;
+  font-size: 1rem;
 }
 
 /* ==== LISTS ==== */
@@ -200,7 +201,6 @@ img {
 
 
 .hero .content p {
-  font-size: 23px;
   max-width: 700px;
   margin: 10px 0 30px;
 }
