@@ -7,11 +7,13 @@
     {% include 'includes/_navbar.html' %}
 
     <div class="content">
+      <!-- Header -->
       
+      <h1>Sign up for free</h1>
+      <p>It's free and only takes a minute</p>
+
       <!-- Signup Form -->
       <div id="form_container">      
-        <h1>Sign up for free</h1>
-        <p>It's free and only takes a minute</p>
         <form method="POST" action="{{url_for('sign_up')}}">
           <div class="form-group">
             <label for="first_name">First Name</label>
