@@ -83,10 +83,21 @@ body {
 }
 /* ==== Headings ==== */
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: 300;
   line-height: 1.2;
   }
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+
 /* ==== PARAGRAPHS ==== */
 
 p {
@@ -187,9 +198,6 @@ img {
   padding: 0 20px;
 }
 
-.hero .content h1 {
-  font-size: 55px;
-}
 
 .hero .content p {
   font-size: 23px;
@@ -218,9 +226,6 @@ img {
   max-width: 300px;
 }
 
-#form_container h1 {
-  font-size: 30px;
-}
 #form_container p {
   font-size: 16px;
 }
