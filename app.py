@@ -38,7 +38,7 @@ create_todos_table()
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title="Home")
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
@@ -50,7 +50,7 @@ def sign_up():
         insert_user(first_name, last_name, email, password)
         return redirect(url_for('signed_up'))
 
-    return render_template('sign_up.html')
+    return render_template('sign_up.html', title="Sign-Up")
 
 # POST: this block of code is only run when a form is submitted (in sign_up.html)
 # sign_up has a form method POST that submits the user input
@@ -60,7 +60,7 @@ def sign_up():
 
 @app.route("/signed_up")
 def signed_up():
-    return render_template("signed_up.html")
+    return render_template("signed_up.html", title="You're Signed Up")
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -87,7 +87,7 @@ def login():
             flash('Invalid credentials. Please try again.', 'error')
             return redirect(url_for('login'))
 
-    return render_template('login.html')
+    return render_template('login.html', title="Login")
 
 @app.route('/logedin', methods=['GET', 'POST'])
 def logedin():
@@ -99,7 +99,7 @@ def logedin():
             todo_name = request.form['todo_name']
             insert_todo(user_id, todo_name)
 
-        return render_template('logedin.html', user_id=user_id, first_name=first_name)
+        return render_template('logedin.html', , title="You're Loged in", user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
 
@@ -113,7 +113,7 @@ def classes():
             class_name = request.form.get('class_name')
             insert_class(user_id, class_name)
     
-    return render_template('classes.html')
+    return render_template('classes.html', title="Your Classes")
 
 
 @app.route('/projects', methods=['GET', 'POST'])
@@ -143,7 +143,7 @@ def projects():
         classes = cursor.fetchall()
         conn.close()
 
-        return render_template('projects.html', class_count=class_count, classes=classes)
+        return render_template('projects.html', title="Your Projects", class_count=class_count, classes=classes)
 
     # user_id is not in session, redirect to login site
     return redirect(url_for('login'))
@@ -196,14 +196,14 @@ def todos():
 
         conn.close()
 
-        return render_template('todos.html', class_count=class_count, classes=classes, projects=projects, selected_class_id=request.form.get('class_id'))
+        return render_template('todos.html', title="Your Todos", class_count=class_count, classes=classes, projects=projects, selected_class_id=request.form.get('class_id'))
 
     # user_id is not in session, redirect to login site
     return redirect(url_for('login'))
     
 @app.route('/useraccount')
 def useraccount():
-    return render_template('user_account.html')
+    return render_template('user_account.html', title="You're User Account")
 
 @app.route('/logout')
 def logout():
@@ -214,7 +214,7 @@ def logout():
 
 @app.route('/delete_site')
 def delete_site():
-    return render_template('user_account_delete.html')
+    return render_template('user_account_delete.html', title="Delete Account")
 
 @app.route('/delete_account', methods=['POST'])
 def delete_account():
@@ -222,17 +222,17 @@ def delete_account():
     password = request.form['password']
     
     if delete_user(email, password):
-        return render_template('user_account_deleted.html')
+        return render_template('user_account_deleted.html', title="Account Deleted")
 
     return 'Incorrect email or password'
 
 @app.route('/imprint')
 def imprint():
-    return render_template('imprint.html')
+    return render_template('imprint.html', title="Imprint")
 
 @app.route('/privacy')
 def privacy():
-    return render_template('privacy.html')
+    return render_template('privacy.html', title="Privacy")
 
 if __name__ == '__main__':
     create_table()
