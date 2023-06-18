@@ -116,7 +116,6 @@ def classes():
     return render_template('classes.html')
 
 
-
 @app.route('/projects', methods=['GET', 'POST'])
 def projects():
     if 'user_id' in session:
@@ -164,7 +163,6 @@ def get_projects():
 # had to research a lot because the select fields would not show the projects for the classes
 # copied this from stackoverflow because I have very little knowledge about javascript/jsonify
 
-
 @app.route('/todos', methods=['GET', 'POST'])
 def todos():
     if 'user_id' in session:
@@ -202,11 +200,6 @@ def todos():
 
     # user_id is not in session, redirect to login site
     return redirect(url_for('login'))
-
-
-
-
-
     
 @app.route('/useraccount')
 def useraccount():
@@ -233,7 +226,13 @@ def delete_account():
 
     return 'Incorrect email or password'
 
+@app.route('/imprint')
+def imprint():
+    return render_template('imprint.html')
 
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
 
 if __name__ == '__main__':
     create_table()

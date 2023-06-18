@@ -1,10 +1,17 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-  {% include 'includes/_header.html' %}
-  
+  <header class="hero">
+    {% include 'includes/_navbar.html' %}
+    <div class="content">
+    <h1>Stay Organized & Stressfree</h1>
+    <p><strong>sTudoo</strong> helps students to organize their class related projects, keep the overview of the todos and stay on track with deadlines.</p>
+    <a href="#about" class="btn"><i class="fa-solid fa-chevron-down"></i> Learn More</a>
+    </div>
+  </header>
+
   <!-- VALUE PROPOSITION -->
-  <!-- <main>
+  <main>
     <section id="about" class="icons bg-light">
       <div class="flex-items">
         <div>
@@ -47,5 +54,5 @@
         </div>
       </div>
     </section> #}
-  </main> -->
+  </main>
 {% endblock %}
