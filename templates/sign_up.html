@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{url_for('static', filename ='css/style.css')}}">
-  <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
-  <title>sTudoo | Sign-Up</title>
-</head>
-<body id="home">
+{% extends 'layout.html' %}
+
+{% block body %}
+
   <header class="hero">
-    <div id="navbar" class="navbar">
-      <h1 class="logo">
-        <span class="text-primary"><i class="fa-solid fa-graduation-cap"></i>sTu</span>doo
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="{{url_for('index')}}">Home</a></li>
-          <li><a href="{{url_for('sign_up')}}" class="current">Sign-Up</a></li>
-          <li><a href="{{url_for('login')}}"><i class="fa-solid fa-right-to-bracket"></i></a></li>
-        </ul>
-      </nav>
-    </div>
+
+    {% include 'includes/_navbar.html' %}
+
     <div class="content">
+      
+      <!-- Signup Form -->
       <div id="form_container">      
         <h1>Sign up for free</h1>
         <p>It's free and only takes a minute</p>
@@ -50,5 +36,4 @@
       </div>
     </div>
   </header>
-</body>
-</html>
+{% endblock %}
