@@ -34,6 +34,10 @@ TABLE OF CONTENTS
 
 /* =========== COLORS ============== */
 
+.text-green {
+  color: #28a745;
+}
+
 /* =========== NAVBAR ============== */
 
 .navbar {
