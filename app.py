@@ -1,7 +1,9 @@
-from flask import Flask, jsonify, render_template, url_for, request, redirect, session
+from flask import Flask, jsonify, render_template, url_for, request, redirect, session, flash
+
 import sqlite3
-from flask import flash
+
 from datetime import timedelta
+
 from database import (
     USERS_DB,
     create_table,
@@ -23,6 +25,7 @@ from database import (
 )
 
 app = Flask(__name__)
+
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=24)
 app.secret_key = 'blablabla'
 # secret key needed to encrypt data so it cannot be read in plaintext
