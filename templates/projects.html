@@ -3,6 +3,7 @@
 {% block body %}
 
 <header class="hero" id="bg-texture-concrete">
+
 <!-- Navbar -->
 {% include 'includes/_navbar_loged_in.html' %}
 
@@ -16,19 +17,23 @@
 
     <div class="form_container_add_items">      
       <form method="POST" action="{{ url_for('projects') }}" class="add-items-form">
-      <!-- Select field for class_id -->
-      <select name="class_id" required>
-        <option value="">Class</option>
 
-        <!-- Populate the options dynamically from the database -->
-        {% for class in classes %}
-        <option value="{{ class[0] }}">{{ class[1] }}</option>
-        {% endfor %}
-      </select>
-      <!-- Add Project Field -->
-      <input type="text" name="project_name" placeholder="Add a Project" required>
-      <button type="submit" name="add_project" class="btn"><i class="fa-solid fa-plus"></i></button>
-    </form>
+        <!-- Date Field -->
+        <input type="date" id="submission_date" name="submission_date">
+
+        <!-- Select field for class_id -->
+        <select name="class_id" required>
+          <option value="">Class</option>
+          <!-- Populate the options dynamically from the database -->
+          {% for class in classes %}
+          <option value="{{ class[0] }}">{{ class[1] }}</option>
+          {% endfor %}
+        </select>
+
+          <!-- Add Project Field -->
+          <input type="text" name="project_name" placeholder="Add a Project" required>
+          <button type="submit" name="add_project" class="btn"><i class="fa-solid fa-plus"></i></button>
+      </form>
     </div>
 
     <!-- Projects Overview -->

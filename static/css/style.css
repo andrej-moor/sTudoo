@@ -252,7 +252,7 @@ img {
 }
 
 .form_container_add_items {
-  max-width: 400px;
+  max-width: 800px;
 }
 
 #form_container p {
@@ -280,6 +280,7 @@ input {
   border: none;
   border-radius: 5px;
   font-size: 1.2rem;
+  color: #787878;
 }
 
 .add-items-form input {
@@ -289,7 +290,7 @@ input {
 /* Add Items Form */
 
 .add-items-form {
-  max-width: 600px;
+  max-width: 750px;
 }
 .add-items-form .btn {
   padding: 0 15px;
