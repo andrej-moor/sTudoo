@@ -77,7 +77,6 @@ def create_todos_table():
     #cursor object can execute sql statements and get stored data from the database
     #cursor.execute is called and executes the following sql statement that creates a table, email must be unique
     
-    
 def insert_user(first_name, last_name, email, password):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
@@ -88,7 +87,6 @@ def insert_user(first_name, last_name, email, password):
     
     #placeholders = ?
     #insert into users: values stored in users.db with sql statement
-    
     
 def authenticate_user(email, password):
     conn = sqlite3.connect(CLASSES_DB)
@@ -113,9 +111,7 @@ def get_first_name(user_id):
         return result[0]
     else:
         return None
-    
-    
-    
+ 
 def delete_user(email, password):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
@@ -142,9 +138,7 @@ def delete_user(email, password):
     conn.close()
     return False
 
-
 #projects/classes/to-dos functionality, add and delete
-
 
 def insert_class(user_id, name):
     conn = sqlite3.connect(CLASSES_DB)
@@ -154,9 +148,7 @@ def insert_class(user_id, name):
     class_id = cursor.lastrowid  # Get the generated class_id
     conn.commit()
     conn.close()
-
     return class_id
-
 
 def insert_project(user_id, class_id, name):
     conn = sqlite3.connect(CLASSES_DB)
@@ -174,8 +166,6 @@ def insert_project(user_id, class_id, name):
     else:
         conn.close()
         return False
-
-
 
 def insert_todo(user_id, class_id, project_id, name):
     conn = sqlite3.connect(CLASSES_DB)
@@ -197,7 +187,6 @@ def insert_todo(user_id, class_id, project_id, name):
     else:
         conn.close()
         return False
-
 
 def delete_project(project_id):
     conn = sqlite3.connect(CLASSES_DB)
