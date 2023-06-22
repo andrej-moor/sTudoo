@@ -34,11 +34,20 @@ create_classes_table()
 create_projects_table()
 create_todos_table()
 
-
+# ==== HOME, IMPRINT, PRIVACY ==== 
 @app.route("/")
 def index():
     return render_template('index.html', title="Home")
 
+@app.route('/imprint')
+def imprint():
+    return render_template('imprint.html', title="Imprint")
+
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html', title="Privacy")
+
+# ==== USER RELATED ROUTES ====
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
@@ -50,12 +59,11 @@ def sign_up():
         return redirect(url_for('signed_up'))
 
     return render_template('sign_up.html', title="Sign-Up")
-
-# POST: this block of code is only run when a form is submitted (in sign_up.html)
-# sign_up has a form method POST that submits the user input
-# call insert_user to store the user input to users.db
-# redirect to signed_up when sign_up is successful
-# otherwise show sign_up page to try again
+    # POST: this block of code is only run when a form is submitted (in sign_up.html)
+    # sign_up has a form method POST that submits the user input
+    # call insert_user to store the user input to users.db
+    # redirect to signed_up when sign_up is successful
+    # otherwise show sign_up page to try again
 
 @app.route("/signed_up")
 def signed_up():
@@ -102,6 +110,32 @@ def logedin():
     else:
         return redirect(url_for('login'))
 
+@app.route('/useraccount')
+def useraccount():
+    return render_template('user_account.html', title="You're User Account")
+
+@app.route('/logout')
+def logout():
+    session.clear() 
+    # Clear session data
+    flash('You have been logged out.', 'success')
+    return redirect(url_for('index'))
+
+@app.route('/delete_site')
+def delete_site():
+    return render_template('user_account_delete.html', title="Delete Account")
+
+@app.route('/delete_account', methods=['POST'])
+def delete_account():
+    email = request.form['email']
+    password = request.form['password']
+    
+    if delete_user(email, password):
+        return render_template('user_account_deleted.html', title="Account Deleted")
+
+    return 'Incorrect email or password'
+
+# ==== LISTS RELATED ROUTES ====
 @app.route('/classes', methods=['GET', 'POST'])
 def classes():
     if 'user_id' in session:
@@ -115,7 +149,6 @@ def classes():
     return render_template('classes.html', title="Your Classes",
     class_list=['Objektorientierte Programierung 1',
     'Objektorientierte Programmierung 2','Datenbanken', 'Programmierung von Webapplikationen'])
-
 
 @app.route('/projects', methods=['GET', 'POST'])
 def projects():
@@ -202,40 +235,7 @@ def todos():
     'Outline für Präsentation','Brainstorming: Android App',' Lernplan Klausur Rechnungswesen'])
 
     # user_id is not in session, redirect to login site
-    return redirect(url_for('login'))
-    
-@app.route('/useraccount')
-def useraccount():
-    return render_template('user_account.html', title="You're User Account")
-
-@app.route('/logout')
-def logout():
-    session.clear() 
-    # Clear session data
-    flash('You have been logged out.', 'success')
-    return redirect(url_for('index'))
-
-@app.route('/delete_site')
-def delete_site():
-    return render_template('user_account_delete.html', title="Delete Account")
-
-@app.route('/delete_account', methods=['POST'])
-def delete_account():
-    email = request.form['email']
-    password = request.form['password']
-    
-    if delete_user(email, password):
-        return render_template('user_account_deleted.html', title="Account Deleted")
-
-    return 'Incorrect email or password'
-
-@app.route('/imprint')
-def imprint():
-    return render_template('imprint.html', title="Imprint")
-
-@app.route('/privacy')
-def privacy():
-    return render_template('privacy.html', title="Privacy")
+    return redirect(url_for('login'))  
 
 if __name__ == '__main__':
     create_table()
