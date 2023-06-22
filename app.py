@@ -37,6 +37,7 @@ create_classes_table()
 create_projects_table()
 create_todos_table()
 
+
 # ==== HOME, IMPRINT, PRIVACY ==== 
 @app.route("/")
 def index():
@@ -49,6 +50,7 @@ def imprint():
 @app.route('/privacy')
 def privacy():
     return render_template('privacy.html', title="Privacy")
+
 
 # ==== USER RELATED ROUTES ====
 @app.route('/sign_up', methods=['GET', 'POST'])
@@ -137,6 +139,7 @@ def delete_account():
         return render_template('user_account_deleted.html', title="Account Deleted")
 
     return 'Incorrect email or password'
+
 
 # ==== LISTS RELATED ROUTES ====
 @app.route('/classes', methods=['GET', 'POST'])
