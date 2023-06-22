@@ -22,7 +22,6 @@ from database import (
     delete_todo  
 )
 
-
 app = Flask(__name__)
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=24)
 app.secret_key = 'blablabla'
@@ -99,7 +98,7 @@ def logedin():
             todo_name = request.form['todo_name']
             insert_todo(user_id, todo_name)
 
-        return render_template('logedin.html', , title="You're Loged in", user_id=user_id, first_name=first_name)
+        return render_template('logedin.html', title="You're Loged in", user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
 
@@ -113,7 +112,9 @@ def classes():
             class_name = request.form.get('class_name')
             insert_class(user_id, class_name)
     
-    return render_template('classes.html', title="Your Classes")
+    return render_template('classes.html', title="Your Classes",
+    class_list=['Objektorientierte Programierung 1',
+    'Objektorientierte Programmierung 2','Datenbanken', 'Programmierung von Webapplikationen'])
 
 
 @app.route('/projects', methods=['GET', 'POST'])
@@ -143,7 +144,8 @@ def projects():
         classes = cursor.fetchall()
         conn.close()
 
-        return render_template('projects.html', title="Your Projects", class_count=class_count, classes=classes)
+        return render_template('projects.html', title="Your Projects", class_count=class_count, classes=classes, project_list=['Hausarbeit Grundlagen der WI',
+    'Präsentation Englisch 1','Android Todo App', 'Klausur Rechnungswesen'])
 
     # user_id is not in session, redirect to login site
     return redirect(url_for('login'))
@@ -196,7 +198,8 @@ def todos():
 
         conn.close()
 
-        return render_template('todos.html', title="Your Todos", class_count=class_count, classes=classes, projects=projects, selected_class_id=request.form.get('class_id'))
+        return render_template('todos.html', title="Your Todos", class_count=class_count, classes=classes, projects=projects, selected_class_id=request.form.get('class_id'), todo_list=['Recherche: Thema Hausarbeit',
+    'Outline für Präsentation','Brainstorming: Android App',' Lernplan Klausur Rechnungswesen'])
 
     # user_id is not in session, redirect to login site
     return redirect(url_for('login'))

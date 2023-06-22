@@ -1,0 +1,13 @@
+<div id="navbar" class="navbar">
+  {% include 'includes/_logo_loged_in.html' %}
+  <nav>
+    <ul>
+      <li><a href="{{url_for('logedin')}}">Home</a></li>
+      <li><a href="{{url_for('classes')}}">Classes</a></li>
+      <li><a href="{{url_for('projects')}}">Projects</a></li>
+      <li><a href="{{url_for('todos')}}">Todos</a></li>
+      <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
+      <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+    </ul>
+  </nav>
+</div>

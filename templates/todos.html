@@ -1,99 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{url_for('static', filename ='css/style.css')}}">
-  <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
-  <title>sTudoo | Todos </title>
-</head>
-<body id="home">
-  <header class="hero" id="hero_signup">
-    <div id="navbar" class="navbar">
-      <h1 class="logo">
-        <span class="text-primary"><i class="fa-solid fa-graduation-cap"></i>sTu</span>doo
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="{{url_for('index')}}">Home</a></li>
-          <li><a href="{{url_for('todos')}}"class="current">Todos</a></li>
-          <li><a href="{{url_for('projects')}}">Projects</a></li>
-          <li><a href="{{url_for('classes')}}">Classes</a></li>
-          <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
-          <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-        </ul>
-      </nav>
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<header class="hero" id="bg-texture-concrete">
+<!-- Navbar -->
+{% include 'includes/_navbar_loged_in.html' %}
+
+  <div class="content">
+
+    <!-- Heading -->
+    <h1>Your Todos</h1>
+    <p>Add, view, edit and remove your todos.</p>
+
+    <!-- Add Todos Form -->
+    <div class="form_container_add_items">
+      <form method="POST" action="{{ url_for('todos') }}" class="add-items-form">
+        <select name="class_id" id="class-select" required>
+          <option value="">Class</option>
+          {% for class in classes %}
+          <option value="{{ class[0] }}">{{ class[1] }}</option>
+          {% endfor %}
+        </select>
+        <select name="project_id" id="project-select" required>
+          <option value="">Project</option>
+        </select>
+        <div>
+          <input type="text" name="todo_name" placeholder="Add a todo">
+        </div>
+        <button type="submit" name="add_todo" class="btn"><i class="fa-solid fa-plus"></i></button>
+      </form>
     </div>
-    <div class="content">
-      <h1>Your Todos</h1>
-      <div id="add_project">
-        <form method="POST" action="{{ url_for('todos') }}" class="add-form">
-          <select name="class_id" id="class-select" required>
-            <option value="">Select a class</option>
-            {% for class in classes %}
-            <option value="{{ class[0] }}">{{ class[1] }}</option>
-            {% endfor %}
-          </select>
-          <select name="project_id" id="project-select" required>
-            <option value="">Select a project</option>
-          </select>
-          <div id="project-input">
-            <input type="text" name="todo_name" placeholder="Add a todo">
-          </div>
-          <button type="submit" name="add_todo">Add</button>
-        </form>
-      </div>
-      
-      <script> //code from stackoverflow because I have very little knowledge on javascript
-        // Retrieve the projects data for the selected class
-        function updateProjects() {
-          const classSelect = document.getElementById('class-select');
-          const projectSelect = document.getElementById('project-select');
-          const selectedClassId = classSelect.value;
-      
-          // Clear existing options
-          projectSelect.innerHTML = '<option value="">Select a project</option>';
-      
-          // Retrieve projects for the selected class using AJAX or fetch
-      
-          // Make a request to fetch the projects
-          fetch('/get_projects?class_id=' + selectedClassId)
-            .then(response => response.json())
-            .then(data => {
-              // Add the retrieved projects as options in the projects dropdown
-              data.forEach(project => {
-                const option = document.createElement('option');
-                option.value = project[0];
-                option.textContent = project[1];
-                projectSelect.appendChild(option);
-              });
-            })
-            .catch(error => {
-              console.error('Error:', error);
-            });
-        }
-      
-        // Listen for change event on the class dropdown
+  
+    <script> //code from stackoverflow because I have very little knowledge on javascript
+      // Retrieve the projects data for the selected class
+      function updateProjects() {
         const classSelect = document.getElementById('class-select');
-        classSelect.addEventListener('change', updateProjects);
-      </script>
-      
-      
-      
-      <div id="projects-overview">
-        <table>
-          <tr>
-            <td><a href="#" class="pen"><i class="fa-solid fa-chalkboard-user"></i></a></td>
-            <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
-            <td>Datenbankanbindung User-Login</td>
-            <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></td>
-            <td><a href="#" class="trash"><i class="fa-solid fa-trash"></td>
-            <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </header>
-</body>
-</html>
+        const projectSelect = document.getElementById('project-select');
+        const selectedClassId = classSelect.value;
+    
+        // Clear existing options
+        projectSelect.innerHTML = '<option value="">Select a project</option>';
+    
+        // Retrieve projects for the selected class using AJAX or fetch
+    
+        // Make a request to fetch the projects
+        fetch('/get_projects?class_id=' + selectedClassId)
+          .then(response => response.json())
+          .then(data => {
+            // Add the retrieved projects as options in the projects dropdown
+            data.forEach(project => {
+              const option = document.createElement('option');
+              option.value = project[0];
+              option.textContent = project[1];
+              projectSelect.appendChild(option);
+            });
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
+    
+      // Listen for change event on the class dropdown
+      const classSelect = document.getElementById('class-select');
+      classSelect.addEventListener('change', updateProjects);
+    </script>
+
+  <!-- Todos Overview -->
+    <table>
+      {% for todo in todo_list %}
+      <tr>
+        <td><a href="#" class="pen"><i class="fa-solid fa-chalkboard-user"></i></a></td>
+        <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
+        <td>{{todo}}</td>
+        <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></td>
+        <td><a href="#" class="trash"><i class="fa-solid fa-trash"></td>
+        <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</header>
+
+{% endblock %}

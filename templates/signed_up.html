@@ -1,45 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{url_for('static', filename ='css/style.css')}}">
-  <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
-  <title>sTudoo | Signed Up</title>
-</head>
-<body id="home">
-  <header class="hero" id="hero_signup">
-    <div id="navbar" class="navbar">
-      <h1 class="logo">
-        <span class="text-primary"><i class="fa-solid fa-graduation-cap"></i>sTu</span>doo
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="{{url_for('index')}}">Home</a></li>
-          <li><a href="{{url_for('login')}}" class="current
-            "><i class="fa-solid fa-right-to-bracket"></i></a></li>
-        </ul>
-      </nav>
-    </div>
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <header class="hero" id="bg-students"> 
+
+    {% include 'includes/_navbar.html' %}
+    
     <div class="content">
-      <div id="form_container">      
-        <h1>You're Signed Up</h1>
-        <p>Please <a href="{{url_for('login')}}">log in</a> to organize your stuff!</p>
-        <!-- <form action="#">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-          </div>
-          <button type="submit" class="btn"> Login</button>
-        </form> -->
-  </div>
-</div>
+      <!-- Header -->
+      <h1>You're Signed Up</h1>
+      <p>Please <a href="{{url_for('login')}}">log in</a> to organize your stuff!</p>
+      <a href="{{url_for('login')}}" class="btn">Login</a>
+    </div>
   </header>
-  
-</body>
-</html>
+{% endblock %}

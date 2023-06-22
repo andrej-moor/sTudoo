@@ -73,6 +73,10 @@ TABLE OF CONTENTS
   font-weight: 600;
 }
 
+.navbar .logo a {
+  border: none;
+}
+
 /* =========== BODY ============== */
 
 body {
@@ -102,7 +106,7 @@ h3 {
 
 p {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 /* ==== LISTS ==== */
@@ -129,7 +133,7 @@ a {
   background-color: #28a745;
   border: none;
   border-radius: 5px;
-  font-size: 23px;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -183,11 +187,35 @@ img {
 /* ============ HERO SECTION =============== */
 
 .hero {
-  background: url(/static/images/students.jpg) no-repeat center center/cover;
   height: 100vh;
   position: relative;
   color: #fff;
 }
+
+/* Hero Background */
+#bg-students {
+  background: url(/static/images/students.jpg) no-repeat center center/cover;
+}
+#bg-table {
+  background: url(/static/images/table.jpg) no-repeat center center/cover;
+}
+#bg-list {
+  background: url(/static/images/blog.jpg) no-repeat center center/cover;
+}
+#bg-page-white {
+  background: url(/static/images/blankPaper.jpg) no-repeat center center/cover;
+}
+#bg-page-yellow {
+  background: url(/static/images/blankPaperYellow.jpg) no-repeat center center/cover;
+}
+#bg-table-with-stuff {
+  background: url(/static/images/tableWithStuff.jpg) no-repeat center center/cover;
+}
+#bg-texture-concrete {
+  background: url(/static/images/textureConrete.jpg) no-repeat center center/cover;
+}
+
+
 
 .hero .content {
   display: flex;
@@ -198,7 +226,6 @@ img {
   height: 100%;
   padding: 0 20px;
 }
-
 
 .hero .content p {
   max-width: 700px;
@@ -220,10 +247,12 @@ img {
 }
 /* ============ FORMS =============== */
 
-/* ==== Sign Up Form ==== */
-
 #form_container {
   max-width: 300px;
+}
+
+.form_container_add_items {
+  max-width: 400px;
 }
 
 #form_container p {
@@ -231,7 +260,8 @@ img {
 }
 
 #form_container a {
-  color: #28a745;
+  color: #34d259;
+  text-decoration: underline;
 }
 
 .form-group {
@@ -243,17 +273,52 @@ img {
   margin-bottom: 5px;
 }
 
-.form-group input {
+input {
   width: 100%;
   padding: 10px;
+  margin: 10px 10px;
   border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.add-items-form input {
+  width: 300px;
+}
+
+/* Add Items Form */
+
+.add-items-form {
+  max-width: 600px;
+}
+.add-items-form .btn {
+  padding: 0 15px;
+}
+
+/* ==== ADD LIST ITEMS FORM ====*/
+
+.add-items-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.add-items-form select {
+  margin: 10px 5px;
+  padding: 0 5px;
+  background-color: #fff;
+  color: #787878;
+  font-family: 'Comme', sans-serif;  
+  font-size: 1.2rem;
   border-radius: 5px;
 }
 
-#form_container button {
-  margin: 20px;
+/* .add-items-form  */
 
-}
+option:checked, option:hover {
+      box-shadow: 0 0 10px 100px #4ddc3b inset;
+    }
 
 /* ==== LIST SECTION ==== */
 #add_class, #add_project {
@@ -264,38 +329,10 @@ img {
   gap: 10px;
 }
 
-select {
-  font-family: 'Comme', sans-serif;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-#date-input input {
-  max-width: 300px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 14px;
-}
-
-#project-input input {
-  max-width: 300px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 18px;
-}
-
-.btn-small {
-  padding: 7px 10px;
-  background-color: #28a745;
-  color: #fff;
-  border-radius: 5px;
-}
-
 /* ==== LIST TABLE ==== */
 
 table {
+  margin-top: 15px;
   border-spacing: 10px;
 }
 

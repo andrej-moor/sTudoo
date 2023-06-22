@@ -1,54 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/static/css/style.css">
-<link rel="stylesheet" href="{{url_for('static', filename ='css/style.css')}}">
-  <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
-  <title>sTudoo | Classes </title>
-</head>
-<body id="home">
-  <header class="hero" id="hero_signup">
-    <div id="navbar" class="navbar">
-      <h1 class="logo">
-        <span class="text-primary"><i class="fa-solid fa-graduation-cap"></i>sTu</span>doo
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="{{url_for('index')}}">Home</a></li>
-          <li><a href="{{url_for('todos')}}">Todos</a></li>
-          <li><a href="{{url_for('projects')}}">Projects</a></li>
-          <li><a href="{{url_for('classes')}}" class="current">Classes</a></li>
-          <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
-          <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="content">
-      <h1>Your Classes</h1>
-      <div id="add_project">
+{% extends 'layout.html' %}
 
-              <!-- Add Class Form -->
-      <div id="add_class">
-        <form method="POST" action="{{ url_for('classes') }}" class="add-form">
-          <input type="text" name="class_name" placeholder="Class Name" required>
-          <button type="submit" name="add_class">Add</button>
-        </form>
-      </div>
-      <div id="projects-overview">
-        <table>
-          <tr></tr>
-            <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
-            <td><a href="#" class="project-link">Programmierung von Webapplikationen</a></td>
-            <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></td>
-            <td><a href="#" class="trash"><i class="fa-solid fa-trash"></td>
-            <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
-          </tr>
-        </table>
-      </div>
+{% block body %}
+
+<header class="hero" id="bg-texture-concrete">
+<!-- Navbar -->
+{% include 'includes/_navbar_loged_in.html' %}
+
+  <div class="content">
+    <!-- Heading -->
+    <h1>Your Classes</h1>
+    <p>Add, view, edit and remove your classes.</p>
+
+    <!-- Add Class Form -->
+    <div class="form_container_add_items">      
+      <form method="POST" action="{{ url_for('classes') }}" class="add-items-form">
+        <input type="text" name="class_name" placeholder="Add a Class" required>
+        <button type="submit" name="add_class" class="btn"><i class="fa-solid fa-plus"></i></button>
+      </form>
     </div>
-  </header>
-</body>
-</html>
+
+    <!-- Classes Overview -->
+ 
+    <table>
+      {% for class in class_list %}
+      <tr>
+        <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
+        <td><a href="#" class="project-link">{{class}}</a></td>
+        <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></td>
+        <td><a href="#" class="trash"><i class="fa-solid fa-trash"></td>
+        <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+</header>
+{% endblock %}

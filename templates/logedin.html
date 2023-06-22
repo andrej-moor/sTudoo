@@ -1,40 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{url_for('static', filename ='css/style.css')}}">
-  <script src="https://kit.fontawesome.com/29bd2ed884.js" crossorigin="anonymous"></script>
-  <title>sTudoo | Let's Get Things Done!</title>
-</head>
-<body id="home">
-  <header class="hero" id="hero_signup">
-    <div id="navbar" class="navbar">
-      <h1 class="logo">
-        <span class="text-primary"><i class="fa-solid fa-graduation-cap"></i>sTu</span>doo
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="{{url_for('index')}}" class="current">Home</a></li>
-          <li><a href="{{url_for('todos')}}">Todos</a></li>
-          <li><a href="{{url_for('projects')}}">Projects</a></li>
-          <li><a href="{{url_for('classes')}}">Classes</a></li>
-          <li><a href="{{url_for('useraccount')}}"><i class="fa-regular fa-circle-user"></i></a></li>
-          <li><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="content">
-      <h1>Welcome <span id="greeting">{{ first_name }}</span>!</h1>
-      <p>Add something new to one of your lists.</p>  
-      <a href="{{url_for('classes')}}" class="btn add-class-btn">Add a Class</a>
-      <a href="{{url_for('projects')}}" class="btn add-project-btn">Add a Project</a>
-      <a href="{{url_for('todos')}}" class="btn add-todo-btn">Add a Todo</a>
-  </div>
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <header class="hero" id="bg-texture-concrete">
   
-</div>
+    <!-- Navbar -->
+    {% include 'includes/_navbar_loged_in.html' %}
+  
+    <div class="content" id="">
+      <!-- Heading -->
+      <h1>Hey <span id="greeting">{{ first_name }}</span>!</h1>
+      <p>Add something to one of your lists.</p>  
+      <!-- Buttons -->
+      <div id="wide-btns">
+        <a href="{{url_for('classes')}}" class="btn">Add a Class</a>
+        <a href="{{url_for('projects')}}" class="btn">Add a Project</a>
+        <a href="{{url_for('todos')}}" class="btn">Add a Todo</a>
+      </div>
+    </div>
   </header>
-</body>
-</html>
+{% endblock %}
