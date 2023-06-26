@@ -8,14 +8,17 @@
     {% include 'includes/_navbar_loged_in.html' %}
   
     <div class="content" id="">
+
       <!-- Heading -->
       <h1>Hey <span id="greeting">{{ first_name }}</span>!</h1>
-      <p>Let's jump to one of your lists.</p>  
+      <p>Let's jump to one of your lists.</p>
+
       <!-- Buttons -->
       <div id="wide-btns">
         <a href="{{url_for('classes')}}" class="btn"><i class="fa-solid fa-chalkboard-user"></i>&nbsp;&nbsp;Classes</a>
         <a href="{{url_for('projects')}}" class="btn"><i class="fa-sharp fa-solid fa-check-to-slot"></i>&nbsp;&nbsp;Projects</a>
         <a href="{{url_for('todos')}}" class="btn"><i class="fa-solid fa-check"></i>&nbsp;&nbsp;Todos</a>
+        
       </div>
     </div>
   </header>

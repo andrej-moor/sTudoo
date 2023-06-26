@@ -11,6 +11,7 @@ from database import (
     delete_user,
     get_first_name,
 )
+
 from database import (
     CLASSES_DB,
     create_classes_table,
@@ -81,7 +82,6 @@ def login():
         email = request.form['email']
         password = request.form['password']
         # receive data from request form
-
         conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
@@ -98,7 +98,6 @@ def login():
         else:
             flash('Invalid credentials. Please try again.', 'error')
             return redirect(url_for('login'))
-
     return render_template('login.html', title="Login")
 
 @app.route('/logedin', methods=['GET', 'POST'])
@@ -106,11 +105,9 @@ def logedin():
     if 'user_id' in session:
         user_id = session['user_id']
         first_name = get_first_name(user_id)
-        
         if 'add_todo' in request.form:
             todo_name = request.form['todo_name']
             insert_todo(user_id, todo_name)
-
         return render_template('logedin.html', title="You're Loged in", user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
