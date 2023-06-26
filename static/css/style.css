@@ -28,6 +28,17 @@ TABLE OF CONTENTS
   padding: 0;
   margin: 0;
 }
+/* =========== SMOOTH SCROLLING ============== */
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 /* =========== FONTS ============== */
 
 @import url('https://fonts.googleapis.com/css2?family=Comme:wght@100;200&display=swap');
@@ -196,25 +207,13 @@ img {
 #bg-students {
   background: url(/static/images/students.jpg) no-repeat center center/cover;
 }
-#bg-table {
-  background: url(/static/images/table.jpg) no-repeat center center/cover;
-}
-#bg-list {
-  background: url(/static/images/blog.jpg) no-repeat center center/cover;
-}
-#bg-page-white {
-  background: url(/static/images/blankPaper.jpg) no-repeat center center/cover;
-}
-#bg-page-yellow {
-  background: url(/static/images/blankPaperYellow.jpg) no-repeat center center/cover;
-}
-#bg-table-with-stuff {
-  background: url(/static/images/tableWithStuff.jpg) no-repeat center center/cover;
-}
-#bg-texture-concrete {
+
+.bg-texture-concrete {
   background: url(/static/images/textureConrete.jpg) no-repeat center center/cover;
 }
-
+.bg-white-bricks{
+  background: url(/static/images/whiteBricks.jpg) no-repeat center center/cover;
+}
 
 
 .hero .content {
@@ -422,4 +421,26 @@ table tr td a i {
 
 .flex-columns p {
   margin: 20px 0;
+}
+
+/* ==== PRESENTATION ==== */
+
+section ul {
+  list-style: circle;
+  font-size: 1.5rem;
+  font-weight: 100;
+  text-align: left;
+  text-decoration: underline;
+}
+
+section .btn {
+  margin-top: 30px;
+}
+
+#value_proposition h2 {
+  font-family:'Times New Roman', Times, serif;
+  max-width: 800px;
+  margin: 50px 0;
+  font-style: italic;
+  line-height: 1.6;
 }
