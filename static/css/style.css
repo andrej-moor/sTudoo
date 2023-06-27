@@ -2,6 +2,7 @@
 TABLE OF CONTENTS
 -----------------
 - Reset
+- Smooth Scrolling
 - Fonts
 - Colors
 - Navbar
@@ -43,10 +44,17 @@ html {
 
 @import url('https://fonts.googleapis.com/css2?family=Comme:wght@100;200&display=swap');
 
+.bold {
+  font-weight: bold;
+}
+
 /* =========== COLORS ============== */
 
 .text-green {
-  color: #28a745;
+  color: #2fc452;
+}
+.text-red {
+  color: #d82727;
 }
 
 /* =========== NAVBAR/FOOTER ============== */
@@ -142,7 +150,7 @@ a {
   margin: 10px;
   color: #fff;
   background-color: #28a745;
-  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
   font-size: 1.2rem;
   font-weight: 500;
@@ -159,6 +167,7 @@ a {
   margin: 10px;
   color: #fff;
   background-color: #c22121;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: none;
   border-radius: 5px;
   font-size: 23px;
@@ -244,6 +253,10 @@ img {
 .hero * {
   z-index: 3;
 }
+
+.checked {
+
+}
 /* ============ FORMS =============== */
 
 #form_container {
@@ -251,7 +264,7 @@ img {
 }
 
 .form_container_add_items {
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 #form_container p {
@@ -289,10 +302,14 @@ input {
 /* Add Items Form */
 
 .add-items-form {
-  max-width: 750px;
+  max-width: 1000px;
 }
 .add-items-form .btn {
   padding: 0 15px;
+}
+
+input[type="date"]{
+  max-width: 160px;
 }
 
 /* ==== ADD LIST ITEMS FORM ====*/
@@ -344,11 +361,22 @@ td {
   padding: 10px 15px;
   font-size: 20px;
   border-radius: 5px;
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
 }
 
-table tr td a {
+table tr td a, table tr td form button{
   color: #fff;
 }
+
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
 table tr td a.project-link:hover{
   text-decoration: underline 2px #28a745;
 }
@@ -357,7 +385,12 @@ table tr td a.checkmark:hover , a.pen:hover {
   color: #28a745 !important;
 }
 
-table tr td a.trash:hover {
+table tr td a.project-link.checked {
+  text-decoration: line-through;
+  color: #b1b0b0;
+}
+
+table tr td form button.trash:hover {
   color: red !important;
 }
 
@@ -426,21 +459,32 @@ table tr td a i {
 /* ==== PRESENTATION ==== */
 
 section ul {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  max-width: 800px;
   list-style: circle;
   font-size: 1.5rem;
   font-weight: 100;
   text-align: left;
-  text-decoration: underline;
+  font-size: 2rem;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 section .btn {
   margin-top: 30px;
 }
 
-#value_proposition h2 {
+h2.italic {
   font-family:'Times New Roman', Times, serif;
   max-width: 800px;
   margin: 50px 0;
   font-style: italic;
   line-height: 1.6;
 }
+
+span.material-symbols-outlined {
+  font-size: 5rem;
+  margin-top: 30px;
+}
+
