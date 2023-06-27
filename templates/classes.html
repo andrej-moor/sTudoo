@@ -22,15 +22,24 @@
     <!-- Classes Overview -->
  
     <table>
-      {% for class in class_list %}
-      <tr>
-        <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
-        <td><a href="#" class="project-link">{{class}}</a></td>
-        <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></td>
-        <td><a href="#" class="trash"><i class="fa-solid fa-trash"></td>
-        <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
-      </tr>
-      {% endfor %}
+      {% for class_item in class_list %}
+  <tr>
+    <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
+    <td><a href="#" class="project-link">{{ class_item[1] }}</a></td>
+    <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></i></a></td>
+    <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
+    <td>
+      <form method="POST" action="{{ url_for('delete_entry') }}">
+        <input type="hidden" name="entry_id" value="{{ class_item[0] }}">
+        <input type="hidden" name="entry_type" value="class">
+        <button type="submit" class="trash" onclick="return confirm('Are you sure you want to delete this class?')">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </form>
+    </td>
+  </tr>
+{% endfor %}
+
     </table>
 </header>
 {% endblock %}

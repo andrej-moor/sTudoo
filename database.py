@@ -192,15 +192,26 @@ def delete_project(project_id):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     cursor.execute('DELETE FROM projects WHERE project_id = ?', (project_id,))
+    cursor.execute('DELETE FROM todos WHERE project_id = ?' , (project_id,))
     conn.commit()
     conn.close()
 
 def delete_class(class_id):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
+    
+    # Löschen der Klasse
     cursor.execute('DELETE FROM classes WHERE class_id = ?', (class_id,))
+    
+    # Löschen der zugehörigen Projekte
+    cursor.execute('DELETE FROM projects WHERE class_id = ?', (class_id,))
+    
+    # Löschen der zugehörigen Todos
+    cursor.execute('DELETE FROM todos WHERE class_id = ?', (class_id,))
+    
     conn.commit()
     conn.close()
+
 
 def delete_todo(todo_id):
     conn = sqlite3.connect(CLASSES_DB)

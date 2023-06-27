@@ -68,15 +68,26 @@
   <!-- Todos Overview -->
     <table>
       {% for todo in todo_list %}
-      <tr>
-        <td><a href="#" class="pen"><i class="fa-solid fa-chalkboard-user"></i></a></td>
-        <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
-        <td>{{todo}}</td>
-        <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></td>
-        <td><a href="#" class="trash"><i class="fa-solid fa-trash"></td>
+    <tr>
+    <td><a href="#" class="pen"><i class="fa-solid fa-chalkboard-user"></i></a></td>
+    <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
+    <td>{{ todo[1] }}</td>
+    <!--todo[1] damit nur der Todo-Name (2. Eintrag in DB) angezeigt wird ohne die ID-->
+    <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></i></a></td>
         <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
+        <td>
+          <form method="POST" action="{{ url_for('delete_entry') }}">
+            <input type="hidden" name="entry_id" value="{{ todo[0] }}">
+            <input type="hidden" name="entry_type" value="todo">
+            <button type="submit" class="trash" onclick="return confirm('Are you sure you want to delete this todo?')">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </form>
+        </td>
       </tr>
-      {% endfor %}
+    {% endfor %}
+
+
     </table>
   </div>
 </header>
