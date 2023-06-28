@@ -13,17 +13,20 @@
   </div>
 </header>
 
+<!-- OUTLINE -->
+
 <section id="outline" class="hero bg-texture-concrete">
   <div class="content">
   <h1>Outline</h1>
-  <ul>
+  <ul style="list-style: none;">
     <li><a href="#what_is_studoo">What is sTudoo?</a></li>
     <li><a href="#value_proposition_problem">Value Proposition (Problem/Solution)</a></li>
-    <li><a href="#app_structure">2. App Structure</a></li>
-    <li><a href="#ui_design">2.1. UI Design</a></li>
-    <li><a href="#css_structure">2.2. CSS Structure</a></li>
-    <li><a href="#css_structure">2.3. App Modules & Database</a></li>
-    <li><a href="#app_functionality">3. App Functionality</a></li>
+    <li><a href="#ui_design">The Frontend</a></li>
+    <li><a href="#ui_design">- Jinja Templates & Main Layout</a></li>
+    <li><a href="#ui_design">- CSS Structure & Components</a></li>
+    <li><a href="#functions_overview">The Backend</a></li>
+    <li><a href="#functions_overview">- Functions Overview</a></li>
+    <li><a href="#css_structure">- Data Model & Database Implementation</a></li>
     <li><a href="#user_registration_login">3.1. User Registration, Login & Account Deletion</a></li>
     <li><a href="#user_registration_login">3.2. Class, Project & List Overviews</a></li>
     <li><a href="#user_registration_login">3.3. Adding, Editing & Deletion of Classes, Projects & Todos</a></li>
@@ -31,6 +34,8 @@
   </ul>
   <a href="#what_is_studoo" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
+
+<!-- WHAT IS STUDOO ? -->
 
 <section id="what_is_studoo" class="hero bg-white-bricks">
   <div class="content">
@@ -40,9 +45,10 @@
   <a href="#value_proposition_problem" class="btn"><i class="fa-solid fa-chevron-down "></i></a>
 </section>
 
+<!-- VALUE PROPOSITION - THE PROBLEM -->
 <section id="value_proposition_problem" class="hero bg-texture-concrete">
   <div class="content">
-  <h1>Value Proposition - The Problem</h1>
+  <h1>Value Proposition: The Problem</h1>
   <span class="material-symbols-outlined text-red">sentiment_sad</span>
   <ul class="italic">
     <li>One of the <strong class="text-red">stressful</strong> parts of being a student is <strong class="text-red">to stay organized with all the deliveries and deadlines</strong> for specific classes at the university.</li>
@@ -51,52 +57,95 @@
   <a href="#value_proposition_solution" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
 
+<!-- VALUE PROPOSITION - THE SOLUTION -->
+
 <section id="value_proposition_solution" class="hero bg-white-bricks">
   <div class="content">
-  <h1>Value Proposition - The Solution</h1>
+  <h1>Value Proposition: The Solution</h1>
   <span class="material-symbols-outlined text-green">sentiment_very_satisfied</span>
   <ul class="italic">
     <li>sTudoo allows you to <strong class="text-green">add classes</strong> (aka goals) to your account.</li>
     <li>Because many courses contain several exams, it is possible to map them as <strong class="text-green">projects</strong> under your classes.</li>
     <li>In each project it is possible to <strong class="text-green">set submission dates</strong> and <strong class="text-green">create the relevant tasks</strong> to make progress and stay on track.</li>
   </ul>
-  <a href="#app_structure" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  <a href="#ui_design_main_layout" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
 
-<section id="app_structure" class="hero bg-texture-concrete">
+<!-- FRONTEND: JINJA TEMPLATES & MAIN LAYOUT  -->
+<section id="ui_design_main_layout" class="hero bg-texture-concrete">
   <div class="content">
-  <h1>App Structure</h1>
-  <div style="margin: 30px 0; background-color: rgba(0, 0, 0, 0.316); border-radius: 5px;">
-    <img style="color: #fff; max-width: 900px; padding: 30px;" src="/static/images/studoo_features.svg" alt="sTudoo Features">
+  <h1>Frontend: Jinja Templates & Main Layout</h1>
+  <div>
+    <figure>
+      <img src="/static/images/templates_overview.png" alt="Templates Overview">
+      <figcaption>Templates Overview</figcaption>
+    </figure>
+    <figure>
+      <img src="/static/images/main_layout.png" alt="sTudoo Features">
+      <figcaption>Main Layout</figcaption>
+    </figure>
   </div>
-  <a href="value_proposition_" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  <div class="flex-container">
+    <a href="#ui_design_css" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+    <a href="#" class="btn"><i class="fa-solid fa-chevron-right"></i> Navbar</a>
+    <a href="#footer" class="btn"><i class="fa-solid fa-chevron-right"></i> Footer</a>
+  </div>
 </section>
 
-<!-- VALUE PROPOSITION -->
-<!-- <main>
-    <section id="about" class="icons bg-light">
-      <div class="flex-items">
-        <div>
-          <i class="fa-solid fa-sitemap fa-2x"></i>
-          <div>
-            <h3>Get Organized</h3>
-            <p>Keep all your classes, the related projects and todos in one place.</p>
-          </div>
-        </div>
-        <div>
-          <i class="fa-solid fa-calendar-days fa-2x"></i>
-          <div>
-            <h3>Keep The Overview</h3>
-            <p>Keep track of your next project and stay focused on the right tasks.</p>
-          </div>
-        </div>
-        <div>
-          <i class="fa-sharp fa-regular fa-face-smile fa-2x"></i>
-          <div>
-            <h3>Study Stressfree</h3>
-            <p>Forget about anxiety and enjoy your free and university time without beeing stressed.</p>
-          </div>
-        </div>
-      </div>
-</main> -->
+<!-- FRONTEND: CSS STRUCTURE AND COMPONENTS -->
+<section id="ui_design_css" class="hero bg-white-bricks">
+  <div class="content">
+  <h1>Frontend: CSS Structure & Components</h1>
+  <div style="max-width: 900px;" class="flex-container">
+    <figure>
+      <img src="/static/images/css_structure.png" alt="CSS Structure">
+      <figcaption>CSS Table of Content</figcaption>
+    </figure>
+    <ul style="margin-left: 60px; margin-top: 70px;" class="italic">
+      <li>1x CSS file</li>
+      <li>1x link in head section of the template of the main layout</li>
+      <li>No CSS framework like Bootstrap or Tailwind, but framework-like usage of classes to avoid repetative CSS code</li>
+      <li>3x backgrounds in the <code>.hero</code> container</li>
+      <li>Usage of <em>Font Awesome</em> and <em>Google Material</em> Icons</li>
+      <li>Usage of <em>Google Fonts</em></li>
+    </ul>
+  </div>
+  <div class="flex-container">
+    <a href="#" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- BACKEND: FUNCTIONS OVERVIEW -->
+
+<section id="functions_overview" class="hero bg-white-bricks">
+  <div class="content">
+  <h1>App Features Overview</h1>
+  <figure>
+    <img style="background-color: #1f1f1f85" src="/static/images/studoo_features.svg" alt="sTudoo Features">
+    <figcaption>Features Overview</figcaption>
+  </figure>
+  <a href="#footer" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+</section>
+
+<!-- BACKEND: DATA MODEL & DATABASE IMPLEMENTATION -->
+
+<section id="ui_design_main_layout" class="hero bg-texture-concrete">
+  <div class="content">
+  <h1>Frontend: Jinja Templates & Main Layout</h1>
+  <div>
+    <figure>
+      <img src="/static/images/templates_overview.png" alt="Templates Overview">
+      <figcaption>Templates Overview</figcaption>
+    </figure>
+    <figure>
+      <img src="/static/images/main_layout.png" alt="sTudoo Features">
+      <figcaption>Main Layout</figcaption>
+    </figure>
+  </div>
+  <div class="flex-container">
+    <a href="#ui_design_css" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+    <a href="#" class="btn"><i class="fa-solid fa-chevron-right"></i> Navbar</a>
+    <a href="#footer" class="btn"><i class="fa-solid fa-chevron-right"></i> Footer</a>
+  </div>
+</section>
 {% endblock %}

@@ -1,10 +1,11 @@
 /* 
-TABLE OF CONTENTS
------------------
+------------------
+CSS: TOC
+------------------
 - Reset
 - Smooth Scrolling
 - Fonts
-- Colors
+  - Font Colors
 - Navbar
 - Body
   - Headings
@@ -16,10 +17,7 @@ TABLE OF CONTENTS
   - Icons
 - Hero Section
 - Forms
-  - Signup Form
-- List Section
-- List Table 
-- Flex Items (Index.html)
+- List Overview
 */
 
 /* =========== RESET ============== */
@@ -48,13 +46,13 @@ html {
   font-weight: bold;
 }
 
-/* =========== COLORS ============== */
+/* ==== FONT COLORS ==== */
 
 .text-green {
   color: #2fc452;
 }
 .text-red {
-  color: #d82727;
+  color: #d84227;
 }
 
 /* =========== NAVBAR/FOOTER ============== */
@@ -337,7 +335,7 @@ option:checked, option:hover {
       box-shadow: 0 0 10px 100px #4ddc3b inset;
     }
 
-/* ==== LIST SECTION ==== */
+/* ==== LIST OVERVIEW ==== */
 #add_class, #add_project {
   margin-top: 20px;
   max-width: 800px;
@@ -345,8 +343,6 @@ option:checked, option:hover {
   padding: 20px;
   gap: 10px;
 }
-
-/* ==== LIST TABLE ==== */
 
 table {
   margin-top: 15px;
@@ -471,8 +467,32 @@ section ul {
   font-family: 'Times New Roman', Times, serif;
 }
 
-section .btn {
+.flex-container {
+  display: flex;
+}
+
+section a .btn {
   margin-top: 30px;
+  display: inline !important;
+}
+
+section figure {
+  display: inline-block;
+  margin: 30px 10px;
+}
+
+section img {
+  height: 600px;
+  width: auto;
+  border: 2px solid #fff;
+  border-radius:10px;
+  object-fit: cover;
+}
+
+figcaption {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 1.2rem;
 }
 
 h2.italic {
@@ -488,3 +508,6 @@ span.material-symbols-outlined {
   margin-top: 30px;
 }
 
+section .fa-brands {
+  margin-bottom: 30px;
+}
