@@ -17,20 +17,22 @@
 
 <section id="outline" class="hero bg-texture-concrete">
   <div class="content">
-  <h1>Outline</h1>
-  <ul style="list-style: none;">
-    <li><a href="#what_is_studoo">What is sTudoo?</a></li>
-    <li><a href="#value_proposition_problem">Value Proposition (Problem/Solution)</a></li>
-    <li><a href="#ui_design">The Frontend</a></li>
-    <li><a href="#ui_design">- Jinja Templates & Main Layout</a></li>
-    <li><a href="#ui_design">- CSS Structure & Components</a></li>
-    <li><a href="#functions_overview">The Backend</a></li>
-    <li><a href="#functions_overview">- Functions Overview</a></li>
-    <li><a href="#css_structure">- Data Model & Database Implementation</a></li>
-    <li><a href="#user_registration_login">3.1. User Registration, Login & Account Deletion</a></li>
-    <li><a href="#user_registration_login">3.2. Class, Project & List Overviews</a></li>
-    <li><a href="#user_registration_login">3.3. Adding, Editing & Deletion of Classes, Projects & Todos</a></li>
-    <li><a href="#someday_maybe_features">4. Someday/Maybe Features</a></li>
+    <h1>Outline</h1>
+    <ul style="list-style: none;">
+      <li><a href="#what_is_studoo">1. What is sTudoo?</a></li>
+      <li><a href="#value_proposition_problem">2. Value Proposition (Problem/Solution)</a></li>
+      <li><a href="#requirements_analysis">3. Requirements Analysis</a></li>
+      <li><a href="#design_decisions">4. Design Decisions</a></li>
+      <li><a href="#">5. Backend</a></li>
+    <li><a href="#css_structure">5.1. Data Model & Database Implementation</a></li>
+    <li><a href="#main_functions">5.2. Main Functions</a></li>
+    <li><a href="#user_registration_login">5.2.1. User Registration, Login & Account Deletion</a></li>
+    <li><a href="#user_registration_login">5.2.2. Adding & Deleting of Classes, Projects & Todos</a></li>
+    <li><a href="#user_registration_login">5.2.3. Class, Project & List Overviews</a></li>
+    <li><a href="#">6. Frontend</a></li>
+    <li><a href="#ui_design">6.1. Jinja Templates & Main Layout</a></li>
+    <li><a href="#ui_design">6.2. CSS Structure & Components</a></li>
+    <li><a href="#someday_maybe_features">7. In the Making & In the Future Functions</a></li>
   </ul>
   <a href="#what_is_studoo" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
@@ -68,7 +70,44 @@
     <li>Because many courses contain several exams, it is possible to map them as <strong class="text-green">projects</strong> under your classes.</li>
     <li>In each project it is possible to <strong class="text-green">set submission dates</strong> and <strong class="text-green">create the relevant tasks</strong> to make progress and stay on track.</li>
   </ul>
-  <a href="#ui_design_main_layout" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  <a href="#requirements_analysis" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+</section>
+
+<!-- REQUIREMENTS ANALYSIS -->
+
+<section id="requirements_analysis" class="hero bg-white-bricks">
+  <div class="content">
+  <h1>Requirements Analysis</h1>
+  <p>What functions are needed to make it all happen?</p>
+  <figure>
+    <img style="background-color: #1f1f1f85" src="/static/images/studoo_features.svg" alt="sTudoo Features">
+    <figcaption>Overview of sTudoo's main Features</figcaption>
+  </figure>
+  <a href="#" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+</section>
+
+<!-- BACKEND: DATA MODEL & DATABASE IMPLEMENTATION -->
+
+<section id="ui_design_main_layout" class="hero bg-texture-concrete">
+  <div class="content">
+  <h1>Backend: Data Model & Database Implementation</h1>
+  <div>
+    <figure>
+      <img src="/static/images/erm_student_classes.png" alt="Data Model">
+      <figcaption>ERM: Student - Classes</figcaption>
+    </figure>
+    <figure>
+      <img src="/static/images/erm_project_todos.png" alt="Data Model">
+      <figcaption>ERM: Projects - Todos</figcaption>
+    </figure>
+    <figure>
+      <img src="/static/images/create_tables_functions.png" alt="Data Model">
+      <figcaption><code>database.py</code>: Create Tables Functions</figcaption>
+    </figure>
+  </div>
+  <div class="flex-container">
+    <a href="#ui_design_css" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  </div>
 </section>
 
 <!-- FRONTEND: JINJA TEMPLATES & MAIN LAYOUT  -->
@@ -111,41 +150,8 @@
     </ul>
   </div>
   <div class="flex-container">
-    <a href="#" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+    <a href="#functions_overview" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
 </section>
 
-<!-- BACKEND: FUNCTIONS OVERVIEW -->
-
-<section id="functions_overview" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>App Features Overview</h1>
-  <figure>
-    <img style="background-color: #1f1f1f85" src="/static/images/studoo_features.svg" alt="sTudoo Features">
-    <figcaption>Features Overview</figcaption>
-  </figure>
-  <a href="#footer" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-</section>
-
-<!-- BACKEND: DATA MODEL & DATABASE IMPLEMENTATION -->
-
-<section id="ui_design_main_layout" class="hero bg-texture-concrete">
-  <div class="content">
-  <h1>Frontend: Jinja Templates & Main Layout</h1>
-  <div>
-    <figure>
-      <img src="/static/images/templates_overview.png" alt="Templates Overview">
-      <figcaption>Templates Overview</figcaption>
-    </figure>
-    <figure>
-      <img src="/static/images/main_layout.png" alt="sTudoo Features">
-      <figcaption>Main Layout</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#ui_design_css" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-    <a href="#" class="btn"><i class="fa-solid fa-chevron-right"></i> Navbar</a>
-    <a href="#footer" class="btn"><i class="fa-solid fa-chevron-right"></i> Footer</a>
-  </div>
-</section>
 {% endblock %}
