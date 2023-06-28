@@ -1,12 +1,9 @@
-# store in separate class file for organizational purposes and clean code
-
 import sqlite3
 
-USERS_DB = 'users.db'
+# ==== CREATE TABLES ====
 CLASSES_DB = 'classes.db'
 
-#create user table
-def create_table():
+def create_users_table():
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     cursor.execute('''
@@ -37,7 +34,6 @@ def create_classes_table():
     conn.commit()
     conn.close()
 
-# create projects table
 def create_projects_table():
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
@@ -54,7 +50,6 @@ def create_projects_table():
     conn.commit()
     conn.close()
 
-# create todos table
 def create_todos_table():
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
@@ -76,7 +71,8 @@ def create_todos_table():
     
     #cursor object can execute sql statements and get stored data from the database
     #cursor.execute is called and executes the following sql statement that creates a table, email must be unique
-    
+
+# ==== USER ACCOUNT RELATED ====
 def insert_user(first_name, last_name, email, password):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
@@ -211,7 +207,6 @@ def delete_class(class_id):
     
     conn.commit()
     conn.close()
-
 
 def delete_todo(todo_id):
     conn = sqlite3.connect(CLASSES_DB)

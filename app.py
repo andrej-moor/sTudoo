@@ -5,24 +5,20 @@ import sqlite3
 from datetime import timedelta
 
 from database import (
-    USERS_DB,
-    create_table,
-    insert_user,
-    delete_user,
-    get_first_name,
-)
-
-from database import (
     CLASSES_DB,
+    create_users_table,
     create_classes_table,
     create_projects_table,
     create_todos_table,
+    insert_user,
     insert_class,
     insert_project,
     insert_todo,
+    delete_user,
     delete_class,
     delete_project,
-    delete_todo  
+    delete_todo,
+    get_first_name
 )
 
 app = Flask(__name__)
@@ -33,7 +29,7 @@ app.secret_key = 'blablabla'
 # stronger key = more security
 # without secret key --> runtime error, session is unavailable because no secret key was set
 
-create_table()
+create_users_table()
 create_classes_table()
 create_projects_table()
 create_todos_table()
@@ -272,5 +268,5 @@ def delete_entry():
 
 
 if __name__ == '__main__':
-    create_table()
+    create_users_table()
     app.run(debug=True)
