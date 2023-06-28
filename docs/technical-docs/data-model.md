@@ -38,7 +38,7 @@ CLASS ||--o{ PROJECT: consists
 CLASS {
     string classId PK, FK
     string className
-    boolean checked
+    boolean class_checked
 }
 
 PROJECT ||--o{ TODO: contains
@@ -46,12 +46,12 @@ PROJECT {
     string projectId PK, FK
     int submissionDate
     string projectName
-    boolean checked
+    boolean project_checked
 }
 
 TODO {
     string todoId PK, FK
     string todoName
-    boolean checked
+    boolean todo_checked
 }
 ```
