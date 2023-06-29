@@ -26,13 +26,12 @@
       <li><a href="#">5. Backend</a></li>
     <li><a href="#css_structure">5.1. Data Model & Database Implementation</a></li>
     <li><a href="#main_functions">5.2. Main Functions</a></li>
-    <li><a href="#user_registration_login">5.2.1. User Registration, Login & Account Deletion</a></li>
-    <li><a href="#user_registration_login">5.2.2. Adding & Deleting of Classes, Projects & Todos</a></li>
-    <li><a href="#user_registration_login">5.2.3. Class, Project & List Overviews</a></li>
+    <li><a href="#user_reg">5.2.1. User Registration, Login & Account Deletion</a></li>
+    <li><a href="#user_classes">5.2.2. Classes, Projects & Todos</a></li>
     <li><a href="#">6. Frontend</a></li>
     <li><a href="#ui_design">6.1. Jinja Templates & Main Layout</a></li>
     <li><a href="#ui_design">6.2. CSS Structure & Components</a></li>
-    <li><a href="#someday_maybe_features">7. In the Making & In the Future Functions</a></li>
+    <li><a href="#someday_maybe_features">7. In-the- Making & Optional Features</a></li>
   </ul>
   <a href="#what_is_studoo" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
@@ -53,7 +52,7 @@
   <h1>Value Proposition: The Problem</h1>
   <span class="material-symbols-outlined text-red">sentiment_sad</span>
   <ul class="italic">
-    <li>One of the <strong class="text-red">stressful</strong> parts of being a student is <strong class="text-red">to stay organized with all the deliveries and deadlines</strong> for specific classes at the university.</li>
+    <li>One of the <strong class="text-underline-red">stressful</strong> parts of being a student is <strong class="text-underline-red">to stay organized with all the deliveries and deadlines</strong> for specific classes at the university.</li>
     <li>Wouldn't it be great to <strong>have an overview</strong> of all your current classes, their related projects and deadlines?</li>
   </ul>
   <a href="#value_proposition_solution" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
@@ -66,16 +65,16 @@
   <h1>Value Proposition: The Solution</h1>
   <span class="material-symbols-outlined text-green">sentiment_very_satisfied</span>
   <ul class="italic">
-    <li>sTudoo allows you to <strong class="text-green">add classes</strong> (aka goals) to your account.</li>
-    <li>Because many courses contain several exams, it is possible to map them as <strong class="text-green">projects</strong> under your classes.</li>
-    <li>In each project it is possible to <strong class="text-green">set submission dates</strong> and <strong class="text-green">create the relevant tasks</strong> to make progress and stay on track.</li>
+    <li>sTudoo allows you to <strong class="text-underline-green">add classes</strong> (aka goals) to your account.</li>
+    <li>Because many courses contain several exams, it is possible to map them as <strong class="text-underline-green">projects</strong> under your classes.</li>
+    <li>In each project it is possible to <strong class="text-underline-green">set submission dates</strong> and <strong class="text-underline-green">create the relevant tasks</strong> to make progress and stay on track.</li>
   </ul>
   <a href="#requirements_analysis" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
 
 <!-- REQUIREMENTS ANALYSIS -->
 
-<section id="requirements_analysis" class="hero bg-white-bricks">
+<section id="requirements_analysis" class="hero bg-texture-concrete">
   <div class="content">
   <h1>Requirements Analysis</h1>
   <p>What functions are needed to make it all happen?</p>
@@ -83,14 +82,14 @@
     <img style="background-color: #1f1f1f85" src="/static/images/studoo_features.svg" alt="sTudoo Features">
     <figcaption>Overview of sTudoo's main Features</figcaption>
   </figure>
-  <a href="#" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  <a href="#data_model_database_implementation" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
 
-<!-- BACKEND: DATA MODEL & DATABASE IMPLEMENTATION -->
+<!-- DATA MODEL & DATABASE IMPLEMENTATION -->
 
-<section id="ui_design_main_layout" class="hero bg-texture-concrete">
+<section id="data_model_database_implementation" class="hero bg-white-bricks">
   <div class="content">
-  <h1>Backend: Data Model & Database Implementation</h1>
+  <h1>Data Model & Database Implementation</h1>
   <div>
     <figure>
       <img src="/static/images/erm_student_classes.png" alt="Data Model">
@@ -106,12 +105,73 @@
     </figure>
   </div>
   <div class="flex-container">
-    <a href="#ui_design_css" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+    <a href="#user_reg" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- USER REGISTRATION -->
+
+<section id="user_reg" class="hero bg-texture-concrete">
+  <div class="content">
+  <h1>User Registration</h1>
+  <div>
+    <figure>
+      <img src="/static/images/sign_up_function.png" alt="Data Model">
+      <figcaption>Sign-Up Function</figcaption>
+    </figure>
+    <figure>
+      <img src="/static/images/sign_up_form.png" alt="Data Model">
+      <figcaption>Sign-Up Form</figcaption>
+    </figure>
+  </div>
+  <div class="flex-container">
+    <a href="#user_log" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- USER LOGIN -->
+
+<section id="user_log" class="hero bg-white-bricks">
+  <div class="content">
+  <h1>User Login</h1>
+  <div>
+    <figure>
+      <img src="/static/images/login_function.png" alt="Data Model">
+      <figcaption>Login Function</figcaption>
+    </figure>
+    <figure>
+      <img src="/static/images/login_form.png" alt="Data Model">
+      <figcaption>Login Form</figcaption>
+    </figure>
+  </div>
+  <div class="flex-container">
+    <a href="#user_del" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- USER Account Deletion -->
+
+<section id="user_del" class="hero bg-texture-concrete">
+  <div class="content">
+  <h1>User Account (Deletion)</h1>
+  <div>
+    <figure>
+      <img src="/static/images/account_functions.png" alt="User Account Deletion">
+      <figcaption>Account Functions</figcaption>
+    </figure>
+    <figure>
+      <img src="/static/images/account_delete.png" alt="Data Model">
+      <figcaption>User Account Date with Delete Button</figcaption>
+    </figure>
+  </div>
+  <div class="flex-container">
+    <a href="#" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+    <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> User Registration</a>
   </div>
 </section>
 
 <!-- FRONTEND: JINJA TEMPLATES & MAIN LAYOUT  -->
-<section id="ui_design_main_layout" class="hero bg-texture-concrete">
+<section id="#" class="hero bg-texture-concrete">
   <div class="content">
   <h1>Frontend: Jinja Templates & Main Layout</h1>
   <div>

@@ -55,6 +55,12 @@ html {
   color: #d84227;
 }
 
+.text-underline-green {
+  border-bottom: #2fc452 3px solid;
+}
+.text-underline-red {
+  border-bottom: #d84227 3px solid;
+}
 /* =========== NAVBAR/FOOTER ============== */
 
 .navbar, .footer {
@@ -86,7 +92,7 @@ html {
   display: flex;
 }
 
-.navbar .logo, .footer .logo {
+.navbar .logo {
   font-weight: 600;
 }
 
