@@ -48,8 +48,8 @@ def imprint():
 def privacy():
     return render_template('privacy.html', title="Privacy")
 
-
 # ==== USER RELATED ROUTES ====
+
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
@@ -59,8 +59,8 @@ def sign_up():
         password = request.form['password']
         insert_user(first_name, last_name, email, password)
         return redirect(url_for('signed_up'))
-
     return render_template('sign_up.html', title="Sign-Up")
+
     # POST: this block of code is only run when a form is submitted (in sign_up.html)
     # sign_up has a form method POST that submits the user input
     # call insert_user to store the user input to users.db
@@ -108,10 +108,6 @@ def logedin():
     else:
         return redirect(url_for('login'))
 
-@app.route('/useraccount')
-def useraccount():
-    return render_template('user_account.html', title="You're User Account")
-
 @app.route('/logout')
 def logout():
     session.clear() 
@@ -119,20 +115,21 @@ def logout():
     flash('You have been logged out.', 'success')
     return redirect(url_for('index'))
 
-@app.route('/delete_site')
-def delete_site():
-    return render_template('user_account_delete.html', title="Delete Account")
+@app.route('/useraccount')
+def useraccount():
+    return render_template('user_account.html', title="You're User Account")
 
 @app.route('/delete_account', methods=['POST'])
 def delete_account():
     email = request.form['email']
     password = request.form['password']
-    
     if delete_user(email, password):
         return render_template('user_account_deleted.html', title="Account Deleted")
-
     return 'Incorrect email or password'
 
+@app.route('/delete_site')
+def delete_site():
+    return render_template('user_account_delete.html', title="Delete Account")
 
 # ==== LISTS RELATED ROUTES ====
 @app.route('/classes', methods=['GET', 'POST'])
@@ -153,8 +150,6 @@ def classes():
     conn.close()
 
     return render_template('classes.html', title="Your Classes", class_list=class_list)
-
-    
     #return render_template('classes.html', title="Your Classes",
     #class_list=['Objektorientierte Programierung 1',
     #'Objektorientierte Programmierung 2','Datenbanken', 'Programmierung von Webapplikationen'])
@@ -202,9 +197,8 @@ def get_projects():
     conn.close()
 
     return jsonify(projects)
-
-# had to research a lot because the select fields would not show the projects for the classes
-# copied this from stackoverflow because I have very little knowledge about javascript/jsonify
+    # had to research a lot because the select fields would not show the projects for the classes
+    # copied this from stackoverflow because I have very little knowledge about javascript/jsonify
 
 @app.route('/todos', methods=['GET', 'POST'])
 def todos():
@@ -262,9 +256,6 @@ def delete_entry():
         return 'Error: Invalid entry type'
 
     return redirect(request.referrer)
-
-
-
 
 
 if __name__ == '__main__':
