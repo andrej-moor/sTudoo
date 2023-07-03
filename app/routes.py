@@ -1,4 +1,6 @@
-from flask import Flask, jsonify, render_template, url_for, request, redirect, session, flash
+from app import app
+
+from flask import jsonify, render_template, url_for, request, redirect, session, flash
 
 import sqlite3
 
@@ -20,8 +22,6 @@ from database import (
     delete_todo,
     get_first_name
 )
-
-app = Flask(__name__)
 
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=24)
 app.secret_key = 'blablabla'
