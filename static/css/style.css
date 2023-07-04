@@ -313,7 +313,7 @@ input {
 }
 
 input[type="date"]{
-  max-width: 160px;
+  max-width: 180px;
 }
 
 /* ==== ADD LIST ITEMS FORM ====*/
