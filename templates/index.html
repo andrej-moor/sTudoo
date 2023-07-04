@@ -19,21 +19,21 @@
   <div class="content">
     <h1>Outline</h1>
     <ul style="list-style: none;">
-      <li><a href="#what_is_studoo">1. What is sTudoo?</a></li>
-      <li><a href="#value_proposition_problem">2. Value Proposition (Problem/Solution)</a></li>
-      <li><a href="#requirements_analysis">3. Requirements Analysis</a></li>
-      <li><a href="#design_decisions">4. Design Decisions</a></li>
-      <li><a href="#jinja_templates_main_layout">5.Jinja Templates & Main Layout</a></li>
-      <li><a href="#css_structure">6.Data Model</a></li>
-      <li><a href="#main_functions">7. Main Functions (Live Session)</a></li>
+      <!-- <li><a href="#what_is_studoo">1. What is sTudoo?</a></li> -->
+      <li><a href="#value_proposition_problem">1. Value Proposition (Problem/Solution)</a></li>
+      <li><a href="#requirements_analysis">2. Requirements Analysis</a></li>
+      <li><a href="#design_decisions">3. Design Decisions</a></li>
+      <li><a href="#jinja_templates_main_layout">4. Templates & Main Layout</a></li>
+      <li><a href="#css_structure">5. Data Model</a></li>
+      <li><a href="#main_functions">6. Main Functions (Live Session)</a></li>
       <!-- <li><a href="#user_reg">6.2.1. User Registration, Login & Account Deletion</a></li>
       <li><a href="#classes">6.2.2. Classes, Projects & Todos</a></li> -->
-      <li><a href="#optional_features">8. Optional Features</a></li>
+      <li><a href="#optional_features">7. Optional Features</a></li>
   </ul>
-  <a href="#what_is_studoo" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+  <a href="#value_proposition_problem" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
 
-<!-- WHAT IS STUDOO ? -->
+<!-- WHAT IS STUDOO ?
 
 <section id="what_is_studoo" class="hero bg-white-bricks">
   <div class="content">
@@ -41,7 +41,7 @@
   <h2 class="italic">sTudoo is a webapp written in python which <strong>helps students to organize their class related projects, keep the overview and stay on track with deadlines</strong>.</h2>
   <a href="https://github.com/andrej-moor/sTudoo"><i class="fa-brands fa-github fa-3x"></i></a>
   <a href="#value_proposition_problem" class="btn"><i class="fa-solid fa-chevron-down "></i></a>
-</section>
+</section> -->
 
 <!-- VALUE PROPOSITION - THE PROBLEM -->
 <section id="value_proposition_problem" class="hero bg-white-bricks">
@@ -88,17 +88,19 @@
   <div class="content">
   <h1>Design Decisions</h1>
   <p>Why we did what we did?</p>
-  <figure>
-    <img style="background-color: #1f1f1f85" src="/static/images/studoo_features.svg" alt="sTudoo Features">
-    <figcaption>Overview of sTudoo's main Features</figcaption>
-  </figure>
+  <ul>
+    <li>1x CSS file vs. CSS Framework</li>
+    <li>Unique Templates vs. Main Layout</li>
+    <li>1-n Cardinality in Data Model</li>
+    <li>Modularization vs. 1x app.py File</li>
+  </ul>
   <a href="#jinja_templates_main_layout" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
 
 <!-- FRONTEND: JINJA TEMPLATES & MAIN LAYOUT  -->
 <section id="jinja_templates_main_layout" class="hero bg-white-bricks">
   <div class="content">
-  <h1>Frontend: Jinja Templates & Main Layout</h1>
+  <h1>Jinja Templates & Main Layout</h1>
   <div>
     <figure>
       <img src="/static/images/templates_overview.png" alt="Templates Overview">
@@ -141,7 +143,7 @@
 
 <section id="data_model" class="hero bg-white-bricks">
   <div class="content">
-  <h1>Data Model & Database Implementation</h1>
+  <h1>Data Model</h1>
   <div>
     <figure>
       <img src="/static/images/erm_student_classes.png" alt="Data Model">
@@ -167,6 +169,12 @@
   <div class="content">
   <h1>Main Functions (Live Session)</h1>
   <div>
+    <figure>
+      <img src="https://i.gifer.com/3rCC.gif" alt="Matrix Code">
+    </figure>
+  </div>
+  
+  <!-- <!-- <div>
     <div style="margin-top: 30px;">
       <h2 style="padding-bottom: 10px;" class="text-underline-red">User</h2>
       <ul style="font-size: 1.8rem;" class="italic">
@@ -187,9 +195,9 @@
       </ul>
     </div>
     <p>*In-The-Making</p>
-  </div>
+  </div> -->
   <div class="flex-container">
-    <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> Live Session</a>
+    <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> Let's Go!</a>
   </div>
 </section>
 
