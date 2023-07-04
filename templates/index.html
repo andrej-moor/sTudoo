@@ -23,15 +23,12 @@
       <li><a href="#value_proposition_problem">2. Value Proposition (Problem/Solution)</a></li>
       <li><a href="#requirements_analysis">3. Requirements Analysis</a></li>
       <li><a href="#design_decisions">4. Design Decisions</a></li>
-      <li><a href="#jinja_templates_main_layout">5. Frontend</a></li>
-      <li><a href="#jinja_templates_main_layout">5.1. Jinja Templates & Main Layout</a></li>
-      <li><a href="#css_structure_and_components">5.2. CSS Structure & Components</a></li>
-      <li><a href="#">6. Backend</a></li>
-      <li><a href="#css_structure">6.1. Data Model & Database Implementation</a></li>
-      <li><a href="#main_functions">6.2. Main Functions</a></li>
-      <li><a href="#user_reg">6.2.1. User Registration, Login & Account Deletion</a></li>
-      <li><a href="#classes">6.2.2. Classes, Projects & Todos</a></li>
-      <li><a href="#inthemaking_optional">7. In-the- Making & Optional Features</a></li>
+      <li><a href="#jinja_templates_main_layout">5.Jinja Templates & Main Layout</a></li>
+      <li><a href="#css_structure">6.Data Model</a></li>
+      <li><a href="#main_functions">7. Main Functions (Live Session)</a></li>
+      <!-- <li><a href="#user_reg">6.2.1. User Registration, Login & Account Deletion</a></li>
+      <li><a href="#classes">6.2.2. Classes, Projects & Todos</a></li> -->
+      <li><a href="#optional_features">8. Optional Features</a></li>
   </ul>
   <a href="#what_is_studoo" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
@@ -82,6 +79,19 @@
     <img style="background-color: #1f1f1f85" src="/static/images/studoo_features.svg" alt="sTudoo Features">
     <figcaption>Overview of sTudoo's main Features</figcaption>
   </figure>
+  <a href="#design_decisions" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+</section>
+
+<!-- Design Decisions  -->
+
+<section id="design_decisions" class="hero bg-white-bricks">
+  <div class="content">
+  <h1>Design Decisions</h1>
+  <p>Why we did what we did?</p>
+  <figure>
+    <img style="background-color: #1f1f1f85" src="/static/images/studoo_features.svg" alt="sTudoo Features">
+    <figcaption>Overview of sTudoo's main Features</figcaption>
+  </figure>
   <a href="#jinja_templates_main_layout" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
 
@@ -100,11 +110,11 @@
     </figure>
   </div>
   <div class="flex-container">
-    <a href="#css_structure_and_components" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+    <a href="#data_model" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
 </section>
 
-<!-- FRONTEND: CSS STRUCTURE AND COMPONENTS -->
+<!-- FRONTEND: CSS STRUCTURE AND COMPONENTS
 <section id="css_structure_and_components" class="hero bg-white-bricks">
   <div class="content">
   <h1>Frontend: CSS Structure & Components</h1>
@@ -125,11 +135,11 @@
   <div class="flex-container">
     <a href="#data_model_database_implementation" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-</section>
+</section> -->
 
 <!-- DATA MODEL & DATABASE IMPLEMENTATION -->
 
-<section id="data_model_database_implementation" class="hero bg-white-bricks">
+<section id="data_model" class="hero bg-white-bricks">
   <div class="content">
   <h1>Data Model & Database Implementation</h1>
   <div>
@@ -141,17 +151,49 @@
       <img src="/static/images/erm_project_todos.png" alt="Data Model">
       <figcaption>ERM: Projects - Todos</figcaption>
     </figure>
-    <figure>
+    <!-- <figure>
       <img src="/static/images/create_tables_functions.png" alt="Data Model">
       <figcaption><code>database.py</code>: Create Tables Functions</figcaption>
-    </figure>
+    </figure> -->
   </div>
   <div class="flex-container">
-    <a href="#user_reg" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
+    <a href="#main_functions" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
 </section>
 
-<!-- USER REGISTRATION -->
+<!-- MAIN FUNCTIONS -->
+
+<section id="main_functions" class="hero bg-white-bricks">
+  <div class="content">
+  <h1>Main Functions (Live Session)</h1>
+  <div>
+    <div style="margin-top: 30px;">
+      <h2 style="padding-bottom: 10px;" class="text-underline-red">User</h2>
+      <ul style="font-size: 1.8rem;" class="italic">
+        <li>User Registration</li>
+        <li>User Loging</li>
+        <li>User Deletion</li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="padding-bottom: 10px;" class="text-underline-green">Classes, Projects & Todos</h2>
+      <ul style="font-size: 1.8rem;" class="italic">
+        <li>Add classes, projects & todos</li>
+        <li>Delete classes, projects & todos</li>
+        <li>Edit classes, projects & todos*</li>
+        <li>Mark as Checked*</li>
+        <li>Show Urgency of projects & todos*</li>
+        <li>Filter Functions (All-Class-Todos, All-Class-Projects)*</li>
+      </ul>
+    </div>
+    <p>*In-The-Making</p>
+  </div>
+  <div class="flex-container">
+    <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> Live Session</a>
+  </div>
+</section>
+
+<!-- USER REGISTRATION
 
 <section id="user_reg" class="hero bg-white-bricks">
   <div class="content">
@@ -169,9 +211,9 @@
   <div class="flex-container">
     <a href="#user_log" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-</section>
+</section> -->
 
-<!-- USER LOGIN -->
+<!-- USER LOGIN
 
 <section id="user_log" class="hero bg-white-bricks">
   <div class="content">
@@ -189,9 +231,9 @@
   <div class="flex-container">
     <a href="#user_del" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-</section>
+</section> -->
 
-<!-- USER Account Deletion -->
+<!-- USER Account Deletion
 
 <section id="user_del" class="hero bg-white-bricks">
   <div class="content">
@@ -210,9 +252,9 @@
     <a href="#classes" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
     <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> User Registration</a>
   </div>
-</section>
+</section> -->
 
-<!-- CLASSES -->
+<!-- CLASSES
 
 <section id="classes" class="hero bg-white-bricks">
   <div class="content">
@@ -230,9 +272,9 @@
   <div class="flex-container">
     <a href="#projects_functions" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-</section>
+</section> -->
 
-<!-- PROJECTS Functions -->
+<!-- PROJECTS Functions
 
 <section id="projects_functions" class="hero bg-white-bricks">
   <div class="content">
@@ -250,9 +292,9 @@
   <div class="flex-container">
     <a href="#projects_overview" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-</section>
+</section> -->
 
-<!-- PROJECTS Overview -->
+<!-- PROJECTS Overview
 
 <section id="projects_overview" class="hero bg-white-bricks">
   <div class="content">
@@ -266,9 +308,9 @@
   <div class="flex-container">
     <a href="#todos" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-</section>
+</section> -->
 
-<!-- TODOS OVERVIEW -->
+<!-- TODOS OVERVIEW
 
 <section id="todos" class="hero bg-white-bricks">
   <div class="content">
@@ -286,9 +328,9 @@
   <div class="flex-container">
     <a href="#delete_entry" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
   </div>
-</section>
+</section> -->
 
-<!-- DELETE ENTRIES -->
+<!-- DELETE ENTRIES
 
 <section id="delete_entry" class="hero bg-white-bricks">
   <div class="content">
@@ -303,26 +345,15 @@
     <a href="#inthemaking_optional" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
     <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> User Registration</a>
   </div>
-</section>
+</section> -->
 
-<!-- In-the- Making & Optional Features -->
-<section id="inthemaking_optional" class="hero bg-white-bricks">
+<!-- Optional Features -->
+
+<section id="optional_features" class="hero bg-white-bricks">
   <div class="content">
-  <h1>Anything Else?</h1>
+  <h1>Optional Features</h1>
   <div style="max-width: 1200 px; margin-top: 30px;" class="flex-container">
-    <div style="width: 500px;">
-      <h2 style="padding-bottom: 10px;" class="text-underline-red">In-the-Making</h2>
-      <ul style="font-size: 1.8rem;" class="italic">
-        <li>Modularization of App</li>
-        <li>Mark classes, projects & todos as checked</li>
-        <li>Implement Filter Routes for 'All Todos from a Call/Project'</li>
-        <li>Implement Filter Routes for 'All Todos from a Call/Project'</li>
-        <li>Colour based view of comming projects and todos (red, orange & green) </li>
-        <li>Pull userdata into user account overview </li>
-      </ul>
-    </div>
     <div style="width: 500px; margin-left: 50px;">
-      <h2 style="padding-bottom: 10px;" class="text-underline-green">Optional Features</h2>
       <ul style="font-size: 1.8rem;" class="italic">
         <li>Pull classes via API from Universities</li>
         <li>Make app fully responsive</li>
@@ -340,7 +371,7 @@
 
 <section id="the_end" class="hero bg-white-bricks">
   <div class="content">
-  <h1>Thank You for your Attentions!</h1>
+  <h1>Thank You for your Attention!</h1>
   <div>
     <figure>
       <img src="https://media.tenor.com/6DUyjTKrrwAAAAAC/bh187-spongebob.gif" alt="Add Classes Form">
