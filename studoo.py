@@ -64,7 +64,7 @@ def sign_up():
 
     # POST: this block of code is only run when a form is submitted (in sign_up.html)
     # sign_up has a form method POST that submits the user input
-    # call insert_user to store the user input to users.db
+    # call insert_user to store the user input to classes.db
     # redirect to signed_up when sign_up is successful
     # otherwise show sign_up page to try again
 
@@ -75,25 +75,23 @@ def signed_up():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # code is only run when login form is submitted
+        # dieser code wird nur ausgeführt, wenn eine post methode getriggert wird (anmeldeformular abschicken)
         email = request.form['email']
         password = request.form['password']
-        # receive data from request form
+        # daten aus dem request form empfangen
         conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
-        # sql statement to get user input (email, password) from database
+        # sql abfrage nach email und passwort
         user = cursor.fetchone()
         conn.close()
 
         if user:
             session['user_id'] = user[0] 
             session.permanent = True
-            # Store user ID in the session, user id is stored in database
-            flash('You have successfully logged in!', 'success')
+            # user id in session speichern
             return redirect(url_for('logedin'))
         else:
-            flash('Invalid credentials. Please try again.', 'error')
             return redirect(url_for('login'))
     return render_template('login.html', title="Login")
 
@@ -102,9 +100,6 @@ def logedin():
     if 'user_id' in session:
         user_id = session['user_id']
         first_name = get_first_name(user_id)
-        if 'add_todo' in request.form:
-            todo_name = request.form['todo_name']
-            insert_todo(user_id, todo_name)
         return render_template('logedin.html', title="You're Loged in", user_id=user_id, first_name=first_name)
     else:
         return redirect(url_for('login'))
@@ -152,9 +147,7 @@ def classes():
     conn.close()
 
     return render_template('classes.html', title="Your Classes", class_list=class_list)
-    #return render_template('classes.html', title="Your Classes",
-    #class_list=['Objektorientierte Programierung 1',
-    #'Objektorientierte Programmierung 2','Datenbanken', 'Programmierung von Webapplikationen'])
+
 
 @app.route('/projects', methods=['GET', 'POST'])
 def projects():
@@ -165,22 +158,19 @@ def projects():
                 project_name = request.form.get('project_name')
                 class_id = request.form.get('class_id')
                 insert_project(user_id, class_id, project_name)
-        # Retrieve the available classes from the database
+                
+        
         conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
         cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
         classes = cursor.fetchall()
-        # Retrieve the available projects from the database
+        # alle verfügbaren classes des users im dropdown anzeigen
         cursor.execute('SELECT project_id, name FROM projects WHERE user_id = ?', (user_id,))
         projects = cursor.fetchall()
+        # alle projects direkt nach dem hinzufügen anzeigen
         conn.close()
         return render_template('projects.html', title="Your Projects", classes=classes, project_list=projects)
 
-
-
-        #return render_template('projects.html', title="Your Projects", class_count=class_count, classes=classes, project_list=['Hausarbeit Grundlagen der WI',
-        # user_id is not in session, redirect to login site
-        # return redirect(url_for('login'))
 
 @app.route('/get_projects')
 def get_projects():
@@ -206,28 +196,30 @@ def todos():
                 class_id = request.form.get('class_id')
                 project_id = request.form.get('project_id')
                 insert_todo(user_id, class_id, project_id, todo_name)
-        # Retrieve the available classes from the database
+                
         conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
         cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
         classes = cursor.fetchall()
-        # Retrieve the available projects for each class
+        # alle verfügbaren classes für den user anzeigen (im dropdown)
         projects_by_class = {}
+        # ich lege ein python dictionary an, das die einzelnen projekte mit der dazugehörigen
+        # class_id verknüpft, sodass nur die projects einer class angezeigt werden
+        # zb alle projects mit foreign key class_id = 1 werden angezeigt
         for class_id, class_name in classes:
             cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ? AND user_id = ?', (class_id, user_id))
             projects = cursor.fetchall()
             projects_by_class[class_id] = projects
-        # Retrieve the todos from the database
+            # wähle für jede class_id und name das oder mehrere dazugehörige projects aus
+            # speichere sie im dictionary 
         cursor.execute('SELECT todo_id, name FROM todos WHERE user_id = ?', (user_id,))
         todos = cursor.fetchall()
         conn.close()
         return render_template('todos.html', title="Your Todos", classes=classes, projects_by_class=projects_by_class, todo_list=todos)
-    # user_id is not in session, redirect to login site
+
     return redirect(url_for('login'))
+    # falls user nicht mehr eingeloggt ist, redirect zu login page
 
-
-
-       # return render_template('todos.html', title="Your Todos", class_count=class_count, classes=classes, projects=projects, selected_class_id=request.form.get('class_id'), todo_list=['Recherche: Thema Hausarbeit',
 
 @app.route('/delete_entry', methods=['POST'])
 def delete_entry():
