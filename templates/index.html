@@ -19,29 +19,16 @@
   <div class="content">
     <h1>Outline</h1>
     <ul style="list-style: none;">
-      <!-- <li><a href="#what_is_studoo">1. What is sTudoo?</a></li> -->
       <li><a href="#value_proposition_problem">1. Value Proposition (Problem/Solution)</a></li>
       <li><a href="#requirements_analysis">2. Requirements Analysis</a></li>
       <li><a href="#design_decisions">3. Design Decisions</a></li>
       <li><a href="#jinja_templates_main_layout">4. Templates & Main Layout</a></li>
       <li><a href="#css_structure">5. Data Model</a></li>
       <li><a href="#main_functions">6. Main Functions (Live Session)</a></li>
-      <!-- <li><a href="#user_reg">6.2.1. User Registration, Login & Account Deletion</a></li>
-      <li><a href="#classes">6.2.2. Classes, Projects & Todos</a></li> -->
       <li><a href="#optional_features">7. Optional Features</a></li>
   </ul>
   <a href="#value_proposition_problem" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
 </section>
-
-<!-- WHAT IS STUDOO ?
-
-<section id="what_is_studoo" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>What is sTudoo?</h1>
-  <h2 class="italic">sTudoo is a webapp written in python which <strong>helps students to organize their class related projects, keep the overview and stay on track with deadlines</strong>.</h2>
-  <a href="https://github.com/andrej-moor/sTudoo"><i class="fa-brands fa-github fa-3x"></i></a>
-  <a href="#value_proposition_problem" class="btn"><i class="fa-solid fa-chevron-down "></i></a>
-</section> -->
 
 <!-- VALUE PROPOSITION - THE PROBLEM -->
 <section id="value_proposition_problem" class="hero bg-white-bricks">
@@ -116,29 +103,6 @@
   </div>
 </section>
 
-<!-- FRONTEND: CSS STRUCTURE AND COMPONENTS
-<section id="css_structure_and_components" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>Frontend: CSS Structure & Components</h1>
-  <div style="max-width: 900px;" class="flex-container">
-    <figure>
-      <img src="/static/images/css_structure.png" alt="CSS Structure">
-      <figcaption>CSS Table of Content</figcaption>
-    </figure>
-    <ul style="margin-left: 60px; margin-top: 70px;" class="italic">
-      <li>1x CSS file</li>
-      <li>1x link in head section of the template of the main layout</li>
-      <li>No CSS framework like Bootstrap or Tailwind, but framework-like usage of classes to avoid repetative CSS code</li>
-      <li>3x backgrounds in the <code>.hero</code> container</li>
-      <li>Usage of <em>Font Awesome</em> and <em>Google Material</em> Icons</li>
-      <li>Usage of <em>Google Fonts</em></li>
-    </ul>
-  </div>
-  <div class="flex-container">
-    <a href="#data_model_database_implementation" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-  </div>
-</section> -->
-
 <!-- DATA MODEL & DATABASE IMPLEMENTATION -->
 
 <section id="data_model" class="hero bg-white-bricks">
@@ -153,10 +117,6 @@
       <img src="/static/images/erm_project_todos.png" alt="Data Model">
       <figcaption>ERM: Projects - Todos</figcaption>
     </figure>
-    <!-- <figure>
-      <img src="/static/images/create_tables_functions.png" alt="Data Model">
-      <figcaption><code>database.py</code>: Create Tables Functions</figcaption>
-    </figure> -->
   </div>
   <div class="flex-container">
     <a href="#main_functions" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
@@ -173,187 +133,10 @@
       <img src="https://i.gifer.com/3rCC.gif" alt="Matrix Code">
     </figure>
   </div>
-  
-  <!-- <!-- <div>
-    <div style="margin-top: 30px;">
-      <h2 style="padding-bottom: 10px;" class="text-underline-red">User</h2>
-      <ul style="font-size: 1.8rem;" class="italic">
-        <li>User Registration</li>
-        <li>User Loging</li>
-        <li>User Deletion</li>
-      </ul>
-    </div>
-    <div>
-      <h2 style="padding-bottom: 10px;" class="text-underline-green">Classes, Projects & Todos</h2>
-      <ul style="font-size: 1.8rem;" class="italic">
-        <li>Add classes, projects & todos</li>
-        <li>Delete classes, projects & todos</li>
-        <li>Edit classes, projects & todos*</li>
-        <li>Mark as Checked*</li>
-        <li>Show Urgency of projects & todos*</li>
-        <li>Filter Functions (All-Class-Todos, All-Class-Projects)*</li>
-      </ul>
-    </div>
-    <p>*In-The-Making</p>
-  </div> -->
   <div class="flex-container">
     <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> Let's Go!</a>
   </div>
 </section>
-
-<!-- USER REGISTRATION
-
-<section id="user_reg" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>User Registration</h1>
-  <div>
-    <figure>
-      <img src="/static/images/sign_up_function.png" alt="Data Model">
-      <figcaption>Sign-Up Function</figcaption>
-    </figure>
-    <figure>
-      <img src="/static/images/sign_up_form.png" alt="Data Model">
-      <figcaption>Sign-Up Form</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#user_log" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-  </div>
-</section> -->
-
-<!-- USER LOGIN
-
-<section id="user_log" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>User Login</h1>
-  <div>
-    <figure>
-      <img src="/static/images/login_function.png" alt="Data Model">
-      <figcaption>Login Function</figcaption>
-    </figure>
-    <figure>
-      <img src="/static/images/login_form.png" alt="Data Model">
-      <figcaption>Login Form</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#user_del" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-  </div>
-</section> -->
-
-<!-- USER Account Deletion
-
-<section id="user_del" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>User Account (Deletion)</h1>
-  <div>
-    <figure>
-      <img src="/static/images/account_functions.png" alt="User Account Deletion">
-      <figcaption>Account Functions</figcaption>
-    </figure>
-    <figure>
-      <img src="/static/images/account_delete.png" alt="Data Model">
-      <figcaption>User Account Date with Delete Button</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#classes" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-    <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> User Registration</a>
-  </div>
-</section> -->
-
-<!-- CLASSES
-
-<section id="classes" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>Classes</h1>
-  <div>
-    <figure>
-      <img src="/static/images/classes_function.png" alt="User Classes Function">
-      <figcaption>Classes Function</figcaption>
-    </figure>
-    <figure>
-      <img src="/static/images/add_classes_form_and_overview.png" alt="Add Classes Form">
-      <figcaption>Add Classes Form & Overview</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#projects_functions" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-  </div>
-</section> -->
-
-<!-- PROJECTS Functions
-
-<section id="projects_functions" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>Projects</h1>
-  <div>
-    <figure>
-      <img src="/static/images/projects_function.png" alt="User Classes Function">
-      <figcaption>Projects Function</figcaption>
-    </figure>
-    <figure>
-      <img style="height: 250px" src="/static/images/get_projects_function.png" alt="User Classes Function">
-      <figcaption>Get Projects Function</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#projects_overview" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-  </div>
-</section> -->
-
-<!-- PROJECTS Overview
-
-<section id="projects_overview" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>Projects</h1>
-  <div>
-    <figure>
-      <img src="/static/images/add_projects_form_and_overview.png" alt="Add Classes Form">
-      <figcaption>Add Projects Form & Overview</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#todos" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-  </div>
-</section> -->
-
-<!-- TODOS OVERVIEW
-
-<section id="todos" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>Todos</h1>
-  <div>
-    <figure>
-      <img src="/static/images/todos_functions.png" alt="Add Classes Form">
-      <figcaption>Todos Function</figcaption>
-    </figure>
-    <figure>
-      <img src="/static/images/add_todos_form_and_overview.png" alt="Add Classes Form">
-      <figcaption>Add Todos Form & Overview</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#delete_entry" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-  </div>
-</section> -->
-
-<!-- DELETE ENTRIES
-
-<section id="delete_entry" class="hero bg-white-bricks">
-  <div class="content">
-  <h1>Delete Entry Function</h1>
-  <div>
-    <figure>
-      <img src="/static/images/delete_entry.png" alt="Add Classes Form">
-      <figcaption>Delete Entry Function</figcaption>
-    </figure>
-  </div>
-  <div class="flex-container">
-    <a href="#inthemaking_optional" class="btn"><i class="fa-solid fa-chevron-down"></i></a>
-    <a href="/sign_up" class="btn"><i class="fa-solid fa-chevron-right"></i> User Registration</a>
-  </div>
-</section> -->
 
 <!-- Optional Features -->
 
