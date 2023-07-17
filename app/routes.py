@@ -6,7 +6,7 @@ import sqlite3
 
 from datetime import timedelta
 
-from database import (
+from app.database import (
     CLASSES_DB,
     create_users_table,
     create_classes_table,

@@ -1,10 +1,10 @@
 from flask import Blueprint, render_template, redirect, request, jsonify, session, url_for
-from database import CLASSES_DB, delete_class, delete_project, delete_todo, insert_class, insert_project, insert_todo
+
+from app.database import CLASSES_DB, delete_class, delete_project, delete_todo, insert_class, insert_project, insert_todo
+
 import sqlite3
 
-
 # ==== LISTS RELATED ROUTES ====
-
 
 entries_bp = Blueprint('entries', __name__)
 
