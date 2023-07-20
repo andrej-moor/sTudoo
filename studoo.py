@@ -184,7 +184,6 @@ def get_projects():
     return jsonify(projects)
 
     # had to research a lot because the select fields would not show the projects for the classes
-    # copied this from stackoverflow because I have very little knowledge about javascript/jsonify
 
 @app.route('/todos', methods=['GET', 'POST'])
 def todos():
