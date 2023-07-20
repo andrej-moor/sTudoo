@@ -23,4 +23,21 @@
 - [] Pull user data into user account
 
 # App Structure
-- [] Database in App Folder
+- [?] Database in App Folder
+- [!] Passwort Hash in der Datenbank
+- [!] User Evaluation 1-2x Topics
+- [!] Peer review (Partner Bewertung) - Team Evaluation geht nicht in die Bewertung an
+- [!] Readme.md mit Anleitung wie man die App zum laufen bringt (Beispiel im starter Repo)
+- [!] Gitignore (venv, instance, __pycache__ )
+  - [-] requirements.txt datei mit den modulen (pip freez)
+- [-] Link der Docs in der Präsentation
+
+# Submission
+## Moodel
+- Link für Repo
+- Link für Docs 
+## Github
+- Link in Repo für Docs
+
+# Copyright
+- [!] Autor angeben und Link einfügen
