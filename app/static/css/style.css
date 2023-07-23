@@ -258,9 +258,6 @@ img {
   z-index: 3;
 }
 
-.checked {
-
-}
 /* ============ FORMS =============== */
 
 #form_container {
@@ -362,8 +359,6 @@ tr {
 td {
   padding: 10px 15px;
   font-size: 20px;
-  border-radius: 5px;
-  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
 }
 
 table tr td a, table tr td form button{
