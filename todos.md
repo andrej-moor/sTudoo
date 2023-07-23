@@ -15,9 +15,6 @@
 - [?] Function Link to All Todos of Class (Create new List)
 - [?] Del (Link  HTML)
 
-# User Account
-- [] Pull user data into user account
-
 # App Structure
 - [?] Database in App Folder
 - [!] Passwort Hash in der Datenbank
