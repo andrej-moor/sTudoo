@@ -70,9 +70,6 @@ def create_todos_table():
     conn.commit()
     conn.close()
 
-    
-   
-
 # ==== USER ACCOUNT RELATED ====
 def insert_user(first_name, last_name, email, password):
     conn = sqlite3.connect(CLASSES_DB)
@@ -108,9 +105,30 @@ def get_first_name(user_id):
         return result[0]
     else:
         return None
-    
-    #function to show first name on welcome page e.g. "Hey [first_name]"
-    # result [0] = 1. Eintrag = first_name
+
+def get_last_name(user_id):
+    conn = sqlite3.connect(CLASSES_DB)
+    cursor = conn.cursor()
+    cursor.execute('SELECT last_name FROM users WHERE id = ?', (user_id,))
+    result = cursor.fetchone()
+    conn.close()
+
+    if result:
+        return result[0]
+    else:
+        return None
+
+def get_email(user_id):
+    conn = sqlite3.connect(CLASSES_DB)
+    cursor = conn.cursor()
+    cursor.execute('SELECT email FROM users WHERE id = ?', (user_id,))
+    result = cursor.fetchone()
+    conn.close()
+
+    if result:
+        return result[0]
+    else:
+        return None
  
 def delete_user(email, password):
     conn = sqlite3.connect(CLASSES_DB)

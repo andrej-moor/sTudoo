@@ -20,7 +20,9 @@ from app.database import (
     delete_class,
     delete_project,
     delete_todo,
-    get_first_name
+    get_first_name,
+    get_last_name,
+    get_email,
 )
 
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=24)
@@ -33,7 +35,6 @@ create_users_table()
 create_classes_table()
 create_projects_table()
 create_todos_table()
-
 
 # ==== HOME, IMPRINT, PRIVACY ==== 
 @app.route("/")
@@ -112,7 +113,12 @@ def logout():
 
 @app.route('/useraccount')
 def useraccount():
-    return render_template('user_account.html', title="You're User Account")
+    if 'user_id' in session:
+        user_id = session['user_id']
+        first_name = get_first_name(user_id)
+        last_name = get_last_name(user_id)
+        email = get_email(user_id)
+        return render_template('user_account.html', title="You're User Account", user_id=user_id, first_name=first_name, last_name=last_name, email=email)
 
 @app.route('/delete_account', methods=['POST'])
 def delete_account():

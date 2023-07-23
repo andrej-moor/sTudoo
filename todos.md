@@ -1,7 +1,3 @@
-- Haben wir die Mindestanforderungen jetzt schon erfühlt? J/N
-
-- Was machen wir und was nicht?
-
 # Classes
 - [-] Checked Function
 - [?] Edit Function
