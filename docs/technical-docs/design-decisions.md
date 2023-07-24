@@ -52,7 +52,7 @@ Further bolow you can find the pros & cons for the taken decision.
 |+ custom coloring & layout |- bloated code with a lot of classes|
 | responsive design is not a requirement |+ responsive design|
 
-## 02: Modularization vs. 1x app.py File
+## 02: Modularization vs. One app.py File
 
 ### Meta
 
@@ -64,11 +64,11 @@ Updated
 
 ### Problem statement
 
-One of the main design decisions for the backend is whether a single app.py file should be used or whether it's worth to seperate the code in several files and import variables and function.
+One of the main design decisions for the backend is whether a single app.py file should be used or whether it's worth to seperate the code in several files, create an app package and import variables and function from it.
 
 ### Decision
 
-The decision that has been taken is to modularize the code. We decided to create several .py-files that with all static files are located in the `/app/` directory which in itself acts as package. The main argument is to keep the code clean and to ensure the seperation of concerns.
+The decision that has been taken is to modularize the code. We decided to create several .py-files that with all static files are located in the `app` directory which in itself acts as package. The main argument is to keep the code clean and to ensure the seperation of concerns.
 
 The decision was made by:
 
