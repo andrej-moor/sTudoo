@@ -4,8 +4,7 @@ parent: Technical Docs
 nav_order: 5
 ---
 
-Andy
-{: .label }
+Jana {: .label } & Andy {: .label }
 
 # Design decisions
 {: .no_toc }
@@ -53,4 +52,34 @@ Further bolow you can find the pros & cons for the taken decision.
 |+ custom coloring & layout |- bloated code with a lot of classes|
 | responsive design is not a requirement |+ responsive design|
 
----
+## 02: Modularization vs. 1x app.py File
+
+### Meta
+
+Status
+: **Decided**
+
+Updated
+: 24-Jul-2023
+
+### Problem statement
+
+One of the main design decisions for the backend is whether a single app.py file should be used or whether it's worth to seperate the code in several files and import variables and function.
+
+### Decision
+
+The decision that has been taken is to modularize the code. We decided to create several .py-files that with all static files are located in the `/app/` directory which in itself acts as package. The main argument is to keep the code clean and to ensure the seperation of concerns.
+
+The decision was made by:
+
+Jana {: .label } & Andy {: .label }
+
+### Regarded options
+
+Further bolow you can find the pros & cons for the taken decision.
+
+|1x app.py file |Modularized app package|
+|---------|---------------------|
+|+ one file |- many files |
+|- bloated code file with config, database and view functions  |+ seperation of concerns|
+|- not cleare where to find specific app functions |+ naming of .py files (i.e. routes.py) makes it easy to keep the overview|
