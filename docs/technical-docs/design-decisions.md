@@ -4,10 +4,10 @@ parent: Technical Docs
 nav_order: 5
 ---
 
-[Jane Dane]
+Andy
 {: .label }
 
-# [Design decisions]
+# Design decisions
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,26 +19,38 @@ nav_order: 5
 {:toc}
 </details>
 
-## 01: [Title]
+## 01: Vanilla CSS vs. CSS-Framework/Library
 
 ### Meta
 
 Status
-: **Work in progress** - Decided - Obsolete
+: **Decided**
 
 Updated
-: DD-MMM-YYYY
+: 24-Jul-2023
 
 ### Problem statement
 
-[Describe the problem to be solved or the goal to be achieved. Include relevant context information.]
+One of the main design decisions for the UI is whether a CSS-Framework should be used or if plain vanilla CSS is a sufficient solution.
 
 ### Decision
 
-[Describe **which** design decision was taken for **what reason** and by **whom**.]
+The decision that has been taken is: Plain Vanila CSS. The main arguments for plain CSS are, that a framework like Bootstrap or Tailwind has to be learned which is time consuming. Since sTudoo is a small app and there are no requirements for responsive design, the plain CSS code is more flexible, can be quickly customized and faster to implement than learning all the necessary classes to achive the same goal with a CSS framework.
+
+The decision was made by:
+
+Andy
+{: .label }
 
 ### Regarded options
 
-[Describe any possible design decision that will solve the problem. Assess these options, e.g., via a simple pro/con list.]
+Further bolow you can find the pros & cons for the taken decision.
+
+|Plain CSS|CSS-Framework/Library|
+|---------|---------------------|
+|+ inhouse competence|- learning curve |
+|+ cleaner html code|- bloated code with a lot of classes|
+|+ custom coloring & layout |- bloated code with a lot of classes|
+| responsive design is not a requirement |+ responsive design|
 
 ---
