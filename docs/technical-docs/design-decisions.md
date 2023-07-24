@@ -4,7 +4,8 @@ parent: Technical Docs
 nav_order: 5
 ---
 
-Jana {: .label } & Andy {: .label }
+Jana {: .label }
+Andy {: .label }
 
 # Design decisions
 {: .no_toc }
@@ -72,7 +73,8 @@ The decision that has been taken is to modularize the code. We decided to create
 
 The decision was made by:
 
-Jana {: .label } & Andy {: .label }
+Jana {: .label }
+Andy {: .label }
 
 ### Regarded options
 
