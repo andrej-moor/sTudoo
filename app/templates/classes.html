@@ -22,11 +22,25 @@
     <!-- Classes Overview -->
  
     <table>
-    {% for class_item in class_list %}
+      {% for class_item in class_list %}
       <tr>
+      <td>
+        <form method="POST" action="{{ url_for('classes') }}">
+          <input type="hidden" name="class_id_to_mark" value="{{ class_item[0] }}">
+            <!-- Verstecktes Eingabefeld mit class ID, die markiert werden soll -->
+          <button type="submit" name="mark_completed">
+            <!--Check (Haken) als button, um die POST methode abzusenden -->
+          <a href="#" class="project-link{{ ' checked' if class_item[2] == 1 else '' }}">{{ class_item[1] }}</a>
+            <!-- Falls die Klasse als abgeschlossen markiert ist (completed == 1),
+              wird die "checked" Klasse hinzugefügt, um den Text durchzustreichen
+              (class_item[2] da in der Route class_id weggelassen wird und das abgefragte Tupel
+              nur 3 Einträge hat, weshalb completed = class_item[2] wird,
+               -->
+          <i class="fa-solid fa-check"></i>
+          </button>
+      </form>
+    </td>
         <td><a href="#" class="pen"><i class="fa-sharp fa-solid fa-check-to-slot"></i></a></td>
-        <td><a href="#" class="project-link checked">{{ class_item[1] }}</a></td>
-        <td><a href="#" class="checkmark"><i class="fa-solid fa-check"></i></a></td>
         <td><a href="#" class="pen"><i class="fa-solid fa-pen"></i></a></td>
         <td>
           <form method="POST" action="{{ url_for('delete_entry') }}">

@@ -136,22 +136,38 @@ def delete_site():
 
 @app.route('/classes', methods=['GET', 'POST'])
 def classes():
-    if 'user_id' in session:
-        user_id = session['user_id']
-    
+    if 'user_id' not in session:
+        return redirect(url_for('login')) 
+        # Umleitung, falls Benutzer nicht angemeldet ist
+
+    user_id = session['user_id']
+
     if request.method == 'POST':
         if 'add_class' in request.form:
             class_name = request.form.get('class_name')
             insert_class(user_id, class_name)
-    
-    # Daten aus der Datenbank abrufen
+            # add class gedrückt? values einfügen
+        elif 'mark_completed' in request.form:
+        # mark_completed-Button gedrückt? (aka checked-Haken)
+
+            class_id = request.form.get('class_id_to_mark')
+            conn = sqlite3.connect(CLASSES_DB)
+            cursor = conn.cursor()
+            cursor.execute('UPDATE classes SET completed = 1 WHERE class_id = ?', (class_id,))
+            # completed auf 1 setzen
+            conn.commit()
+            # änderung committen
+            conn.close()
+
     conn = sqlite3.connect(CLASSES_DB)
+    # erneute verbindung aufbauen um alle classes anzuzeigen inklusive completed status
     cursor = conn.cursor()
-    cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
+    cursor.execute('SELECT class_id, name, completed FROM classes WHERE user_id = ?', (user_id,))
     class_list = cursor.fetchall()
     conn.close()
 
     return render_template('classes.html', title="Your Classes", class_list=class_list)
+
 
 
 @app.route('/projects', methods=['GET', 'POST'])
@@ -179,17 +195,17 @@ def projects():
 
 @app.route('/get_projects')
 def get_projects():
+    # class ID für anzuzeigende projekte abrufen
     class_id = request.args.get('class_id')
-
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
+    # projekte für die abgefragte class_id abrufen
     cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ?', (class_id,))
     projects = cursor.fetchall()
     conn.close()
+    # projekte als json antwort zurückgeben (JSON kriterium erfüllt)
     return jsonify(projects)
-
-    # had to research a lot because the select fields would not show the projects for the classes
-    # copied this from stackoverflow because I have very little knowledge about javascript/jsonify
+    
 
 @app.route('/todos', methods=['GET', 'POST'])
 def todos():

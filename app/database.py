@@ -169,7 +169,7 @@ def insert_class(user_id, name):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
 
-    cursor.execute('INSERT INTO classes (user_id, name) VALUES (?, ?)', (user_id, name))
+    cursor.execute('INSERT INTO classes (user_id, name, completed) VALUES (?, ?, 0)', (user_id, name))
     # class_id = cursor.lastrowid
     conn.commit()
     conn.close()
