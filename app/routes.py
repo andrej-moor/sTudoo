@@ -155,6 +155,9 @@ def classes():
             cursor = conn.cursor()
             cursor.execute('UPDATE classes SET completed = 1 WHERE class_id = ?', (class_id,))
             # completed auf 1 setzen
+            cursor.execute('UPDATE projects SET completed = 1 WHERE class_id = ?', (class_id,))
+            cursor.execute('UPDATE todos SET completed = 1 WHERE project_id IN (SELECT project_id FROM projects WHERE class_id = ?)', (class_id,))
+            # abhägigkeit von classes zu projects und todos, sodass alle dazugehörigen projects und todos auch den status completed == 1 erhalten
             conn.commit()
             # änderung committen
             conn.close()
