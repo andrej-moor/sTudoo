@@ -27,11 +27,14 @@ def create_classes_table():
             class_id INTEGER PRIMARY KEY AUTOINCREMENT,
             user_id INTEGER,
             name TEXT NOT NULL,
+            completed BOOLEAN DEFAULT 0,
             FOREIGN KEY (user_id) REFERENCES users (id)
         )
     ''')
     conn.commit()
     conn.close()
+
+#completed boolean auf default 0, dh auf default "not checked", dasselbe für projects and todos tables
 
 def create_projects_table():
     conn = sqlite3.connect(CLASSES_DB)
@@ -42,6 +45,7 @@ def create_projects_table():
             user_id INTEGER,
             class_id INTEGER,
             name TEXT NOT NULL,
+            completed BOOLEAN DEFAULT 0,
             FOREIGN KEY (user_id) REFERENCES users (id),
             FOREIGN KEY (class_id) REFERENCES classes (class_id)
         )
@@ -62,6 +66,7 @@ def create_todos_table():
             class_id INTEGER,
             project_id INTEGER,
             name TEXT NOT NULL,
+            completed BOOLEAN DEFAULT 0,
             FOREIGN KEY (user_id) REFERENCES users (id),
             FOREIGN KEY (class_id) REFERENCES classes (class_id),
             FOREIGN KEY (project_id) REFERENCES projects (project_id)
