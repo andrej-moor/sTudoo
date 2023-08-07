@@ -177,23 +177,30 @@ def classes():
 def projects():
     if 'user_id' in session:
         user_id = session['user_id']
-        if request.method == 'POST':
-            if 'add_project' in request.form:
-                project_name = request.form.get('project_name')
-                class_id = request.form.get('class_id')
-                insert_project(user_id, class_id, project_name)
-                
-        
+
+        # POST-Anfrage, um ein neues Projekt hinzuzufügen
+        if request.method == 'POST' and 'add_project' in request.form:
+            project_name = request.form.get('project_name')
+            class_id = request.form.get('class_id')
+            insert_project(user_id, class_id, project_name)
+
+        # Datenbankverbindung aufbauen
         conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
-        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
+
+        # Nicht abgeschlossene Classes des Users abrufen
+        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ? AND completed = 0', (user_id,))
         classes = cursor.fetchall()
-        # alle verfügbaren classes des users im dropdown anzeigen
-        cursor.execute('SELECT project_id, name FROM projects WHERE user_id = ?', (user_id,))
+
+        # Verfügbare Projects zu den Classes abrufen
+        cursor.execute('SELECT project_id, name FROM projects WHERE user_id = ? AND completed = 0', (user_id,))
         projects = cursor.fetchall()
-        # alle projects direkt nach dem hinzufügen anzeigen
         conn.close()
+
+        # HTML-Template mit Daten zurückgeben
         return render_template('projects.html', title="Your Projects", classes=classes, project_list=projects)
+
+    return redirect(url_for('login'))
 
 
 @app.route('/get_projects')
@@ -202,10 +209,12 @@ def get_projects():
     class_id = request.args.get('class_id')
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
+    
     # projekte für die abgefragte class_id abrufen
     cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ?', (class_id,))
     projects = cursor.fetchall()
     conn.close()
+    
     # projekte als json antwort zurückgeben (JSON kriterium erfüllt)
     return jsonify(projects)
     
@@ -214,35 +223,41 @@ def get_projects():
 def todos():
     if 'user_id' in session:
         user_id = session['user_id']
-        if request.method == 'POST':
-            if 'add_todo' in request.form:
-                todo_name = request.form.get('todo_name')
-                class_id = request.form.get('class_id')
-                project_id = request.form.get('project_id')
-                insert_todo(user_id, class_id, project_id, todo_name)
-                
+        
+        # POST-Anfrage, um ein neues Todo hinzuzufügen
+        if request.method == 'POST' and 'add_todo' in request.form:
+            todo_name = request.form.get('todo_name')
+            class_id = request.form.get('class_id')
+            project_id = request.form.get('project_id')
+            insert_todo(user_id, class_id, project_id, todo_name)
+
         conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
-        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ?', (user_id,))
+
+        # Nicht abgeschlossene Klassen des eingeloggten Users abrufen
+        cursor.execute('SELECT class_id, name FROM classes WHERE user_id = ? AND completed = 0', (user_id,))
         classes = cursor.fetchall()
-        # alle verfügbaren classes für den user anzeigen (im dropdown)
+
+        # Dictionary für Projekte nach Klasse erstellen
         projects_by_class = {}
-        # ich lege ein python dictionary an, das die einzelnen projekte mit der dazugehörigen
-        # class_id verknüpft, sodass nur die projects einer class angezeigt werden
-        # zb alle projects mit foreign key class_id = 1 werden angezeigt
-        for class_id, class_name in classes:
-            cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ? AND user_id = ?', (class_id, user_id))
+
+        # Für jede Class die Projects abrufen und im Dictionary speichern
+        for class_id, _ in classes:
+            cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ? AND completed = 0', (class_id,))
             projects = cursor.fetchall()
             projects_by_class[class_id] = projects
-            # wähle für jede class_id und name das oder mehrere dazugehörige projects aus
-            # speichere sie im dictionary 
+
+        # Todos des eingeloggten Users abrufen
         cursor.execute('SELECT todo_id, name FROM todos WHERE user_id = ?', (user_id,))
         todos = cursor.fetchall()
         conn.close()
+
+        # HTML-Template mit Daten zurückgeben
         return render_template('todos.html', title="Your Todos", classes=classes, projects_by_class=projects_by_class, todo_list=todos)
 
+    # Wenn Benutzer nicht eingeloggt ist, Weiterleitung zur Login-Seite
     return redirect(url_for('login'))
-    # falls user nicht mehr eingeloggt ist, redirect zu login page
+
 
 
 @app.route('/delete_entry', methods=['POST'])
