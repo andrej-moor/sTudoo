@@ -33,14 +33,23 @@
             -->
         </td>
         <td>
-          <form method="POST" action="{{ url_for('classes') }}">
+          <!--<form method="POST" action="{{ url_for('classes') }}">
             <input type="hidden" name="class_id_to_mark" value="{{ class_item[0] }}">
-            <!-- Verstecktes Eingabefeld mit class ID, die markiert werden soll -->
+            <!-- Verstecktes Eingabefeld mit class ID, die markiert werden soll
             <button type="submit" name="mark_completed">
-              <!--Check (Haken) als button, um die POST methode abzusenden -->
+              <!--Check (Haken) als button, um die POST methode abzusenden
               <i class="fa-solid fa-check"></i>
             </button>
+          </form> -->
+          <form method="POST" action="{{ url_for('classes') }}">
+            <input type="hidden" name="toggle_id" value="{{ class_item[0] }}">
+            {% if class_item[2] == 1 %}
+              <button type="submit" name="mark_incompleted"><i class="fa-solid fa-times"></i></button>
+            {% else %}
+              <button type="submit" name="mark_completed"><i class="fa-solid fa-check"></i></button>
+            {% endif %}
           </form>
+          
         </td>
         <td>
           <form method="POST" action="{{ url_for('delete_entry') }}">

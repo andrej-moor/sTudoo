@@ -58,8 +58,16 @@ def sign_up():
         last_name = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
+        
+        if not first_name or not last_name or not email or not password:
+            flash('Alle Felder müssen ausgefüllt sein!', 'error')
+            return render_template('sign_up.html', title="Sign-Up")
+        # Flash Nachricht, die getriggert, wenn nicht alle Felder ausgefüllt sind
+        
         insert_user(first_name, last_name, email, password)
         return redirect(url_for('signed_up'))
+    
+    
     return render_template('sign_up.html', title="Sign-Up")
 
     # POST: this block of code is only run when a form is submitted (in sign_up.html)
@@ -134,41 +142,55 @@ def delete_site():
 
 # ==== LISTS RELATED ROUTES ====
 
+def update_status(class_id, status):
+    conn = sqlite3.connect(CLASSES_DB)
+    cursor = conn.cursor()
+    
+    # Class completed status updaten/rückgängig machen, je nach übergebenem value
+    # wenn 0 übergeben wird -> Status auf 1 setzen, wenn 1 übergeben wird -> Status auf 0 setzen
+    # dasselbe für die abhängigen projects und todos
+    # abhängige todos finden mithilfe von einfacher subquery
+    cursor.execute('UPDATE classes SET completed = ? WHERE class_id = ?', (status, class_id))
+    cursor.execute('UPDATE projects SET completed = ? WHERE class_id = ?', (status, class_id))
+    cursor.execute('UPDATE todos SET completed = ? WHERE project_id IN (SELECT project_id FROM projects WHERE class_id = ?)', (status, class_id))
+    conn.commit()
+    conn.close()
+
 @app.route('/classes', methods=['GET', 'POST'])
 def classes():
     if 'user_id' not in session:
-        return redirect(url_for('login')) 
-        # Umleitung, falls Benutzer nicht angemeldet ist
+        return redirect(url_for('login'))
 
     user_id = session['user_id']
 
+    # POST-Anfrage, um ein neue Class hinzuzufügen
     if request.method == 'POST':
         if 'add_class' in request.form:
             class_name = request.form.get('class_name')
             insert_class(user_id, class_name)
-            # add class gedrückt? values einfügen
+            
+        # mark completed (aka Haken) gedrückt?
+        # update status funktion aufrufen, um completed auf 1 zu setzen
         elif 'mark_completed' in request.form:
-        # mark_completed-Button gedrückt? (aka checked-Haken)
+            class_id = request.form.get('toggle_id')
+            update_status(class_id, 1)
+            
+        # mark incompleted gedrückt?
+        # update status funktion aufrufen, um completed wieder auf 0 zu setzen
+        elif 'mark_incompleted' in request.form:
+            class_id = request.form.get('toggle_id')
+            update_status(class_id, 0)
 
-            class_id = request.form.get('class_id_to_mark')
-            conn = sqlite3.connect(CLASSES_DB)
-            cursor = conn.cursor()
-            cursor.execute('UPDATE classes SET completed = 1 WHERE class_id = ?', (class_id,))
-            # completed auf 1 setzen
-            cursor.execute('UPDATE projects SET completed = 1 WHERE class_id = ?', (class_id,))
-            cursor.execute('UPDATE todos SET completed = 1 WHERE project_id IN (SELECT project_id FROM projects WHERE class_id = ?)', (class_id,))
-            # abhägigkeit von classes zu projects und todos, sodass alle dazugehörigen projects und todos auch den status completed == 1 erhalten
-            conn.commit()
-            # änderung committen
-            conn.close()
-
+    # Alle Classes inklusive Status abrufen
+    # Status wird im HTML mithilfe des CSS Styles als durchgestrichen (completed = 1)
+    # oder normal (completed = 0) angezeigt
     conn = sqlite3.connect(CLASSES_DB)
-    # erneute verbindung aufbauen um alle classes anzuzeigen inklusive completed status
     cursor = conn.cursor()
     cursor.execute('SELECT class_id, name, completed FROM classes WHERE user_id = ?', (user_id,))
     class_list = cursor.fetchall()
     conn.close()
 
+    # HTML mit Daten zurückgeben
     return render_template('classes.html', title="Your Classes", class_list=class_list)
 
 
@@ -205,17 +227,17 @@ def projects():
 
 @app.route('/get_projects')
 def get_projects():
-    # class ID für anzuzeigende projekte abrufen
+    # class ID für anzuzeigende projects abrufen
     class_id = request.args.get('class_id')
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     
-    # projekte für die abgefragte class_id abrufen
+    # projects für die abgefragte class_id abrufen
     cursor.execute('SELECT project_id, name FROM projects WHERE class_id = ?', (class_id,))
     projects = cursor.fetchall()
     conn.close()
     
-    # projekte als json antwort zurückgeben (JSON kriterium erfüllt)
+    # projects als json antwort zurückgeben (JSON kriterium erfüllt)
     return jsonify(projects)
     
 
