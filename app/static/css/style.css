@@ -359,7 +359,6 @@ tr {
 td {
   padding: 10px 15px;
   font-size: 20px;
-  border-radius: 5px;
 }
 
 table tr td a, table tr td form button, table tr td form input td button {
@@ -514,4 +513,20 @@ section .fa-brands {
   margin-bottom: 30px;
 }
 
+/* FLashing Form */
+
+.flashes {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.flashes li {
+  background-color: #f44336; /* Rote Hintergrundfarbe */
+  color: white; /* Weißer Text */
+  padding: 10px; /* Polsterung um den Text */
+  border-radius: 5px; /* Abgerundete Ecken */
+  margin: 5px 0; /* Abstand zwischen den Nachrichten, falls mehrere angezeigt werden */
+  text-align: center; /* Zentriert den Text in der Nachricht */
+}
 
