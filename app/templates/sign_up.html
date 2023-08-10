@@ -3,9 +3,22 @@
   <header class="hero" id="bg-students">
     {% include 'includes/_navbar.html' %}
     <div class="content">
+
       <!-- Header -->
       <h1>Sign up Now!</h1>
       <p>It's free and only takes a minute</p>
+
+      <!-- Message -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          <ul class="flashes">
+              {% for category, message in messages %}
+                  <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+          </ul>
+      {% endif %}
+      {% endwith %}
+
       <!-- Signup Form -->
       <div id="form_container">      
         <form method="POST" action="{{url_for('sign_up')}}">
