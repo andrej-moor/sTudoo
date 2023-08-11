@@ -19,6 +19,86 @@ nav_order: 1
 {:toc}
 </details>
 
+```bash
+sTudoo
+├── app
+│   ├── database.py
+│   ├── entries.py
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── static
+│   │   ├── css
+│   │   └── images
+│   └── templates
+├── classes.db
+├── config.py
+├── .flaskenv
+├── README.md
+└── studoo.py
+```
+```bash
+├── app
+│   ├── database.py
+│   ├── entries.py
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── style.css
+│   │   └── images
+│   │       ├── account_delete.png
+│   │       ├── account_functions.png
+│   │       ├── add_classes_form_and_overview.png
+│   │       ├── add_projects_form_and_overview.png
+│   │       ├── add_todos_form_and_overview.png
+│   │       ├── classes_function.png
+│   │       ├── create_tables_functions.png
+│   │       ├── css_structure.png
+│   │       ├── data_model.png
+│   │       ├── delete_entry.png
+│   │       ├── erm_project_todos.png
+│   │       ├── erm_student_classes.png
+│   │       ├── get_projects_function.png
+│   │       ├── login_form.png
+│   │       ├── login_function.png
+│   │       ├── main_layout.png
+│   │       ├── projects_function.png
+│   │       ├── sign_up_form.png
+│   │       ├── sign_up_function.png
+│   │       ├── students.jpg
+│   │       ├── studoo_features.svg
+│   │       ├── templates_overview.png
+│   │       ├── textureConrete.jpg
+│   │       ├── todos_functions.png
+│   │       └── whiteBricks.jpg
+│   └── templates
+│       ├── classes.html
+│       ├── includes
+│       │   ├── _footer.html
+│       │   ├── _logo.html
+│       │   ├── _logo_loged_in.html
+│       │   ├── _navbar.html
+│       │   ├── _navbar_loged_in.html
+│       │   └── _social.html
+│       ├── index.html
+│       ├── layout.html
+│       ├── logedin.html
+│       ├── login.html
+│       ├── logout.html
+│       ├── projects.html
+│       ├── signed_up.html
+│       ├── sign_up.html
+│       ├── todos.html
+│       ├── user_account_deleted.html
+│       ├── user_account_delete.html
+│       └── user_account.html
+├── classes.db
+├── config.py
+├── .flaskenv
+├── README.md
+└── studoo.py
+```
+
 ## Overview of sTudoo's structure (Use Case Diagram)
 
 To get a big picture of the functions lets take a look at the use case diagram of sTudoo.
