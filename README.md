@@ -88,7 +88,7 @@ $ chmod 600 ~/.ssh/authorized_keys
 ```
 The passwordless loging should now be working every time your log in with ssh.
 
-## 4. 
+## 4. Insalling Base Dependencies
 
 
 

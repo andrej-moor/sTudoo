@@ -28,12 +28,12 @@
         </form> -->
         <form method="POST" action="{{url_for('login')}}">
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <!-- <label for="email">Email</label> -->
+            <input type="email" name="email" id="email" placeholder="Email">
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <!-- <label for="password">Password</label> -->
+            <input type="password" name="password" id="password" placeholder="Password">
           </div>
           <button type="submit" class="btn">Login</button>
           <p class="small_text">Don't have an account? <a href="{{url_for('sign_up')}}">Sign up here</a></p>
