@@ -116,7 +116,7 @@ h1, h2, h3 {
   }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 h2 {
   font-size: 1.8rem;
@@ -275,15 +275,6 @@ img {
 #form_container a {
   color: #34d259;
   text-decoration: underline;
-}
-
-.form-group {
-  margin-top: 15px;
-}
-.form-group label {
-  display: block;
-  text-align: left;
-  margin-bottom: 5px;
 }
 
 input {
