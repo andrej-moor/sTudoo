@@ -504,7 +504,7 @@ section .fa-brands {
   margin-bottom: 30px;
 }
 
-/* FLashing Form */
+/*Flash Design*/
 
 .flashes {
   list-style-type: none;
@@ -515,9 +515,9 @@ section .fa-brands {
 .flashes li {
   background-color: #f44336; /* Rote Hintergrundfarbe */
   color: white; /* Weißer Text */
-  padding: 10px; /* Polsterung um den Text */
+  padding: 10px; 
   border-radius: 5px; /* Abgerundete Ecken */
-  margin: 5px 0; /* Abstand zwischen den Nachrichten, falls mehrere angezeigt werden */
+  margin: 5px 0; 
   text-align: center; /* Zentriert den Text in der Nachricht */
 }
 

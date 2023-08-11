@@ -8,12 +8,15 @@
       <h1>Sign up Now!</h1>
       <p>It's free and only takes a minute</p>
 
-      <!-- Message -->
-      {% with messages = get_flashed_messages(with_categories=true) %}
+      <!--Flash Messages-->
+    {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
           <ul class="flashes">
               {% for category, message in messages %}
+              <!--Nachricht wird in Flash in der Kategorie "Error" gespeichert, sobald die Bedingung
+              für den Error zutrifft (Feld leer) wird die Nachricht angezeigt-->
                   <li class="{{ category }}">{{ message }}</li>
+                  <!--Nachricht im vorgefertigten CSS Styling-->
               {% endfor %}
           </ul>
       {% endif %}

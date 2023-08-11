@@ -62,7 +62,7 @@ def sign_up():
         if not first_name or not last_name or not email or not password:
             flash('Alle Felder müssen ausgefüllt sein!', 'error')
             return render_template('sign_up.html', title="Sign-Up")
-        # Flash Nachricht, die getriggert, wenn nicht alle Felder ausgefüllt sind
+        # Flash Nachricht, die getriggert wird, wenn nicht alle Felder ausgefüllt sind
         
         insert_user(first_name, last_name, email, password)
         return redirect(url_for('signed_up'))
@@ -115,9 +115,8 @@ def logedin():
 @app.route('/logout')
 def logout():
     session.clear() 
-    # Clear session data
     flash('You have been logged out.', 'success')
-    return redirect(url_for('index'))
+    return render_template('logout.html')
 
 @app.route('/useraccount')
 def useraccount():
