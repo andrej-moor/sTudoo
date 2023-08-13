@@ -21,10 +21,6 @@ Jana
  </details>
 
 
-
-
-
-
 ### **Function:** `update_status(class_id, status)`
 
 **Purpose:** This function updates the completed status of a class and its associated projects and todos. The function takes a `class_id` and a `status` parameter. If `status` is `0`, the function sets the completed status of the class and its dependencies to `0`. If `status` is `1`, it sets the completed status of the class and its dependencies to `1`.
