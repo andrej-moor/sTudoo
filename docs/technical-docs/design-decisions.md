@@ -84,4 +84,21 @@ Further bolow you can find the pros & cons for the taken decision.
 |---------|---------------------|
 |+ one file |- many files |
 |- bloated code file with config, database and view functions  |+ seperation of concerns|
-|- not cleare where to find specific app functions |+ naming of .py files (i.e. routes.py) makes it easy to keep the overview|
+|- not clear where to find specific app functions |+ naming of .py files (i.e. routes.py) makes it easy to keep the overview|
+
+We regarded implementing Blueprints for further modularization, but since the app was already quite developed we quickly decided against it because it would have meant lots of URL-editing.
+
+
+### 03: Line-through for projects and todos
+
+### Problem Statement
+
+Status: ** discarded**
+
+
+Line-through design for all mark-completed classes and their dependent projects and todos.
+
+### Decision
+
+We decided partially against it because the projects and todos do not show up in a visible list within the projects and todos route. Instead we decided to implement a database dependency so that the dependent projects and todos would not show up in the populated dropdown list if they were marked as completed. The marked completed classes would still show up in a line-through design. 
+
