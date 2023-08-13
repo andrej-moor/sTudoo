@@ -319,4 +319,5 @@ Now, we have to reload the config and activate it.
 $ sudo service ngnix reload
 ```
 
+Congrats, your sTudoo is now deployed.
 
