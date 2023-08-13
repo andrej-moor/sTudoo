@@ -4,8 +4,8 @@ parent: Technical Docs
 nav_order: 4
 ---
 
-**Jana Kusch**, 
-**Andreas Moor**
+Jana
+{: .label }
 
 # [function_definition()]
 
