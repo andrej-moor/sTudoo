@@ -250,7 +250,7 @@ Reload the suvervisor service.
 ```
 $ sudo supervisorctl reload
 ```
-## Set Up Ngnix
+## 8. Set Up Ngnix
 
 To handle external web traffic let us set up the public facing Ngnix server.
 
