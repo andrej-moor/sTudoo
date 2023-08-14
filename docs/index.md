@@ -7,18 +7,41 @@ Jana
 Andy
 {: .label }
 
-# [Welcome to *sTudoo*'s Documentation]
+# Welcome to sTudoo's Documentation
 
-**_sTudoo is a webapp written in python and flask. It helps students to organize their class related projects, keep the overview of your todos and stay on track with deadlines._**
+**_sTudoo is a webapp written in python and flask. It helps students to organize their class related projects & keep the overview of your todos._**
 
 The idea to create [sTudoo](https://github.com/andrej-moor/sTudoo.git) grew as a project in our web development with Python class at the [Business School of Economics & Law](https://www.hwr-berlin.de/en/) in Berlin, Germany.
 
+Beside the app itself, the documentation is a part of our exam in this class, so don't be confused if the Docs read a little weird compared to a *regular* doc.
+
+
 ## Team members
+
+Our team name for this project is **_The Happy Students_**. Why? Well, we're both students and try to code a web app which should help to reduce the stress in our student lives.
 
 Our contributers are:
 
 - [Jana Kusch](https://github.com/JanaKusch) (Mtr_Nr.: 1909841)
 - [Andreas Moor](https://github.com/andrej-moor) (Mtr_Nr.: 10275592)
+
+
+## Documentaion Outline
+
+- Technical Documentation
+  - [App Structure](/docs/technical-docs/app-structure.md)
+  - [App Behavior](/docs/technical-docs/app-structure.md)
+  - [Data Model](/docs/technical-docs/data-model.md)
+  - [Api Reference](/docs/technical-docs/api-reference.md)
+  - [Design Decisions](/docs/technical-docs/design-decisions.md)
+  - [Installation Instructions (Ngnix Server)](/docs/technical-docs/design-decisions.md)
+- Team Evaluation
+  - [Our Goals](/docs/team-eval/goals.md)
+  - [Improvements](/docs/team-eval/improvements.md)
+  - [Peer Review](/docs/team-eval/peer-review.md)
+  - [Contributions](/docs/team-eval/contributions.md)
+
+
 
 ## Eidesstattliche Erklärung [The Legal Stuff]
 
@@ -28,3 +51,5 @@ Die oben genannten Teammitglieder erklären an Eides statt:
 
 Last build: {{ site.time | date: '%d %b %Y, %R%:z' }}
 {: .fs-2 }
+
+
