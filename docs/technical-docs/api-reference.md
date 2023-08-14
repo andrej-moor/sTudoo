@@ -4,8 +4,8 @@ parent: Technical Docs
 nav_order: 4
 ---
 
-**Jana Kusch**, 
-**Andreas Moor**
+Jana
+{: .label }
 
 # [function_definition()]
 
@@ -19,10 +19,6 @@ nav_order: 4
     - [**Function:** `update_status(class_id, status)`](#function-update_statusclass_id-status)
     - [**JSON:** `/get_projects`](#json-get_projects)
  </details>
-
-
-
-
 
 
 ### **Function:** `update_status(class_id, status)`

@@ -4,9 +4,6 @@ parent: Technical Docs
 nav_order: 5
 ---
 
-Jana {: .label }
-Andy {: .label }
-
 # Design decisions
 {: .no_toc }
 
@@ -20,6 +17,9 @@ Andy {: .label }
 </details>
 
 ## 01: Vanilla CSS vs. CSS-Framework/Library
+
+Andy
+{: .label }
 
 ### Meta
 
@@ -61,6 +61,7 @@ Status
 : **Decided**
 
 Updated
+
 : 24-Jul-2023
 
 ### Problem statement
@@ -73,8 +74,10 @@ The decision that has been taken is to modularize the code. We decided to create
 
 The decision was made by:
 
-Jana {: .label }
-Andy {: .label }
+Jana
+{: .label }
+Andy
+{: .label }
 
 ### Regarded options
 
@@ -93,8 +96,12 @@ We regarded implementing Blueprints for further modularization, but since the ap
 
 ### Problem Statement
 
-Status: ** discarded**
+Status:
+**Decided**
 
+Updated
+
+: 24-Jul-2023
 
 Line-through design for all mark-completed classes and their dependent projects and todos.
 
@@ -102,3 +109,5 @@ Line-through design for all mark-completed classes and their dependent projects 
 
 We decided partially against it because the projects and todos do not show up in a visible list within the projects and todos route. Instead we decided to implement a database dependency so that the dependent projects and todos would not show up in the populated dropdown list if they were marked as completed. The marked completed classes would still show up in a line-through design. 
 
+Jana
+{: .label }

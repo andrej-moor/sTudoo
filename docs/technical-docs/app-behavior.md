@@ -4,21 +4,26 @@ parent: Technical Docs
 nav_order: 2
 ---
 
-**Jana Kusch**, **Andreas Moor**
+Jana
+{: .label }
+
+Andy
+{: .label }
 
 
-# [App behavior]
-
-
+# App behavior
 
 <details open markdown="block">
   <summary>
     Table of contents
   </summary>
-  <div markdown="1">
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
  
-- [\[App behavior\]](#app-behavior)
+- [App behavior](#app-behavior)
     - [**Route:** `/index`](#route-index)
     - [**Route:** `/imprint`](#route-imprint)
     - [**Route:** `/privacy`](#route-privacy)

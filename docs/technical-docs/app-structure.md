@@ -4,7 +4,7 @@ parent: Technical Docs
 nav_order: 1
 ---
 
-[Andy]
+Andy
 {: .label }
 
 # [sTudoos app structure]
