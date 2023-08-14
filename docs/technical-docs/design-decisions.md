@@ -92,7 +92,7 @@ Further bolow you can find the pros & cons for the taken decision.
 We regarded implementing Blueprints for further modularization, but since the app was already quite developed we quickly decided against it because it would have meant lots of URL-editing.
 
 
-### 03: Line-through for projects and todos
+## 03: Line-through for projects and todos
 
 ### Problem Statement
 

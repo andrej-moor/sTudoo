@@ -1,4 +1,5 @@
 import sqlite3
+# from passlib.hash import bcrypt
 
 # ==== CREATE TABLES ====
 CLASSES_DB = 'classes.db'
@@ -15,9 +16,14 @@ def create_users_table():
             password TEXT NOT NULL
         )
     ''')
+    conn.commit()
+    conn.close()
     
-   #cursor object can execute sql statements and get stored data from the database
-   #cursor.execute is called and executes the following sql statement that creates a table, email must be unique
+   # Cursor-Objekt kann mit der Datenbank interagieren z.B. zum Erstellen, Einfügen, Abrufen von Daten
+   # ID wird automatisch zum Primärschlüssel
+   # Email muss UNIQUE also eindeutig sein und darf nicht doppelt vorkommen
+   # Commit speichert Änderungen
+   # Close schließt die Verbindung
     
 def create_classes_table():
     conn = sqlite3.connect(CLASSES_DB)
@@ -34,7 +40,8 @@ def create_classes_table():
     conn.commit()
     conn.close()
 
-#completed boolean auf default 0, dh auf default "not checked", dasselbe für projects and todos tables
+    # Foreign Key = USER ID, damit bekannt ist, welchem User das Fach angehört
+    # Completed boolean auf default 0, dh auf default "not checked"
 
 def create_projects_table():
     conn = sqlite3.connect(CLASSES_DB)
@@ -52,9 +59,12 @@ def create_projects_table():
     ''')
     conn.commit()
     conn.close()
-    #create projects table with foreign key referencing to user, so the projects
-    #are created for the logged-in user
-    #create classes table
+    
+    # Foreign key = USER ID, damit Projects einem USER zugeordnet sind 
+    # Foreign key = Class ID, damit Projects einem Fach zugeordnet sind
+    # Completed boolean auf default 0, dh auf default "not checked"
+
+    
     
 def create_todos_table():
     conn = sqlite3.connect(CLASSES_DB)
@@ -74,30 +84,32 @@ def create_todos_table():
     ''')
     conn.commit()
     conn.close()
+    
+    # Foreign key = USER ID, damit Todos einem USER zugeordnet sind 
+    # Foreign key = Project ID, damit Todos einem Project zugeordnet sind
+    # Foreign key = Class ID, damit Todos einem Fach zugeordnet sind
+    # Completed boolean auf default 0, dh auf default "not checked"
+
+
+
 
 # ==== USER ACCOUNT RELATED ====
+
 def insert_user(first_name, last_name, email, password):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
+    
+    # hashed_password = bcrypt.hash(password)
+    # bcrypt import nicht erkannt, daher nicht funktional
+    
     cursor.execute('INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
-                   (first_name, last_name, email, password))
+                   (first_name, last_name, email, password)) # hashed_password
     conn.commit()
     conn.close()
     
-    #placeholders = ?
-    #insert into users: values stored in classes.db with sql statement
-    
-def authenticate_user(email, password):
-    conn = sqlite3.connect(CLASSES_DB)
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM users WHERE email = ?', (email,))
-    user = cursor.fetchone()
-    conn.close()
+    # Platzhalter = ?, damit die entsprechenden Werte an der richtigen Stelle in der DB eingefügt werden   
 
-    if user and user[4] == password:
-        return True
-
-    return False
+   
    
 def get_first_name(user_id):
     conn = sqlite3.connect(CLASSES_DB)
@@ -135,6 +147,12 @@ def get_email(user_id):
     else:
         return None
  
+    # get_first_name, get_last_name, get_email zum Anzeigen der Daten auf der User-Startseite
+    # oder Useraccount-Seite
+    
+    
+    
+ 
 def delete_user(email, password):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
@@ -142,19 +160,14 @@ def delete_user(email, password):
     user = cursor.fetchone()
     
     if user and user[4] == password:
-    # user [4] vergleicht, ob user und passwort (5. Spalte) miteinander übereinstimmen    
+    # user [4] vergleicht, ob USER und PW (5. Spalte) miteinander übereinstimmen    
         
-        #Delete user's projects
         cursor.execute('DELETE FROM projects WHERE user_id = ?', (user[0],))
-        
-        #Delete user's classes
         cursor.execute('DELETE FROM classes WHERE user_id = ?', (user[0],))
-        
-        #Delete user's todos
         cursor.execute('DELETE FROM todos WHERE user_id = ?', (user[0],))
-        
-        #Delete user
         cursor.execute('DELETE FROM users WHERE email = ?', (email,))
+        # nach Eingabe von Email und PW den USER
+        # mit abhängigen Classes, Projects und Todos löschen
         
         conn.commit()
         conn.close()
@@ -163,28 +176,31 @@ def delete_user(email, password):
     conn.close()
     return False
 
-#projects/classes/to-dos functionality, add and delete
+
+# ==== CLASSES, PROJECTS & TODOS INSERT AND DELETE ====
+
+
 
 def insert_class(user_id, name):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
-
+    
     cursor.execute('INSERT INTO classes (user_id, name, completed) VALUES (?, ?, 0)', (user_id, name))
-    # class_id = cursor.lastrowid
+    # Classes mit foreign key (USER ID), Class-Name und Completed Status einfügen
+    
     conn.commit()
     conn.close()
-    # return class_id
     return False
 
 def insert_project(user_id, class_id, name):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
 
-    # class und user_id vorhanden?
     cursor.execute('SELECT class_id FROM classes WHERE class_id = ? AND user_id = ?', (class_id, user_id))
     class_exists = cursor.fetchone()
     # cursor fetchone ruft ab, ob bereits eine class in der datenbank angelegt ist
-    # falls nicht wird False zurück gegeben (Z. 173)
+    # Project mit foreign key (USER ID & CLASS ID), Project-Name und Completed Status einfügen
+
 
     if class_exists:
         cursor.execute('INSERT INTO projects (user_id, class_id, name) VALUES (?, ?, ?)', (user_id, class_id, name))
@@ -194,6 +210,9 @@ def insert_project(user_id, class_id, name):
     else:
         conn.close()
         return False
+        # Class nicht vorhanden? Error
+        
+        
 
 def insert_todo(user_id, class_id, project_id, name):
     conn = sqlite3.connect(CLASSES_DB)
@@ -202,16 +221,20 @@ def insert_todo(user_id, class_id, project_id, name):
     
     cursor.execute('SELECT class_id FROM classes WHERE class_id = ? AND user_id = ?', (class_id, user_id))
     class_exists = cursor.fetchone()
-    # siehe insert project
+    # Dropdown-List mit für den USER verfügbaren Classes füllen
+    # fetchone überprüft, ob bereits eine Class angelegt ist, sonst leere Dropdown-Liste
+
 
     cursor.execute('SELECT project_id FROM projects WHERE project_id = ? AND class_id = ?', (project_id, class_id))
     project_exists = cursor.fetchone()
-    # fetchone überprüft, ob bereits ein project angelegt ist
-    # falls nicht wird False zurückgegeben (Z. 197)
+    # Dropdown-List mit für die Classes verfügbaren Projects füllen
+    # fetchone überprüft, ob bereits ein project angelegt ist, sonst leere Dropdown-Liste
 
     if class_exists and project_exists:
         cursor.execute('INSERT INTO todos (user_id, class_id, project_id, name) VALUES (?, ?, ?, ?)',
                        (user_id, class_id, project_id, name))
+        # Todo mit foreign key (USER ID, CLASS ID, PROJECT ID) und Todos-Name einfügen
+        
         conn.commit()
         conn.close()
         return True
@@ -219,30 +242,29 @@ def insert_todo(user_id, class_id, project_id, name):
         conn.close()
         return False
 
-def delete_project(project_id):
-    conn = sqlite3.connect(CLASSES_DB)
-    cursor = conn.cursor()
-    cursor.execute('DELETE FROM projects WHERE project_id = ?', (project_id,))
-    cursor.execute('DELETE FROM todos WHERE project_id = ?' , (project_id,))
-    # löscht die todos mit abhängigkeit zu projects
-    conn.commit()
-    conn.close()
 
 def delete_class(class_id):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
     
-    # Löschen der Klasse
     cursor.execute('DELETE FROM classes WHERE class_id = ?', (class_id,))
-    
-    # Löschen der zugehörigen Projekte
     cursor.execute('DELETE FROM projects WHERE class_id = ?', (class_id,))
-    
-    # Löschen der zugehörigen Todos
     cursor.execute('DELETE FROM todos WHERE class_id = ?', (class_id,))
+    # Class mit abhängigen Projects und Todos löschen
     
     conn.commit()
     conn.close()
+
+def delete_project(project_id):
+    conn = sqlite3.connect(CLASSES_DB)
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM projects WHERE project_id = ?', (project_id,))
+    cursor.execute('DELETE FROM todos WHERE project_id = ?' , (project_id,))
+    # Project mit abhängigen Todos löschen
+    
+    conn.commit()
+    conn.close()
+
 
 def delete_todo(todo_id):
     conn = sqlite3.connect(CLASSES_DB)
