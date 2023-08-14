@@ -19,16 +19,17 @@ nav_order: 3
 {:toc}
 </details>
 
-## [team member] - review 1
+## [Jana Kusch] - review 1
 
 ### My observation (Wahrnehmung)
 
-[A specific observation, regarding know-how, effectiveness, team work or from another relevant area]
+Some of the required features and implementations seemed quite advanced, especially regarding the database. Since I was already knowledgeable in SQL and table operations, it did not concern me that much but many of my co-students seemed to have quite a bit of trouble. 
+
 
 ### Effect on me (Wirkung)
 
-[What positive or negative effect did this observation have on the reviewer?]
+I found it a good challenge to have a new programming subject to do research on but found it all in all a bit too much work for only 5 course credits. 
 
 ### Tip for the future (Wunsch)
 
-[What should be changed or strengthened for the point of view of the reviewer? ]
+More help concerning the documentation of projects and more relevant code in class, since the code we learned only superficially helped for the actual web development and especially for our project I had to look up several relevant materials. 
