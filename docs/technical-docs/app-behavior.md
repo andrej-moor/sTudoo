@@ -30,6 +30,7 @@ nav_order: 2
     - [**Route:** `/useraccount`](#route-useraccount)
     - [**Route:** `/delete_account`](#route-delete_account)
     - [**Route:** `/delete_site`](#route-delete_site)
+  - [](#)
     - [**Route:** `/classes`](#route-classes)
     - [**Route:** `/projects`](#route-projects)
     - [**Route:** `/todos`](#route-todos)
@@ -165,6 +166,7 @@ nav_order: 2
 **Sample output:**
 ![get_list_todos() sample](../assets/images/delete_confirm.PNG) 
 
+![get_list_todos() sample](../assets/images/useraccount_deleted.PNG) 
 ---
 
 ### **Route:** `/classes`

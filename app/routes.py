@@ -26,10 +26,10 @@ from app.database import (
 )
 
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=24)
-app.secret_key = 'blablabla'
-# secret key needed to encrypt data so it cannot be read in plaintext
-# stronger key = more security
-# without secret key --> runtime error, session is unavailable because no secret key was set
+app.secret_key = 'studooisourappforthesubjectwebdevelopment'
+
+# Geheimer Schlüssel --> die Sicherheit der Benutzerdaten in den Sitzungen
+# Ohne geheimen Schlüssel tritt ein Laufzeitfehler auf
 
 create_users_table()
 create_classes_table()
@@ -58,6 +58,8 @@ def sign_up():
         last_name = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
+        # POST ausführen,sobald submit gedrückt wurde und alle Felder ausgefüllt sind 
+
         
         if not first_name or not last_name or not email or not password:
             flash('Alle Felder müssen ausgefüllt sein!', 'error')
@@ -66,15 +68,10 @@ def sign_up():
         
         insert_user(first_name, last_name, email, password)
         return redirect(url_for('signed_up'))
-    
+        # Name, Nachname, Email und PW in die Datenbank einfügen
     
     return render_template('sign_up.html', title="Sign-Up")
 
-    # POST: this block of code is only run when a form is submitted (in sign_up.html)
-    # sign_up has a form method POST that submits the user input
-    # call insert_user to store the user input to classes.db
-    # redirect to signed_up when sign_up is successful
-    # otherwise show sign_up page to try again
 
 @app.route("/signed_up")
 def signed_up():
@@ -83,21 +80,22 @@ def signed_up():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # dieser code wird nur ausgeführt, wenn eine post methode getriggert wird (anmeldeformular abschicken)
         email = request.form['email']
         password = request.form['password']
-        # daten aus dem request form empfangen
+        # Formular empfangen
+        
         conn = sqlite3.connect(CLASSES_DB)
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
-        # sql abfrage nach email und passwort
+        # SQL-Abfrage: Email und PW korrekt?
+        
         user = cursor.fetchone()
         conn.close()
 
         if user:
             session['user_id'] = user[0] 
             session.permanent = True
-            # user id in session speichern
+            # User in Session speichern
             return redirect(url_for('logedin'))
         else:
             return redirect(url_for('login'))
@@ -109,6 +107,8 @@ def logedin():
         user_id = session['user_id']
         first_name = get_first_name(user_id)
         return render_template('logedin.html', title="You're Loged in", user_id=user_id, first_name=first_name)
+        # User nach Login auf personalisierte Startseite weiterleiten (Begrüßung mit Username)
+    
     else:
         return redirect(url_for('login'))
 
@@ -125,19 +125,29 @@ def useraccount():
         first_name = get_first_name(user_id)
         last_name = get_last_name(user_id)
         email = get_email(user_id)
+        # Vorname, Nachname, Email aus User-Session abrufen und auf Useraccount anzeigen
+        
         return render_template('user_account.html', title="You're User Account", user_id=user_id, first_name=first_name, last_name=last_name, email=email)
+
+@app.route('/delete_site')
+def delete_site():
+    return render_template('user_account_delete.html', title="Delete Account")
+    # Löschseite, auf die man von Useraccount zugreift
+
 
 @app.route('/delete_account', methods=['POST'])
 def delete_account():
     email = request.form['email']
     password = request.form['password']
+    # zwei Formularfelder zum Emfangen
+    
     if delete_user(email, password):
         return render_template('user_account_deleted.html', title="Account Deleted")
+    # Nach Löschen auf Bestätigungsseite weiterleiten 
+    
     return 'Incorrect email or password'
 
-@app.route('/delete_site')
-def delete_site():
-    return render_template('user_account_delete.html', title="Delete Account")
+
 
 # ==== LISTS RELATED ROUTES ====
 
@@ -174,7 +184,7 @@ def classes():
             class_id = request.form.get('toggle_id')
             update_status(class_id, 1)
             
-        # mark incompleted gedrückt?
+        # mark incompleted (aka x-Symbol) gedrückt?
         # update status funktion aufrufen, um completed wieder auf 0 zu setzen
         elif 'mark_incompleted' in request.form:
             class_id = request.form.get('toggle_id')
