@@ -1,4 +1,5 @@
 import sqlite3
+# from passlib.hash import bcrypt
 
 # ==== CREATE TABLES ====
 CLASSES_DB = 'classes.db'
@@ -97,14 +98,17 @@ def create_todos_table():
 def insert_user(first_name, last_name, email, password):
     conn = sqlite3.connect(CLASSES_DB)
     cursor = conn.cursor()
+    
+    # hashed_password = bcrypt.hash(password)
+    # bcrypt import nicht erkannt, daher nicht funktional
+    
     cursor.execute('INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
-                   (first_name, last_name, email, password))
+                   (first_name, last_name, email, password)) # hashed_password
     conn.commit()
     conn.close()
     
     # Platzhalter = ?, damit die entsprechenden Werte an der richtigen Stelle in der DB eingefügt werden   
 
-   
    
    
 def get_first_name(user_id):
