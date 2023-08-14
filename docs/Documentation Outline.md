@@ -1,4 +1,4 @@
-# Project Documentation Outline
+# Documentation Outline
 
 [Link to Documentation](https://www.andreas-moor.de/sTudoo/)
 
