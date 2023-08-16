@@ -1,7 +1,7 @@
 ---
 title: Contributions
 parent: Team Evaluation
-nav_order: 4
+nav_order: 2
 ---
 
 Jana
@@ -22,74 +22,38 @@ Andy
 {:toc}
 </details>
 
-## [Jane Dane]
+## Jana's Contributions
+- Setting Up the Database with the implementation of the Data model
+  - `databyse.py`
+- Coding the Routes (Backend Logic)
+  - `routes.py`
+    - Index
+    - Sign Up
+    - Signed Up
+    - Login
+    - Loged in
+    - User Account
+    - User Account Delete
+    - User Account Deleted
+    - Classes
+    - Projects
+    - Todos
+- **Docs**
+  - App Behavior
+  - Api Reference
 
-Contributions
-: Jane's first contribution
-: Jane's second contribution
-: ...
-
-## [Joe Doe]
-
-Contributions
-: Joe's first contribution
-: Joe's second contribution
-: ...
-
-======
-
----
-title: Todos
-nav_order: 0
----
-[Andy]
-{: .label }
-
-# [Project Todos Structure]
-
-The project structure should help us to navigate through the project and stay on track.
-
-The main milstones in the *sTudoo* project are the following:
-
-- [Summary of individual contributions](#summary-of-individual-contributions)
-  - [\[Jane Dane\]](#jane-dane)
-  - [\[Joe Doe\]](#joe-doe)
-  - [nav\_order: 0](#nav_order-0)
-- [\[Project Todos Structure\]](#project-todos-structure)
-  - [Description of labels \& states](#description-of-labels--states)
-  - [8 Routes (Python \& Flask)](#8-routes-python--flask)
-  - [Database (SQLite) @Jana](#database-sqlite-jana)
-  - [HTML \& CSS Templates (Jinja)](#html--css-templates-jinja)
-  - [Headless API (JSON delivery)](#headless-api-json-delivery)
-  - [Documentation](#documentation)
-  - [Presentation](#presentation)
-  - [Deploy on dedicated Web server (NGINX/Waitress)](#deploy-on-dedicated-web-server-nginxwaitress)
-- [Documentation Outline](#documentation-outline)
-  - [Index](#index)
-    - [1. Value Proposition](#1-value-proposition)
-    - [2. App Structure](#2-app-structure)
-    - [3. App Behavior](#3-app-behavior)
-    - [4. Data Model](#4-data-model)
-    - [5. API Reference](#5-api-reference)
-    - [6. Design Decisions](#6-design-decisions)
-    - [7. User Evaluation](#7-user-evaluation)
-    - [8. Goals](#8-goals)
-    - [9. Individual Contribution](#9-individual-contribution)
-
-## Description of labels & states
-
-@Name = assignment to responsible contributer
-
-- [-] = Task not started
-
-
-- [>] = Task in progess
-
-- [x] = Task finished
-
-Below you can find the detailed tasks to each of the milestones.
-
----
+## Andy's Contributions
+- Setting Up Github repo & Github pages
+- Planing the routes based on Requirements Analysis
+- Creating routes related structure of the Jinja Templates
+- Coding the Frontend (HTML & CSS)
+- Presentation Structure & Design
+- Creating of the UML grafics (Data Model & Requirements Analysis )
+- Restructure App (`/app`, `.flaskenv`, `config.py`, `.gitignore`)
+- Create `requirements.txtf`
+- **Docs**
+  - Readme
+  - Installation Instructions (with Ngnix server)
 
 ## 8 Routes (Python & Flask)
 
@@ -104,9 +68,7 @@ Below you can find the detailed tasks to each of the milestones.
   - [-] Programm Project-Todos-View (Route 7)
   - [-] Programm All-Todos-View (Route 8)
 
-Resources: 
-  - [Harvard CS50’s Introduction to Programming with Python](https://youtu.be/nLRL_NcnK-4)
-  - [Harvard CS50's Web Programming with Flask](https://youtu.be/zdgYw-3tzfI)
+
 
 ## Database (SQLite) @Jana
 - [>] Create Class Diagrams (Class, Attributes, Methods)
@@ -136,9 +98,6 @@ Ressources:
 - [x] Template All-Classes-View -> @Andy
 - [x] Template All-Projects-View -> @Andy
 - [x] Template All-Todos-View -> @Andy
-
-## Headless API (JSON delivery)
-- [-] Talk to Mr. Eck reg. API (Export of Projects & Todos)
 
 ## Documentation
 - [x] Home (Index) @Jana @Andy
