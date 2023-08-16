@@ -25,21 +25,21 @@ Andy
 ## Team Goals
 
 Our Team goals are:
-- To Creating a MVP that works and has a userfriendly UI.
-- To have regular feedback sessions and checkups.
-- To get a throughout understanding of the individual contributions
-- To break down the project in a fair and accomplishable amount of workload for each of us.
+- [x] To Creating a MVP that works and has a userfriendly UI.
+- [x] To have regular feedback sessions and checkups.
+- [x] To get a throughout understanding of the individual contributions
+- [x] To break down the project in a fair and accomplishable amount of workload for each of us.
 
 ## Jana
 
 Jana's goals are:
-- Become familiar with Python in web development environments
-- Stay organized through the implementation and git version controls
-- Implement the Python and database contents
+- [x] Become familiar with Python in web development environments
+- [x] Stay organized through the implementation and git version controls
+- [x] Implement the Python and database contents
 
 ## Andreas
 Andy's goals are:
-- Become confident in functional and OOP programming in Python & Flask
-- Being able to create a userfriendly GUI with HTML, CSS & Ninja
--  Being able to use Git & Github on a level that I can seamlessly collaborate with other developers
-- Make the work with me a pleasant experience for my team mate.
+- [x] Become confident in functional and OOP programming in Python & Flask
+- [x] Being able to create a userfriendly GUI with HTML, CSS & Ninja
+- [x]  Being able to use Git & Github on a level that I can seamlessly collaborate with other developers
+- [x] Make the work with me a pleasant experience for my team mate.
