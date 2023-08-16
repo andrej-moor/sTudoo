@@ -9,9 +9,20 @@ Andy
 
 # Welcome to sTudoo's Documentation
 
-**_sTudoo is a webapp written in python and flask. It helps students to organize their class related projects & keep the overview of your todos._**
+_sTudoo is a webapp written in python and flask. It helps students to organize their class related projects & keep the overview of your todos._
 
-Beside the app itself, the documentation is a part of our exam in this class, so don't be confused if the Docs read a little weird compared to a *regular* documentation.
+## sTudoo's Value Proposition
+
+### The Problem
+
+- One of the stressful parts of being a student is to stay organized with all the deliveries and deadlines for specific classes at the university.
+- Wouldn't it be great to have an overview of all your current classes, their related projects and deadlines?
+
+### The Solution
+
+- sTudoo allows you to add classes (aka goals) to your account.
+- Because many courses contain several exams, it is possible to map them as projects under your classes.
+- In each project it is possible to set submission dates and create the relevant tasks to make progress and stay on track.
 
 ## Team members
 
@@ -36,6 +47,7 @@ Our contributers are:
   - [Improvements](/docs/team-eval/improvements.md)
   - [Peer Review](/docs/team-eval/peer-review.md)
   - [Contributions](/docs/team-eval/contributions.md)
+- User Evaluation (not done)
 
 ## Eidesstattliche Erklärung [The Legal Stuff]
 
