@@ -10,8 +10,9 @@ Jana
 Andy
 {: .label }
 
-# [Data model]
-{: .no_toc }
+# Data Model
+
+To understand how data and the database  is structured in sTudoo, let's have a look at sTudoo's data model in the entity-relationship diagram.
 
 <details open markdown="block">
   <summary>
@@ -22,7 +23,7 @@ Andy
 {:toc}
 </details>
 
-## Entity-Relationship Diagram of sTudoo
+## Entity-Relationship Diagram
 
 ```mermaid
 
@@ -58,3 +59,15 @@ TODO {
     boolean todoChecked
 }
 ```
+
+## User to Classes
+
+What you can see is a 1-n cardinality between each entity. This means that a user has to be created to before university classes can be added, but each user can have many classes as entries.
+
+## Classes to Projects
+
+Projecs follows a similiar rule. To a project to exist in sTudoo it has to be matched to a class. Like in real life a project in university belongs a class that is taken. But again, a uni class can have several project assigned to it.
+
+## Projects to Todos
+
+Each todo in university context belongs to a project. A project can have one or many todos assigned to it.
