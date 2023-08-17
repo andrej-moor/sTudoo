@@ -17,7 +17,9 @@ Andy
 
 # Installation
 
-To deploy the sTudoo application please make sure to follow the steps below.
+Before jumping into the installation process, we have to give credit to Miguel Grinberg and his Book [The Flask Mega-Tutorial](https://amzn.to/3KPcMyz) which is the source for the installation instructions (starting in Chapter 17.). Feel free check the main source which also includes the install instructions of flask apps for the raspberry pi and docker containers.
+
+To deploy the sTudoo application please make sure to follow the steps below. 
 
 ## 1. Get a Server
 
@@ -334,4 +336,3 @@ $ sudo service ngnix reload
 ```
 
 Congrats, your sTudoo is now deployed.
-
