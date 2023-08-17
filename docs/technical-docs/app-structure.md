@@ -9,7 +9,7 @@ Andy
 
 # sTudoos Application Structure
 
-To get a glimpse of the application structure and it's compoments, let's dive into the directory tree.
+To get a glimpse of the application structure and it's compoments, let's dive into the directory tree and see what the functions of the included files are.
 
 <details open markdown="block">
   <summary>
@@ -43,7 +43,7 @@ The `README.md` file contains the description of sTudoo's value proposition and 
 
 ## The app package (The Main code)
 
-The main code of sTudoo is located in the `app` directory and contains a `__init__.py` file which makes it a package that can be imported. Via the `__init__.py` file the `routes.py` and the `database.py` are imported.
+The main code of sTudoo is located in the `app` directory and contains a `__init__.py` file which makes it a package that can be imported. Furthermore the `routes.py` and the `database.py` are imported via the `__init__.py` file.
 
 ### routes.py & database.py
 The `routes` modul contains all routes (view functions) that are used in the application. The `datatbase` modul includes all database related functions that are responsible to create the database with the necessary tables and those functions which are responsible to get and write data into the database.
@@ -90,7 +90,7 @@ The `templates` directory contains the Jinja templates which are used to render 
 The `classes.db` file is the database that save the application relevant data.
 
 ## studoo.py & .flaskenv (Run The App)
-The `studoo.py` file is a python script that defines the Flask application instance. It imports the `app` varible from the `app` package (see above).
+The `studoo.py` file is a python script that defines the Flask application instance. It imports the `app` variable from the `app` package mantioned above.
 
 To run the application `FLASK_APP` environment variable is set to `studoo.py` in the `.flaskenv` file.
 
