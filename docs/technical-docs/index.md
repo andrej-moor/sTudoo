@@ -6,4 +6,4 @@ nav_order: 2
 
 {: .label }
 
-# Technical documentation
+# Technical Documentation
