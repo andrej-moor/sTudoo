@@ -10,7 +10,7 @@ Jana
 Andy
 {: .label }
 
-# App behavior
+# App Behavior
 
 <details open markdown="block">
   <summary>
