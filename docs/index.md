@@ -33,22 +33,6 @@ Our contributers are:
 - [Jana Kusch](https://github.com/JanaKusch) (Mtr_Nr.: 1909841)
 - [Andreas Moor](https://github.com/andrej-moor) (Mtr_Nr.: 10275592)
 
-## Documentaion Outline
-
-- Technical Documentation
-  - [App Structure](/docs/technical-docs/app-structure.md)
-  - [App Behavior](/docs/technical-docs/app-structure.md)
-  - [Data Model](/docs/technical-docs/data-model.md)
-  - [Api Reference](/docs/technical-docs/api-reference.md)
-  - [Design Decisions](/docs/technical-docs/design-decisions.md)
-  - [Installation Instructions (Ngnix Server)](/docs/technical-docs/design-decisions.md)
-- Team Evaluation
-  - [Our Goals](/docs/team-eval/goals.md)
-  - [Improvements](/docs/team-eval/improvements.md)
-  - [Peer Review](/docs/team-eval/peer-review.md)
-  - [Contributions](/docs/team-eval/contributions.md)
-- User Evaluation (not done)
-
 ## Eidesstattliche Erklärung [The Legal Stuff]
 
 Die oben genannten Teammitglieder erklären an Eides statt:
