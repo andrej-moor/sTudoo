@@ -21,7 +21,7 @@ Andy
 {:toc}
 </details>
 
-## sTudoo's Use Case
+## sTudoo's Use Cases
 
 To get a big picture of sTudoo's functionality let us take a look at the use case diagram.
 
@@ -54,9 +54,7 @@ Next we'll take a look ath the routes, their methods, purpuses and outputs.
 **Sample output:**
 ![get_list_todos() sample](../assets/images/signup.PNG)
 
-
 ![get_list_todos() sample](../assets/images/signup_flash.png)  
-
 
 ---
 
@@ -140,6 +138,7 @@ Next we'll take a look ath the routes, their methods, purpuses and outputs.
 ![get_list_todos() sample](../assets/images/delete_confirm.PNG) 
 
 ![get_list_todos() sample](../assets/images/useraccount_deleted.PNG) 
+
 ---
 
 ### **Route:** `/classes`
@@ -178,6 +177,7 @@ After handling the POST requests, the route retrieves the list of classes and th
 ![get_list_todos() sample](../assets/images/projects.PNG) 
 
 ---
+
 ### **Route:** `/todos`
 
 **Methods:** `GET`, `POST`
@@ -191,7 +191,6 @@ After handling the POST requests, the route retrieves the list of classes and th
 ![get_list_todos() sample](../assets/images/todos.PNG) 
 
 ---
-
 
 ### **Route:** `/delete_entry`
 
