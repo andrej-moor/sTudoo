@@ -551,7 +551,7 @@
 </Line>
 <UseCase id="a30b0477-022a-11ee-8361-03061af2090a">
 <name>
-<val>Edit User Data</val>
+<val>View user data &amp; delete account</val>
 </name>
 <package>
 <ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
@@ -570,10 +570,10 @@
 <val>(0.0, -7.69228436151667)</val>
 </top-left>
 <width>
-<val>103.26136790644335</val>
+<val>124.14456176757812</val>
 </width>
 <height>
-<val>37.69228436151667</val>
+<val>54.0</val>
 </height>
 <diagram>
 <ref refid="58d6c536-66f8-11ec-b4c8-0456e5e540ed"/>
@@ -596,7 +596,7 @@
 <val>(1.0, 0.0, 0.0, 1.0, 88.44142150878909, 569.3731985704446)</val>
 </matrix>
 <points>
-<val>[(243.54260264765426, -153.59976107044469), (0.0, -5.684341886080802e-14)]</val>
+<val>[(212.75001525878903, -147.60366732044463), (0.0, -5.684341886080802e-14)]</val>
 </points>
 </Line>
 <Box id="bc5f9948-022a-11ee-9ea6-03061af2090a">

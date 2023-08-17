@@ -10,7 +10,6 @@ Jana
 Andy
 {: .label }
 
-
 # App behavior
 
 <details open markdown="block">
@@ -22,11 +21,10 @@ Andy
 {:toc}
 </details>
 
- 
 - [App behavior](#app-behavior)
+  - [sTudoo's Use Case](#studoos-use-case)
+  - [Overview And Explenation Of The Programmed Routes](#overview-and-explenation-of-the-programmed-routes)
     - [**Route:** `/index`](#route-index)
-    - [**Route:** `/imprint`](#route-imprint)
-    - [**Route:** `/privacy`](#route-privacy)
     - [**Route:** `/sign_up`](#route-sign_up)
     - [**Route:** `/signed_up`](#route-signed_up)
     - [**Route:** `/login`](#route-login)
@@ -42,7 +40,18 @@ Andy
     - [**Route:** `/delete_entry`](#route-delete_entry)
 </details>
 
----
+
+## sTudoo's Use Case
+
+To get a big picture of sTudoo's functionality let us take a look at the use case diagram.
+
+![Use case diagram](../assets/diagrams/Studoo_Features.png)
+
+To use the full functionality it is necessary for a user to register an login. After the registration and the login the user is able to add, delete, mark as completed and view the **classes, projects and todos**. Furthermore the user is able to view his account informations and delete the account.
+
+## Overview And Explenation Of The Programmed Routes
+
+Next we'll take a look ath the routes, their methods, purpuses and outputs.
 
 ### **Route:** `/index`
 
@@ -53,27 +62,6 @@ Andy
 **Sample output:**
 
 ![get_list_todos() sample](../assets/images/index.png)
-
----
-
-### **Route:** `/imprint`
-
-**Methods:** `GET`
-
-**Purpose:** Display the `imprint.html` template with the title set to "Imprint".
-
-**Sample output:**
-
----
-
-### **Route:** `/privacy`
-
-**Methods:** `GET`
-
-**Purpose:** Display the `privacy.html` template with the title set to "Privacy".
-
-**Sample output:**
-
 
 ---
 
@@ -196,7 +184,6 @@ After handling the POST requests, the route retrieves the list of classes and th
 ![get_list_todos() sample](../assets/images/classes_incomplete.PNG) 
 
 ---
-
 
 ### **Route:** `/projects`
 
