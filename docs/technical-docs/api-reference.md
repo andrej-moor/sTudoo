@@ -32,5 +32,5 @@ Jana
 
 **Sample output:** Dynamically populated dropdown-list: 
 
- ![get_list_todos() sample](../assets/images/todos.PNG)
+![get_list_todos() sample](../assets/images/todos.PNG)
 
