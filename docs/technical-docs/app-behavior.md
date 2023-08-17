@@ -21,26 +21,6 @@ Andy
 {:toc}
 </details>
 
-- [App behavior](#app-behavior)
-  - [sTudoo's Use Case](#studoos-use-case)
-  - [Overview And Explenation Of The Programmed Routes](#overview-and-explenation-of-the-programmed-routes)
-    - [**Route:** `/index`](#route-index)
-    - [**Route:** `/sign_up`](#route-sign_up)
-    - [**Route:** `/signed_up`](#route-signed_up)
-    - [**Route:** `/login`](#route-login)
-    - [**Route:** `/logedin`](#route-logedin)
-    - [**Route:** `/logout`](#route-logout)
-    - [**Route:** `/useraccount`](#route-useraccount)
-    - [**Route:** `/delete_account`](#route-delete_account)
-    - [**Route:** `/delete_site`](#route-delete_site)
-  - [](#)
-    - [**Route:** `/classes`](#route-classes)
-    - [**Route:** `/projects`](#route-projects)
-    - [**Route:** `/todos`](#route-todos)
-    - [**Route:** `/delete_entry`](#route-delete_entry)
-</details>
-
-
 ## sTudoo's Use Case
 
 To get a big picture of sTudoo's functionality let us take a look at the use case diagram.
