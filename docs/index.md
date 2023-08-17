@@ -24,7 +24,7 @@ _sTudoo is a webapp written in python and flask. It helps students to organize t
 - Because many courses contain several exams, it is possible to map them as projects under your classes.
 - In each project it is possible to set submission dates and create the relevant tasks to make progress and stay on track.
 
-## Team members
+## Team Members
 
 Our team name for this project is **_The Happy Students_**. Why? Well, we're both students and try to code a web app which should help to reduce the stress in our student lives.
 
@@ -33,7 +33,7 @@ Our contributers are:
 - [Jana Kusch](https://github.com/JanaKusch) (Mtr_Nr.: 1909841)
 - [Andreas Moor](https://github.com/andrej-moor) (Mtr_Nr.: 10275592)
 
-## Eidesstattliche Erklärung [The Legal Stuff]
+## Eidesstattliche Erklärung (The Legal Stuff)
 
 Die oben genannten Teammitglieder erklären an Eides statt:
 
