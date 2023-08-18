@@ -32,7 +32,7 @@ Our Team goals were:
 
 ### Technical Achieved Goals
 
-A detailed view of the implementation and sub goals can be seen as a MVP and be found in the [Contributions](/docs/team-eval/contributions.md) section.
+A detailed view of the implementation and sub goals can be seen as a MVP and be found in the [Contributions](https://andrej-moor.github.io/sTudoo/team-eval/contributions.html) section.
 
 ### Technical Missed Goals
 
