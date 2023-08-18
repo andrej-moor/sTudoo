@@ -13,11 +13,11 @@ nav_order: 4
 
 ### My Observation
 
-My observation was that me an Jana worked quite harmoniously. We could split the work load into Backend (mostly Jana's part) and Frontend & Ops (mostly Andy's part). We were both commited to keep the communication flowing, which meant to talk about what works, does pnot work, what should be addapted and what would be out of the scope of the project and also out of our current capability to manage, with all the other projects that had to be pushed paralelly to.
+My observation was that me an Jana worked quite harmoniously. We could split the workload into Backend (mostly handled by Jana) and Frontend & Ops (mostly handled by Andy). We were both commited to keep the communication flowing, which meant to talk about what works, does not work, what should be addapted and what would be out of the scope of the project and also out of our current capability to manage, with all the other projects that had to be pushed paralelly at univeristy and private life.
 
 ### Effect On Me
 
-I realy appriciated the honest and clear communication and Jana's drive to get things done even under heavy load. Which was honestly a help in my own motivation. Jana was really one of the less project members at university that I would wish to have in real life in the professional context.
+I realy appriciated the honest and clear communication and Jana's drive to get things, done even under heavy load. Which was honestly a help in my own motivation. Jana was really one of the less project members at university that I would wish to have in real life in a professional context.
 
 ### Tip For The Future
 
