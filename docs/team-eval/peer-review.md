@@ -14,7 +14,7 @@ My observation was that me an Jana worked quite harmoniously. We could split the
 
 ### Effect On Me
 
-I realy appriciated the honest and clear communication and Jana's drive to get things, done even under heavy load. Which was honestly a help in my own motivation. Jana was really one of the less project members at university that I would wish to have in real life in a professional context.
+I realy appriciated the honest and clear communication and Jana's drive to get things done, even under heavy load. Which was honestly a help in my own motivation. Jana was really one of the view project partners at university that I would wish to have in real life in a professional context.
 
 ### Tip For The Future
 
