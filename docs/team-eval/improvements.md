@@ -4,10 +4,10 @@ parent: Team Evaluation
 nav_order: 3
 ---
 
-[Jana]
+Jana
 {: .label }
 
-[Andy]
+Andy
 {: .label }
 
 # How we would improve next time
