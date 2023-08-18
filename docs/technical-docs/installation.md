@@ -17,16 +17,15 @@ Andy
 
 # Installation
 
-Before jumping into the installation process, we have to give credit to Miguel Grinberg and his Book [The Flask Mega-Tutorial](https://amzn.to/3KPcMyz) which is the source for the installation instructions (starting in Chapter 17.). Feel free check the main source which also includes the install instructions of flask apps for the raspberry pi and docker containers.
+Before jumping into the installation process, we have to give credit to Miguel Grinberg and his book [The Flask Mega-Tutorial](https://amzn.to/3KPcMyz) which is the source for the installation instructions (starting in Chapter 17.). Feel free check the main source which also includes the deploy instructions of Flask apps for the raspberry pi and docker containers.
 
 To deploy the sTudoo application please make sure to follow the steps below. 
 
 ## 1. Get a Server
 
-To run sTudoo in production, a server is needed. So make sure that you have a functional server up and running. The provided command should work on the most linux based serveres. Please make sure that the package manager used in the following commands is **apt**. If the distribution you're using is using a different package manager (i.e. Fedora -> dnf) ensure that you adapt the commands for your case.
+To run sTudoo in production, a server is needed. So make sure that you have a functional server up and running. The provided command should work on the most linux based servers. Please make sure that the package manager used in the following commands is **apt**. If the distribution you're using is using a different package manager (i.e. Fedora -> dnf) ensure that you adapt the commands for your case.
 
-Possible solutions for installing a server are provided by [Linode]
-(https://www.linode.com/), [Digital Ocean](https://www.digitalocean.com/) or [Amazon Lightsail](https://aws.amazon.com/lightsail/).
+Possible solutions for installing a server are provided by [Linode](https://www.linode.com/), [Digital Ocean](https://www.digitalocean.com/) or [Amazon Lightsail](https://aws.amazon.com/lightsail/).
 
 Please follow the Documentation of the provider to install the virtual server and make sure you have the **IP** and the **root password** of your server.
 
@@ -80,7 +79,7 @@ If the directory itself or the files are missing run the following command to cr
 $ ssh-keygen
 ```
 
-Accept the following prompts by pressing `enter`. After the command has run the mentioned files should have been created. The `id_rsa.pub` files is the **public key** (which is provided to third parties to get identified). The `id_rsa` is the **private key** and shouldn't be shared with anyone.
+Accept the following prompts by pressing `enter`. After the command has run the mentioned files should have been created. The `id_rsa.pub` file is the **public key** (which is provided to third parties to get identified). The `id_rsa` is the **private key** and shouldn't be shared with anyone.
 
 ### 3.2. Configuring the public key as an authorized host
 
@@ -95,7 +94,7 @@ ssh-rsa Alaksjdkfjjoi2..............3870asjd20ß23r8zz8ß1´="=
 ```
 The output of the command should be a long cryptic string of characters as shown under the command above.
 
-Copy the string to your clipboard, switch to the terminal of ther remote server and import the key with the following command.
+Copy the string to your clipboard, switch to the terminal of the remote server and import the key with the following command.
 
 ```
 $ echo <copy-your-key-here> >> ~/.ssh/authorized_keys
@@ -198,7 +197,7 @@ $ echo "export FLASK_APP=studoo.py" >> ~/.profile
 
 ## 6. Set up MySQL
 
-To manage multiple request at a time in production a MySQL databse will be implement.
+To manage multiple request at a time in production a MySQL database will be implemented.
 
 Login in into MySQL as a root user.
 
@@ -206,17 +205,17 @@ Login in into MySQL as a root user.
 $ sudo mysql -u root 
 ```
 
-Create a database called `studoo` and a user with the same name with full acces. Enter your the password from the `.env` file you've chosen insteat of `<db-password>`.
+Create a database called `classes` and a user with the same name with full acces. Enter the password from the `.env` file you've chosen insteat of `<db-password>`.
 
 ```
-mysql> create database studoo caracter set utf8 collate utf8_bin;
+mysql> create database classes caracter set utf8 collate utf8_bin;
 mysql> create user 'studoo'@'localhoast' identified by '<db-password>';
-mysql> create database studoo caracter set utf8 collate utf8_bin;
+mysql> grant all provileges on classes.* to 'studoo'@'localhost';
 mysql> flush privileges;
 mysql> quit;
 ```
 
-Run the database migrations that create all the tables.
+Run the database migrations that creates all the tables.
 
 ```
 (venv) $ flask db upgrade
@@ -265,12 +264,11 @@ $ mkdir certs
 $ openssl req -new -newkey rsa:4096 -day 365 - nodes -x509 \
   - keyout certs/key.pem -out certs/cert.pem
 ```
-**!! Make sure that you nee a "real" certificat by a trusted autority, otherwise users will receive warnings from the browser, that the certificate can't be trusted!! 
 
-Include the appropriate files (key.pem & cert.pm) in the directories mentioned in the Ngnix config file when  have your dmain set up.
+{: .attention }
+> Make sure that you nee a "real" certificat by a trusted autority, otherwise users will receive warnings from the browser, that the certificate can't be trusted. Include the appropriate files (key.pem & cert.pm) in the directories mentioned in the Ngnix config file when have your domain set up and the ssl key available.
 
-
-Next, delete the preinstalled test side created as a default by Ngnix
+Next, delete the preinstalled test site created as a default by Ngnix.
 
 ```
 $ sudo rm /etc/ngnix/sites-enabled/default
@@ -282,12 +280,11 @@ Create a new config file,
 $ touch /etc/ngnix/sites-enabled/studoo
 ```
 
-and add the following content to it.
+open it with nano and add the followed content to it.
 
 ```
 $ nano /etc/ngnix/sites-enabled/studoo
 ```
-
 ```
 server {
   # listen on port 80 (http)
@@ -301,7 +298,7 @@ server {
 
 server {
   # listen on port 443 (https)
-  lsiten 433 ssl;
+  listen 433 ssl;
   server_name_;
 
   #location of the self-signed SSL certificate 
@@ -313,7 +310,7 @@ server {
   error_log /var/log/microblog:error.log;
 
   location / {
-    #forward allplication request to the gunicorn server
+    #forward application request to the gunicorn server
     proxy_pass http://localhost:800;
     proxy:redirect off;
     proxy_set_header Host $host;
@@ -322,7 +319,7 @@ server {
   }
 
   location /static {
-    # handle static files directly, without forwarding to the application
+    # handle static files directly, without forwarding them to the application
     alias /home/studoo/studoo/app/static;
     expired 30d;
   }
@@ -335,4 +332,4 @@ Now, we have to reload the config and activate it.
 $ sudo service ngnix reload
 ```
 
-Congrats, your sTudoo is now deployed.
+**Congrats, your sTudoo instance is now deployed and usable.**
