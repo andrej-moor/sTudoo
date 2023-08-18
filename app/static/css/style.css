@@ -228,7 +228,6 @@ img {
   background: url(/static/images/whiteBricks.jpg) no-repeat center center/cover;
 }
 
-
 .hero .content {
   display: flex;
   flex-direction: column;
@@ -520,4 +519,3 @@ section .fa-brands {
   margin: 5px 0; 
   text-align: center; /* Zentriert den Text in der Nachricht */
 }
-
