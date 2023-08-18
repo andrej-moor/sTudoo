@@ -7,29 +7,18 @@ nav_order: 4
 [Jane Dane]
 {: .label }
 
-# [Peer review]
-{: .no_toc }
+# Peer Review
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
+## Andreas Moor -> Jana
 
-## [Jana Kusch] - review 1
+### My Observation
 
-### My observation (Wahrnehmung)
+My observation was that me an Jana worked quite harmoniously. We could split the work load into Backend (mostly Jana's part) and Frontend & Ops (mostly Andy's part). We were both commited to keep the communication flowing, which meant to talk about what works, does pnot work, what should be addapted and what would be out of the scope of the project and also out of our current capability to manage, with all the other projects that had to be pushed paralelly to.
 
-Some of the required features and implementations seemed quite advanced, especially regarding the database. Since I was already knowledgeable in SQL and table operations, it did not concern me that much but many of my co-students seemed to have quite a bit of trouble. 
+### Effect On Me
 
+I realy appriciated the honest and clear communication and Jana's drive to get things done even under heavy load. Which was honestly a help in my own motivation. Jana was really one of the less project members at university that I would wish to have in real life in the professional context.
 
-### Effect on me (Wirkung)
+### Tip For The Future (Wunsch)
 
-I found it a good challenge to have a new programming subject to do research on but found it all in all a bit too much work for only 5 course credits. 
-
-### Tip for the future (Wunsch)
-
-More help concerning the documentation of projects and more relevant code in class, since the code we learned only superficially helped for the actual web development and especially for our project I had to look up several relevant materials. 
+I hope that Jana will stick to here values and her powerful mentality, here humor and her gentle and polite way to communicate. And maybe I'm lucky enough to work on a different project with her again.
