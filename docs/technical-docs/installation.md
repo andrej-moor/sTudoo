@@ -17,7 +17,8 @@ Andy
 
 # Installation
 
-Before jumping into the installation process, we have to give credit to Miguel Grinberg and his book [The Flask Mega-Tutorial](https://amzn.to/3KPcMyz) which is the source for the installation instructions (starting in Chapter 17.). Feel free check the main source which also includes the deploy instructions of Flask apps for the raspberry pi and docker containers.
+{: .info }
+> Before jumping into the installation process, we have to give credit to Miguel Grinberg and his book [The Flask Mega-Tutorial](https://amzn.to/3KPcMyz) which is the source for the installation instructions (starting in Chapter 17.). Feel free check the main source which also includes the deploy instructions of Flask apps for the raspberry pi and docker containers.
 
 To deploy the sTudoo application please make sure to follow the steps below. 
 
