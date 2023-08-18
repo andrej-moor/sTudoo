@@ -7,7 +7,7 @@ nav_order: 1
 Andy
 {: .label }
 
-# sTudoos Application Structure
+# sTudoo's Application Structure
 
 To get a glimpse of the application structure and it's compoments, let's dive into the directory tree and see what the functions of the included files are.
 

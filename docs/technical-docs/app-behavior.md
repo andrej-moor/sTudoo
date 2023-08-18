@@ -23,7 +23,7 @@ Andy
 
 ## sTudoo's Use Cases
 
-To get a big picture of sTudoo's functionality let us take a look at the use case diagram.
+To get the big picture of sTudoo's functionality let us take a look at the use case diagram.
 
 ![Use case diagram](../assets/diagrams/Studoo_Features.png)
 

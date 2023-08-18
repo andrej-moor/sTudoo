@@ -62,13 +62,13 @@ TODO {
 
 ## Student (User) to Classes
 
-What you can see is a 1-n cardinality between each entity. This means that a user has to be created to before university classes can be added, but each user can have many classes as entries.
+What you can see is a 1-n cardinality between each entity. This means that a user has to be created before university classes can be added, but each user can have many classes as entries.
 
 The _Student_ entity holds the attributes `studentId`, `firstName`, `lastName`, `email`, `email` & `password` which are all string data types. `studentId` has the primary and foreign key assigned to it.
 
 ## Classes to Projects
 
-Projecs follows a similiar rule. To a project to exist in sTudoo it has to be matched to a class. Like in real life a project in university belongs a class that is taken. But again, a uni class can have several project assigned to it.
+The projecs follow a similiar rule. For a project to exist in sTudoo it has to be matched to a class. Like in real life a project in university belongs to a class that is taken. But again, a uni class can have several project assigned to it.
 
 The _Class_ entity holds the attributes `classId`, `className` & `classChecked`. The first two are string data types the last one a boolean. `classId` has the primary and foreign key assigned to it.
 
@@ -76,6 +76,6 @@ The _Class_ entity holds the attributes `classId`, `className` & `classChecked`.
 
 Each todo in university context belongs to a project. A project can have one or many todos assigned to it.
 
-The _Project_ entity holds the attributes `projectId`, `projectName`, `submissionDate` & `projectChecked`. The first two are string data types, the thirs an integer and the last one is a boolean. `projectId` has the primary and foreign key assigned to it.
+The _Project_ entity holds the attributes `projectId`, `projectName`, `submissionDate` & `projectChecked`. The first two are string data types, the third an integer and the last one is a boolean. `projectId` has the primary and foreign key assigned to it.
 
-The _Todos_ entity hold the attributes `todoId`, `todoName` & `todoChecked`. The first two are string data type the last one is a boolean.
+The _Todos_ entity hold the attributes `todoId`, `todoName` & `todoChecked`. The first two are string data types the last one is a boolean.
