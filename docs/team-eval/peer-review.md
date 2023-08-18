@@ -4,9 +4,6 @@ parent: Team Evaluation
 nav_order: 4
 ---
 
-[Jane Dane]
-{: .label }
-
 # Peer Review
 
 ## Andreas Moor -> Jana
