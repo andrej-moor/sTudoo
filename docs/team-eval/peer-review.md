@@ -19,6 +19,6 @@ My observation was that me an Jana worked quite harmoniously. We could split the
 
 I realy appriciated the honest and clear communication and Jana's drive to get things done even under heavy load. Which was honestly a help in my own motivation. Jana was really one of the less project members at university that I would wish to have in real life in the professional context.
 
-### Tip For The Future (Wunsch)
+### Tip For The Future
 
 I hope that Jana will stick to here values and her powerful mentality, here humor and her gentle and polite way to communicate. And maybe I'm lucky enough to work on a different project with her again.
